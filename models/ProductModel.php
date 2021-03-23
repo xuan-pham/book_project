@@ -13,7 +13,6 @@ class ProductModel
 
         $query = $conn->query("SELECT * FROM product_category");
         return $data = $query->fetch_array();
-
     }
 
     public function getProductById($id)
