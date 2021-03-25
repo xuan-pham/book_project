@@ -11,7 +11,7 @@
     <!-- Title Tag  -->
     <title>Eshop - eCommerce HTML5 Template.</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images\favicon.png">
+    <link rel="icon" type="image/png" href="templates\images\favicon.png">
     <!-- Web Font -->
     <link
         href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
@@ -20,30 +20,30 @@
     <!-- StyleSheet -->
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="view/css/bootstrap.css">
+    <link rel="stylesheet" href="templates/css/bootstrap.css">
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="view/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="templates/css/magnific-popup.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="view/css/font-awesome.css">
+    <link rel="stylesheet" href="templates/css/font-awesome.css">
     <!-- Fancybox -->
-    <link rel="stylesheet" href="view/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="templates/css/jquery.fancybox.min.css">
     <!-- Themify Icons -->
-    <link rel="stylesheet" href="view/css/themify-icons.css">
+    <link rel="stylesheet" href="templates/css/themify-icons.css">
     <!-- Nice Select CSS -->
-    <link rel="stylesheet" href="view/css/niceselect.css">
+    <link rel="stylesheet" href="templates/css/niceselect.css">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="view/css/animate.css">
+    <link rel="stylesheet" href="templates/css/animate.css">
     <!-- Flex Slider CSS -->
-    <link rel="stylesheet" href="view/css/flex-slider.min.css">
+    <link rel="stylesheet" href="templates/css/flex-slider.min.css">
     <!-- Owl Carousel -->
-    <link rel="stylesheet" href="view/css/owl-carousel.css">
+    <link rel="stylesheet" href="templates/css/owl-carousel.css">
     <!-- Slicknav -->
-    <link rel="stylesheet" href="view/css/slicknav.min.css">
+    <link rel="stylesheet" href="templatescss/slicknav.min.css">
 
     <!-- Eshop StyleSheet -->
-    <link rel="stylesheet" href="view/css/reset.css">
-    <link rel="stylesheet" href="view/css/style.css">
-    <link rel="stylesheet" href="view/css/responsive.css">
+    <link rel="stylesheet" href="templates/css/reset.css">
+    <link rel="stylesheet" href="templates/css/style.css">
+    <link rel="stylesheet" href="templates/css/responsive.css">
 
 </head>
 
@@ -59,54 +59,8 @@
     </div>
     <!-- End Preloader -->
 
-    <!-- Get Pro Button -->
-    <ul class="pro-features">
-        <a class="get-pro" href="#">Get Pro</a>
-        <li class="title">Pro Version Features</li>
-        <li>4+ premade home pages</li>
-        <li>19+ html pages</li>
-        <li>Color Plate With 12+ Colors</li>
-        <li>Sticky Header / Sticky Filters</li>
-        <li>Quick view / Product Countdown</li>
-        <div class="button">
-            <a href="https://graygrids.com/item/eshop-ecommerce-html5-template/?ref=Nthemer" target="_blank"
-                class="btn">Buy Pro Version</a>
-            <a href="https://graygrids.com/item/eshop-ecommerce-html5-template/?ref=Nthemer" target="_blank"
-                class="btn">View Details</a>
-        </div>
-    </ul>
-
     <!-- Header -->
     <header class="header shop">
-        <!-- Topbar -->
-        <div class="topbar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-12">
-                        <!-- Top Left -->
-                        <div class="top-left">
-                            <ul class="list-main">
-                                <li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
-                                <li><i class="ti-email"></i> support@shophub.com</li>
-                            </ul>
-                        </div>
-                        <!--/ End Top Left -->
-                    </div>
-                    <div class="col-lg-8 col-md-12 col-12">
-                        <!-- Top Right -->
-                        <div class="right-content">
-                            <ul class="list-main">
-                                <li><i class="ti-location-pin"></i> Store location</li>
-                                <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
-                                <li><i class="ti-user"></i> <a href="#">My account</a></li>
-                                <li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
-                            </ul>
-                        </div>
-                        <!-- End Top Right -->
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End Topbar -->
         <div class="middle-inner">
             <div class="container">
@@ -114,7 +68,7 @@
                     <div class="col-lg-2 col-md-2 col-12">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="images\logo.png" alt="logo"></a>
+                            <a href="index.html"><img src="templates\images\logo.png" alt="logo"></a>
                         </div>
                         <!--/ End Logo -->
                         <!-- Search Form -->
@@ -152,9 +106,6 @@
                         <div class="right-bar">
                             <!-- Search Form -->
                             <div class="sinlge-bar">
-                                <a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                            </div>
-                            <div class="sinlge-bar">
                                 <a href="#" class="single-icon"><i class="fa fa-user-circle-o"
                                         aria-hidden="true"></i></a>
                             </div>
@@ -171,14 +122,16 @@
                                         <li>
                                             <a href="#" class="remove" title="Remove this item"><i
                                                     class="fa fa-remove"></i></a>
-                                            <a class="cart-img" href="#"><img src="images\product-1.jpg" alt="#"></a>
+                                            <a class="cart-img" href="#"><img src="templates\images\product-1.jpg"
+                                                    alt="#"></a>
                                             <h4><a href="#">Woman Ring</a></h4>
                                             <p class="quantity">1x - <span class="amount">$99.00</span></p>
                                         </li>
                                         <li>
                                             <a href="#" class="remove" title="Remove this item"><i
                                                     class="fa fa-remove"></i></a>
-                                            <a class="cart-img" href="#"><img src="images\product-2.jpg" alt="#"></a>
+                                            <a class="cart-img" href="#"><img src="templates\images\product-2.jpg"
+                                                    alt="#"></a>
                                             <h4><a href="#">Woman Necklace</a></h4>
                                             <p class="quantity">1x - <span class="amount">$35.00</span></p>
                                         </li>
@@ -227,7 +180,7 @@
                                             <li class="single-menu">
                                                 <a href="#" class="title-link">Shop Kid's</a>
                                                 <div class="image">
-                                                    <img src="images\mega-menu1.jpg" alt="#">
+                                                    <img src="templates\images\mega-menu1.jpg" alt="#">
                                                 </div>
                                                 <div class="inner-link">
                                                     <a href="#">Kids Toys</a>
@@ -239,7 +192,7 @@
                                             <li class="single-menu">
                                                 <a href="#" class="title-link">Shop Men's</a>
                                                 <div class="image">
-                                                    <img src="images\mega-menu2.jpg" alt="#">
+                                                    <img src="templates\images\mega-menu2.jpg" alt="#">
                                                 </div>
                                                 <div class="inner-link">
                                                     <a href="#">Watch</a>
@@ -251,7 +204,7 @@
                                             <li class="single-menu">
                                                 <a href="#" class="title-link">Shop Women's</a>
                                                 <div class="image">
-                                                    <img src="images\mega-menu3.jpg" alt="#">
+                                                    <img src="templates\images\mega-menu3.jpg" alt="#">
                                                 </div>
                                                 <div class="inner-link">
                                                     <a href="#">Ladies Shirt</a>
@@ -350,7 +303,7 @@
                 <!-- Single Banner  -->
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-banner">
-                        <img src="images\mini-banner1.jpg" alt="#">
+                        <img src="templates\images\mini-banner1.jpg" alt="#">
                         <div class="content">
                             <p>Man's Collectons</p>
                             <h3>Summer travel <br> collection</h3>
@@ -362,7 +315,7 @@
                 <!-- Single Banner  -->
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-banner">
-                        <img src="images\mini-banner2.jpg" alt="#">
+                        <img src="templates\images\mini-banner2.jpg" alt="#">
                         <div class="content">
                             <p>Bag Collectons</p>
                             <h3>Awesome Bag <br> 2020</h3>
@@ -374,7 +327,7 @@
                 <!-- Single Banner  -->
                 <div class="col-lg-4 col-12">
                     <div class="single-banner tab-height">
-                        <img src="images\mini-banner3.jpg" alt="#">
+                        <img src="templates\images\mini-banner3.jpg" alt="#">
                         <div class="content">
                             <p>Flash Sale</p>
                             <h3>Mid Season <br> Up to <span>40%</span> Off</h3>
@@ -404,18 +357,10 @@
                         <div class="nav-main">
                             <!-- Tab Nav -->
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man"
-                                        role="tab">Man</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women"
-                                        role="tab">Woman</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids"
-                                        role="tab">Kids</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories"
-                                        role="tab">Accessories</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#essential"
-                                        role="tab">Essential</a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices"
-                                        role="tab">Prices</a></li>
+                                <?php foreach ($categoriesProduct as $item) : ?>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#man"
+                                        role="tab"><?= $item['name'] ?></a></li>
+                                <?php endforeach; ?>
                             </ul>
                             <!--/ End Tab Nav -->
                         </div>
@@ -428,8 +373,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p1.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p2.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p1.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p2.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -460,8 +407,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p3.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p4.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p3.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p4.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -492,8 +441,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p5.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p6.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p5.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p6.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -524,8 +475,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p7.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p8.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p7.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p8.jpg"
+                                                            alt="#">
                                                         <span class="new">New</span>
                                                     </a>
                                                     <div class="button-head">
@@ -557,8 +510,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p9.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p10.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p9.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p10.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -589,8 +544,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p11.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p12.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p11.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p12.jpg"
+                                                            alt="#">
                                                         <span class="price-dec">30% Off</span>
                                                     </a>
                                                     <div class="button-head">
@@ -622,8 +579,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p13.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p14.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p13.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p14.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -654,8 +613,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p15.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p16.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p15.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p16.jpg"
+                                                            alt="#">
                                                         <span class="out-of-stock">Hot</span>
                                                     </a>
                                                     <div class="button-head">
@@ -696,8 +657,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p9.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p10.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p9.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p10.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -728,8 +691,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p11.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p12.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p11.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p12.jpg"
+                                                            alt="#">
                                                         <span class="price-dec">30% Off</span>
                                                     </a>
                                                     <div class="button-head">
@@ -761,8 +726,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p13.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p14.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p13.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p14.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -793,8 +760,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p15.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p16.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p15.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p16.jpg"
+                                                            alt="#">
                                                         <span class="out-of-stock">Hot</span>
                                                     </a>
                                                     <div class="button-head">
@@ -827,8 +796,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p1.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p2.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p1.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p2.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -859,8 +830,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p3.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p4.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p3.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p4.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -891,8 +864,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p5.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p6.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p5.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p6.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -923,8 +898,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p7.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p8.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p7.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p8.jpg"
+                                                            alt="#">
                                                         <span class="new">New</span>
                                                     </a>
                                                     <div class="button-head">
@@ -964,8 +941,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p5.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p6.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p5.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p6.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -996,8 +975,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p7.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p8.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p7.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p8.jpg"
+                                                            alt="#">
                                                         <span class="new">New</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1029,8 +1010,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p1.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p2.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p1.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p2.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1061,8 +1044,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p3.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p4.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p3.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p4.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1093,8 +1078,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p9.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p10.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p9.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p10.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1125,8 +1112,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p11.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p12.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p11.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p12.jpg"
+                                                            alt="#">
                                                         <span class="price-dec">30% Off</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1158,8 +1147,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p13.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p14.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p13.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p14.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1190,8 +1181,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p15.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p16.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p15.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p16.jpg"
+                                                            alt="#">
                                                         <span class="out-of-stock">Hot</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1232,8 +1225,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p5.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p6.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p5.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p6.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1264,8 +1259,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p7.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p8.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p7.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p8.jpg"
+                                                            alt="#">
                                                         <span class="new">New</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1297,8 +1294,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p9.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p10.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p9.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p10.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1329,8 +1328,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p1.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p2.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p1.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p2.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1361,8 +1362,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p3.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p4.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p3.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p4.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1393,8 +1396,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p11.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p12.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p11.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p12.jpg"
+                                                            alt="#">
                                                         <span class="price-dec">30% Off</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1426,8 +1431,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p13.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p14.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p13.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p14.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1458,8 +1465,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p15.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p16.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p15.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p16.jpg"
+                                                            alt="#">
                                                         <span class="out-of-stock">Hot</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1500,8 +1509,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p13.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p14.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p13.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p14.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1532,8 +1543,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p15.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p16.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p15.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p16.jpg"
+                                                            alt="#">
                                                         <span class="out-of-stock">Hot</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1566,8 +1579,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p1.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p2.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p1.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p2.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1598,8 +1613,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p3.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p4.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p3.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p4.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1630,8 +1647,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p5.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p6.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p5.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p6.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1662,8 +1681,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p7.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p8.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p7.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p8.jpg"
+                                                            alt="#">
                                                         <span class="new">New</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1695,8 +1716,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p9.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p10.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p9.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p10.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1727,8 +1750,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p11.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p12.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p11.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p12.jpg"
+                                                            alt="#">
                                                         <span class="price-dec">30% Off</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1768,8 +1793,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p1.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p2.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p1.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p2.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1800,8 +1827,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p3.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p4.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p3.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p4.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1832,8 +1861,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p5.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p6.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p5.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p6.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1864,8 +1895,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p7.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p8.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p7.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p8.jpg"
+                                                            alt="#">
                                                         <span class="new">New</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1897,8 +1930,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p9.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p10.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p9.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p10.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1929,8 +1964,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p11.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p12.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p11.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p12.jpg"
+                                                            alt="#">
                                                         <span class="price-dec">30% Off</span>
                                                     </a>
                                                     <div class="button-head">
@@ -1962,8 +1999,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p13.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p14.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p13.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p14.jpg"
+                                                            alt="#">
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1994,8 +2033,10 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <a href="product-details.html">
-                                                        <img class="default-img" src="images\products\p15.jpg" alt="#">
-                                                        <img class="hover-img" src="images\products\p16.jpg" alt="#">
+                                                        <img class="default-img" src="templates\images\products\p15.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="templates\images\products\p16.jpg"
+                                                            alt="#">
                                                         <span class="out-of-stock">Hot</span>
                                                     </a>
                                                     <div class="button-head">
@@ -2053,7 +2094,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="list-image overlay">
-                                    <img src="images\list\shop-list1.jpg" alt="#">
+                                    <img src="templates\images\list\shop-list1.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
@@ -2071,7 +2112,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="list-image overlay">
-                                    <img src="images\list\shop-list2.jpg" alt="#">
+                                    <img src="templates\images\list\shop-list2.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
@@ -2089,7 +2130,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="list-image overlay">
-                                    <img src="images\list\shop-list3.jpg" alt="#">
+                                    <img src="templates\images\list\shop-list3.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
@@ -2116,7 +2157,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="list-image overlay">
-                                    <img src="images\list\shop-list4.jpg" alt="#">
+                                    <img src="templates\images\list\shop-list4.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
@@ -2134,7 +2175,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="list-image overlay">
-                                    <img src="images\list\shop-list5.jpg" alt="#">
+                                    <img src="templates\images\list\shop-list5.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
@@ -2152,7 +2193,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="list-image overlay">
-                                    <img src="images\list\shop-list6.jpg" alt="#">
+                                    <img src="templates\images\list\shop-list6.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
@@ -2179,7 +2220,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="list-image overlay">
-                                    <img src="images\list\shop-list7.jpg" alt="#">
+                                    <img src="templates\images\list\shop-list7.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
@@ -2197,7 +2238,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="list-image overlay">
-                                    <img src="images\list\shop-list8.jpg" alt="#">
+                                    <img src="templates\images\list\shop-list8.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
@@ -2215,7 +2256,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="list-image overlay">
-                                    <img src="images\list\shop-list9.jpg" alt="#">
+                                    <img src="templates\images\list\shop-list9.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
@@ -2249,7 +2290,7 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Blog  -->
                     <div class="shop-single-blog">
-                        <img src="images\blog1.jpg" alt="#">
+                        <img src="templates\images\blog1.jpg" alt="#">
                         <div class="content">
                             <p class="date">22 July , 2020. Monday</p>
                             <a href="#" class="title">Sed adipiscing ornare.</a>
@@ -2261,7 +2302,7 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Blog  -->
                     <div class="shop-single-blog">
-                        <img src="images\blog2.jpg" alt="#">
+                        <img src="templates\images\blog2.jpg" alt="#">
                         <div class="content">
                             <p class="date">22 July, 2020. Monday</p>
                             <a href="#" class="title">Man’s Fashion Winter Sale</a>
@@ -2273,7 +2314,7 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Blog  -->
                     <div class="shop-single-blog">
-                        <img src="images\blog3.jpg" alt="#">
+                        <img src="templates\images\blog3.jpg" alt="#">
                         <div class="content">
                             <p class="date">22 July, 2020. Monday</p>
                             <a href="#" class="title">Women Fashion Festive</a>
@@ -2370,16 +2411,16 @@
                             <div class="product-gallery">
                                 <div class="quickview-slider-active">
                                     <div class="single-slider">
-                                        <img src="images\modal1.png" alt="#">
+                                        <img src="templates\images\modal1.png" alt="#">
                                     </div>
                                     <div class="single-slider">
-                                        <img src="images\modal2.png" alt="#">
+                                        <img src="templates\images\modal2.png" alt="#">
                                     </div>
                                     <div class="single-slider">
-                                        <img src="images\modal3.png" alt="#">
+                                        <img src="templates\images\modal3.png" alt="#">
                                     </div>
                                     <div class="single-slider">
-                                        <img src="images\modal4.png" alt="#">
+                                        <img src="templates\images\modal4.png" alt="#">
                                     </div>
                                 </div>
                             </div>
@@ -2484,7 +2525,7 @@
                         <!-- Single Widget -->
                         <div class="single-footer about">
                             <div class="logo">
-                                <a href="index.html"><img src="images\logo2.png" alt="#"></a>
+                                <a href="index.html"><img src="templates\images\logo2.png" alt="#"></a>
                             </div>
                             <p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, magna
                                 eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor,
@@ -2561,7 +2602,7 @@
                         </div>
                         <div class="col-lg-6 col-12">
                             <div class="right">
-                                <img src="images\payments.png" alt="#">
+                                <img src="templates\images\payments.png" alt="#">
                             </div>
                         </div>
                     </div>
@@ -2572,41 +2613,41 @@
     <!-- /End Footer Area -->
 
     <!-- Jquery -->
-    <script src="js\jquery.min.js"></script>
-    <script src="js\jquery-migrate-3.0.0.js"></script>
-    <script src="js\jquery-ui.min.js"></script>
+    <script src="templates/js\jquery.min.js"></script>
+    <script src="templates/js\jquery-migrate-3.0.0.js"></script>
+    <script src="templates/js\jquery-ui.min.js"></script>
     <!-- Popper JS -->
-    <script src="js\popper.min.js"></script>
+    <script src="templates/js\popper.min.js"></script>
     <!-- Bootstrap JS -->
-    <script src="js\bootstrap.min.js"></script>
+    <script src="templates/js\bootstrap.min.js"></script>
     <!-- Color JS -->
-    <script src="js/colors.js"></script>
+    <script src="templates/js/colors.js"></script>
     <!-- Slicknav JS -->
-    <script src="js\slicknav.min.js"></script>
+    <script src="templates/js\slicknav.min.js"></script>
     <!-- Owl Carousel JS -->
-    <script src="js\owl-carousel.js"></script>
+    <script src="templates/js\owl-carousel.js"></script>
     <!-- Magnific Popup JS -->
-    <script src="js\magnific-popup.js"></script>
+    <script src="templates/js\magnific-popup.js"></script>
     <!-- Fancybox JS -->
-    <script src="js\facnybox.min.js"></script>
+    <script src="templates/js\facnybox.min.js"></script>
     <!-- Waypoints JS -->
-    <script src="js\waypoints.min.js"></script>
+    <script src="templates/js\waypoints.min.js"></script>
     <!-- Countdown JS -->
-    <script src="js\finalcountdown.min.js"></script>
+    <script src="templates/js\finalcountdown.min.js"></script>
     <!-- Nice Select JS -->
-    <script src="js\nicesellect.js"></script>
+    <script src="templates/js\nicesellect.js"></script>
     <!-- Ytplayer JS -->
-    <script src="js\ytplayer.min.js"></script>
+    <script src="templates/js\ytplayer.min.js"></script>
     <!-- Flex Slider JS -->
-    <script src="js\flex-slider.js"></script>
+    <script src="templates/js\flex-slider.js"></script>
     <!-- ScrollUp JS -->
-    <script src="js\scrollup.js"></script>
+    <script src="templates/js\scrollup.js"></script>
     <!-- Onepage Nav JS -->
-    <script src="js\onepage-nav.min.js"></script>
+    <script src="templates/js\onepage-nav.min.js"></script>
     <!-- Easing JS -->
-    <script src="js\easing.js"></script>
+    <script src="templates/js\easing.js"></script>
     <!-- Active JS -->
-    <script src="js\active.js"></script>
+    <script src="templates/js\active.js"></script>
 </body>
 
 </html>
