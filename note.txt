@@ -1,0 +1,15 @@
+cau lenh up code len git
+
+// cau lenh push code len
+git add . 
+(cau lenh nay add het tat ca file da thay doi)
+
+git commit -m "sua trang home"
+(cau lenh nay de comment lai nhung gi da thay doi, cho nguoi khac lam viec chung hieu la vua lam cai gi)
+
+git push 
+(push code len)
+
+// cau lenh lay code ve
+git pull 
+(lay code moi ve)
