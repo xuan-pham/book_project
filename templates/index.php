@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zxx">
 
 <head>
@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title Tag  -->
-    <title>Eshop - eCommerce HTML5 Template.</title>
+    <title>Book Project</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="templates\images\favicon.png">
     <!-- Web Font -->
@@ -38,25 +38,28 @@
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="templates/css/owl-carousel.css">
     <!-- Slicknav -->
-    <link rel="stylesheet" href="templatescss/slicknav.min.css">
+    <link rel="stylesheet" href="templates/css/slicknav.min.css">
 
     <!-- Eshop StyleSheet -->
     <link rel="stylesheet" href="templates/css/reset.css">
     <link rel="stylesheet" href="templates/css/style.css">
     <link rel="stylesheet" href="templates/css/responsive.css">
 
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="js">
     <!-- Preloader -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="preloader-inner">
             <div class="preloader-icon">
                 <span></span>
                 <span></span>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Preloader -->
 
     <!-- Header -->
@@ -89,14 +92,8 @@
                     <div class="col-lg-8 col-md-7 col-12">
                         <div class="search-bar-top">
                             <div class="search-bar">
-                                <select>
-                                    <option selected="selected">All Category</option>
-                                    <option>watch</option>
-                                    <option>mobile</option>
-                                    <option>kid’s item</option>
-                                </select>
                                 <form>
-                                    <input name="search" placeholder="Search Products Here....." type="search">
+                                    <input name="search" placeholder="Tìm kiếm sản phẩm....." type="search">
                                     <button class="btnn"><i class="ti-search"></i></button>
                                 </form>
                             </div>
@@ -160,7 +157,12 @@
                             <div class="all-category">
                                 <h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
                                 <ul class="main-category">
-                                    <li><a href="#">New Arrivals <i class="fa fa-angle-right"
+                                    <?php foreach($categoriesSidebar as $item) : ?>
+
+                                    <li><a href="#"><?= $item['name'] ?></a></li>
+
+                                    <?php endforeach; ?>
+                                    <!-- <li><a href="#">New Arrivals <i class="fa fa-angle-right"
                                                 aria-hidden="true"></i></a>
                                         <ul class="sub-category">
                                             <li><a href="#">accessories</a></li>
@@ -222,7 +224,7 @@
                                     <li><a href="#">man’s product</a></li>
                                     <li><a href="#">ladies</a></li>
                                     <li><a href="#">westrn dress</a></li>
-                                    <li><a href="#">denim </a></li>
+                                    <li><a href="#">denim </a></li> -->
                                 </ul>
                             </div>
                         </div>
@@ -233,25 +235,15 @@
                                     <div class="navbar-collapse">
                                         <div class="nav-inner">
                                             <ul class="nav main-menu menu navbar-nav">
-                                                <li class="active"><a href="#">Home</a></li>
-                                                <li><a href="#">Product</a></li>
-                                                <li><a href="#">Service</a></li>
-                                                <li><a href="#">Shop<i class="ti-angle-down"></i><span
-                                                            class="new">New</span></a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="shop-grid.html">Shop Grid</a></li>
-                                                        <li><a href="cart.html">Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Pages</a></li>
+                                                <li class="active"><a href="#">Trang chủ</a></li>
+                                                <li><a href="#">Sản phẩm</a></li>
                                                 <li><a href="#">Blog<i class="ti-angle-down"></i></a>
                                                     <ul class="dropdown">
                                                         <li><a href="blog-single-sidebar.html">Blog Single Sidebar</a>
                                                         </li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.html">Contact Us</a></li>
+                                                <li><a href="contact.html">Liên hệ</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -301,41 +293,17 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- Single Banner  -->
+                <?php foreach ($banners as $item) : ?>
+
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="single-banner">
-                        <img src="templates\images\mini-banner1.jpg" alt="#">
-                        <div class="content">
-                            <p>Man's Collectons</p>
-                            <h3>Summer travel <br> collection</h3>
-                            <a href="#">Discover Now</a>
-                        </div>
+                        <img src="templates/images/banners/<?= $item['image'] ?>" alt="#">
                     </div>
                 </div>
+
+                <?php endforeach; ?>
                 <!-- /End Single Banner  -->
-                <!-- Single Banner  -->
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="single-banner">
-                        <img src="templates\images\mini-banner2.jpg" alt="#">
-                        <div class="content">
-                            <p>Bag Collectons</p>
-                            <h3>Awesome Bag <br> 2020</h3>
-                            <a href="#">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /End Single Banner  -->
-                <!-- Single Banner  -->
-                <div class="col-lg-4 col-12">
-                    <div class="single-banner tab-height">
-                        <img src="templates\images\mini-banner3.jpg" alt="#">
-                        <div class="content">
-                            <p>Flash Sale</p>
-                            <h3>Mid Season <br> Up to <span>40%</span> Off</h3>
-                            <a href="#">Discover Now</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /End Single Banner  -->
+
             </div>
         </div>
     </section>
@@ -347,7 +315,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Trending Item</h2>
+                        <h2>Sản phẩm nổi bật</h2>
                     </div>
                 </div>
             </div>
@@ -2081,70 +2049,7 @@
     <section class="shop-home-list section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="shop-section-title">
-                                <h1>On sale</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list1.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Licity jelly leg flat Sandals</a></h4>
-                                    <p class="price with-discount">$59</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list2.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                                    <p class="price with-discount">$44</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list3.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                                    <p class="price with-discount">$89</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <div class="row">
                         <div class="col-12">
                             <div class="shop-section-title">
@@ -2155,13 +2060,13 @@
                     <!-- Start Single List  -->
                     <div class="single-list">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="list-image overlay">
                                     <img src="templates\images\list\shop-list4.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
+                            <div class="col-lg-4 col-md-6 col-12 no-padding">
                                 <div class="content">
                                     <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
                                     <p class="price with-discount">$65</p>
@@ -2173,13 +2078,13 @@
                     <!-- Start Single List  -->
                     <div class="single-list">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="list-image overlay">
                                     <img src="templates\images\list\shop-list5.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
+                            <div class="col-lg-4 col-md-6 col-12 no-padding">
                                 <div class="content">
                                     <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
                                     <p class="price with-discount">$33</p>
@@ -2191,13 +2096,13 @@
                     <!-- Start Single List  -->
                     <div class="single-list">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="list-image overlay">
                                     <img src="templates\images\list\shop-list6.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
+                            <div class="col-lg-4 col-md-6 col-12 no-padding">
                                 <div class="content">
                                     <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
                                     <p class="price with-discount">$77</p>
@@ -2207,7 +2112,7 @@
                     </div>
                     <!-- End Single List  -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <div class="row">
                         <div class="col-12">
                             <div class="shop-section-title">
@@ -2218,13 +2123,13 @@
                     <!-- Start Single List  -->
                     <div class="single-list">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="list-image overlay">
                                     <img src="templates\images\list\shop-list7.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
+                            <div class="col-lg-4 col-md-6 col-12 no-padding">
                                 <div class="content">
                                     <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
                                     <p class="price with-discount">$22</p>
@@ -2236,13 +2141,13 @@
                     <!-- Start Single List  -->
                     <div class="single-list">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="list-image overlay">
                                     <img src="templates\images\list\shop-list8.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
+                            <div class="col-lg-4 col-md-6 col-12 no-padding">
                                 <div class="content">
                                     <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
                                     <p class="price with-discount">$35</p>
@@ -2254,13 +2159,13 @@
                     <!-- Start Single List  -->
                     <div class="single-list">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-4 col-md-6 col-12">
                                 <div class="list-image overlay">
                                     <img src="templates\images\list\shop-list9.jpg" alt="#">
                                     <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
+                            <div class="col-lg-4 col-md-6 col-12 no-padding">
                                 <div class="content">
                                     <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
                                     <p class="price with-discount">$99</p>
@@ -2282,47 +2187,28 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>From Our Blog</h2>
+                        <h2>Blog của chúng tôi</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
+                <?php foreach ($blogItem as $item): ?>
+
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Blog  -->
                     <div class="shop-single-blog">
-                        <img src="templates\images\blog1.jpg" alt="#">
+                        <img src="templates\images\blogs\<?= $item['image'] ?>" alt="#">
                         <div class="content">
-                            <p class="date">22 July , 2020. Monday</p>
-                            <a href="#" class="title">Sed adipiscing ornare.</a>
-                            <a href="#" class="more-btn">Continue Reading</a>
+                            <p class="date"><?= date_format(new DateTime($item['created_at']),'l jS F Y') ?>
+                            </p>
+                            <a href="#" class="title"><?= $item['title'] ?></a>
+                            <a href="#" class="more-btn">Đọc tiếp</a>
                         </div>
                     </div>
                     <!-- End Single Blog  -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Blog  -->
-                    <div class="shop-single-blog">
-                        <img src="templates\images\blog2.jpg" alt="#">
-                        <div class="content">
-                            <p class="date">22 July, 2020. Monday</p>
-                            <a href="#" class="title">Man’s Fashion Winter Sale</a>
-                            <a href="#" class="more-btn">Continue Reading</a>
-                        </div>
-                    </div>
-                    <!-- End Single Blog  -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Blog  -->
-                    <div class="shop-single-blog">
-                        <img src="templates\images\blog3.jpg" alt="#">
-                        <div class="content">
-                            <p class="date">22 July, 2020. Monday</p>
-                            <a href="#" class="title">Women Fashion Festive</a>
-                            <a href="#" class="more-btn">Continue Reading</a>
-                        </div>
-                    </div>
-                    <!-- End Single Blog  -->
-                </div>
+
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -2372,30 +2258,7 @@
         </div>
     </section>
     <!-- End Shop Services Area -->
-
-    <!-- Start Shop Newsletter  -->
-    <section class="shop-newsletter section">
-        <div class="container">
-            <div class="inner-top">
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2 col-12">
-                        <!-- Start Newsletter Inner -->
-                        <div class="inner">
-                            <h4>Newsletter</h4>
-                            <p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
-                            <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-                                <input name="EMAIL" placeholder="Your email address" required="" type="email">
-                                <button class="btn">Subscribe</button>
-                            </form>
-                        </div>
-                        <!-- End Newsletter Inner -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Shop Newsletter -->
-
+    
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -2596,8 +2459,8 @@
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <div class="left">
-                                <p>Copyright © 2020 <a href="http://www.wpthemesgrid.com"
-                                        target="_blank">Wpthemesgrid</a> - All Rights Reserved.</p>
+                                <p>Copyright © 2020 <a href="#"
+                                        target="_blank">PCP</a> - All Rights Reserved.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-12">
@@ -2620,8 +2483,6 @@
     <script src="templates/js\popper.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="templates/js\bootstrap.min.js"></script>
-    <!-- Color JS -->
-    <script src="templates/js/colors.js"></script>
     <!-- Slicknav JS -->
     <script src="templates/js\slicknav.min.js"></script>
     <!-- Owl Carousel JS -->
