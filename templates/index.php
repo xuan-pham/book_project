@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title Tag  -->
-    <title>Eshop - eCommerce HTML5 Template.</title>
+    <title>Bshop </title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="templates\images\favicon.png">
     <!-- Web Font -->
@@ -89,12 +89,6 @@
                     <div class="col-lg-8 col-md-7 col-12">
                         <div class="search-bar-top">
                             <div class="search-bar">
-                                <select>
-                                    <option selected="selected">All Category</option>
-                                    <option>watch</option>
-                                    <option>mobile</option>
-                                    <option>kid’s item</option>
-                                </select>
                                 <form>
                                     <input name="search" placeholder="Search Products Here....." type="search">
                                     <button class="btnn"><i class="ti-search"></i></button>
@@ -281,9 +275,7 @@
                                         <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
                                         <p>Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find
                                             it pereri <br> odiy maboriosm.</p>
-                                        <div class="button">
-                                            <a href="#" class="btn">Shop Now!</a>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -479,7 +471,7 @@
                                                             alt="#">
                                                         <img class="hover-img" src="templates\images\products\p8.jpg"
                                                             alt="#">
-                                                        <span class="new">New</span>
+
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -695,7 +687,7 @@
                                                             alt="#">
                                                         <img class="hover-img" src="templates\images\products\p12.jpg"
                                                             alt="#">
-                                                        <span class="price-dec">30% Off</span>
+
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -1185,7 +1177,7 @@
                                                             alt="#">
                                                         <img class="hover-img" src="templates\images\products\p16.jpg"
                                                             alt="#">
-                                                        <span class="out-of-stock">Hot</span>
+
                                                     </a>
                                                     <div class="button-head">
                                                         <div class="product-action">
@@ -2077,203 +2069,7 @@
     </div>
     <!-- End Product Area -->
 
-    <!-- Start Shop Home List  -->
-    <section class="shop-home-list section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="shop-section-title">
-                                <h1>On sale</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list1.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Licity jelly leg flat Sandals</a></h4>
-                                    <p class="price with-discount">$59</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list2.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                                    <p class="price with-discount">$44</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list3.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                                    <p class="price with-discount">$89</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="shop-section-title">
-                                <h1>Best Seller</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list4.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                                    <p class="price with-discount">$65</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list5.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                                    <p class="price with-discount">$33</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list6.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                                    <p class="price with-discount">$77</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="shop-section-title">
-                                <h1>Top viewed</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list7.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                                    <p class="price with-discount">$22</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list8.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                                    <p class="price with-discount">$35</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                    <!-- Start Single List  -->
-                    <div class="single-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="list-image overlay">
-                                    <img src="templates\images\list\shop-list9.jpg" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                                <div class="content">
-                                    <h5 class="title"><a href="#">Licity jelly leg flat Sandals</a></h5>
-                                    <p class="price with-discount">$99</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single List  -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Shop Home List  -->
+
 
 
     <!-- Start Shop Blog  -->
@@ -2373,28 +2169,7 @@
     </section>
     <!-- End Shop Services Area -->
 
-    <!-- Start Shop Newsletter  -->
-    <section class="shop-newsletter section">
-        <div class="container">
-            <div class="inner-top">
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2 col-12">
-                        <!-- Start Newsletter Inner -->
-                        <div class="inner">
-                            <h4>Newsletter</h4>
-                            <p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
-                            <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-                                <input name="EMAIL" placeholder="Your email address" required="" type="email">
-                                <button class="btn">Subscribe</button>
-                            </form>
-                        </div>
-                        <!-- End Newsletter Inner -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Shop Newsletter -->
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
