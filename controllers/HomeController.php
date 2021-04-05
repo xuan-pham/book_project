@@ -5,14 +5,29 @@ class HomeController
 
     public function index()
     {
-        // Goi category product model de lay du lieu 
+        // Get data of categories featured
         require_once('models/CategoryProductModel.php');
         $categoriesProductModel = new CategoryProductModel();
-        $categoryProduct = $categoriesProductModel->getCategories();
+        $categoryProduct = $categoriesProductModel->getCategoriesFeatured();
+        
+        // Get data of categories sidebar
+        $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
 
-        // Goi view de tra ve du lieu da lay 
+
+        // Get data of banners
+        require_once('models/BannerModel.php');
+        $bannerModel = new BannerModel();
+        $bannerItem = $bannerModel->getBannerOfHome();
+
+        // Get data of blogs
+        require_once('models/PostModel.php');
+        $blogModel = new PostModel();
+        $blogItem = $blogModel->getBlogAtHomePage();
+        
+        // Call view to return data 
         require_once('views/HomeView.php');
         $categoryProductView = new HomeView();
-        $categoryProductView->index($categoryProduct);
+        $categoryProductView->index($categoryProduct,$categoriesSidebar, $bannerItem, $blogItem);
+
     }
 }
