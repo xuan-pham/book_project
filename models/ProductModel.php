@@ -1,7 +1,6 @@
 <?php
 class ProductModel
 {
-
     public function getFeaturedProduct(){
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         mysqli_set_charset($conn,"utf8");

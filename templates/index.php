@@ -24,9 +24,7 @@
                                         <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
                                         <p>Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find
                                             it pereri <br> odiy maboriosm.</p>
-                                        <div class="button">
-                                            <a href="#" class="btn">Shop Now!</a>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -133,14 +131,14 @@
                 </div>
             </div>
             <div class="row">
-                <?php foreach ($blogItem as $item): ?>
+                <?php foreach ($blogItem as $item) : ?>
 
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Single Blog  -->
                     <div class="shop-single-blog">
                         <img src="templates\images\blogs\<?= $item['image'] ?>" alt="#">
                         <div class="content">
-                            <p class="date"><?= date_format(new DateTime($item['created_at']),'l jS F Y') ?>
+                            <p class="date"><?= date_format(new DateTime($item['created_at']), 'l jS F Y') ?>
                             </p>
                             <a href="#" class="title"><?= $item['title'] ?></a>
                             <a href="#" class="more-btn">Đọc tiếp</a>
@@ -250,8 +248,10 @@
                                 </div>
                                 <h3>$29.00</h3>
                                 <div class="quickview-peragraph">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum
-                                        ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste
+                                        laborum
+                                        ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos
+                                        qui
                                         nemo ipsum numquam.</p>
                                 </div>
                                 <div class="size">
@@ -331,7 +331,8 @@
                             <div class="logo">
                                 <a href="index.html"><img src="templates\images\logo2.png" alt="#"></a>
                             </div>
-                            <p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, magna
+                            <p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,
+                                magna
                                 eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor,
                                 facilisis luctus, metus.</p>
                             <p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456
