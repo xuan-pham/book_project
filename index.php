@@ -8,10 +8,13 @@ if($url == "/book_project/"){
 }
 
 require_once 'controllers/HomeController.php';
+require_once 'controllers/AdminController.php';
 
 // file nay chay dau tien no chay vo file HomeController
 $homeController = new HomeController;
+$adminController = new AdminController;
 
+// Home Page
 if($action == 'home'){
    $homeController->index();
 }
@@ -24,3 +27,14 @@ else if($action == 'products'){
 else if($action == 'contact'){
     $homeController->contact();
 }
+// Admin Page
+
+else if($action == 'login'){
+    $adminController->login();
+}   
+else if($action == 'dashboard'){
+    $adminController->index();
+}
+
+
+
