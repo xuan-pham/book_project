@@ -92,7 +92,7 @@
                         <div class="right-bar">
                             <!-- Search Form -->
                             <div class="sinlge-bar">
-                                <a href="#" class="single-icon"><i class="fa fa-user-circle-o"
+                                <a href="?action=login" class="single-icon"><i class="fa fa-user-circle-o"
                                         aria-hidden="true"></i></a>
                             </div>
                             <div class="sinlge-bar shopping">
