@@ -9,207 +9,48 @@
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets\images\favicon.ico">
+    <link rel="shortcut icon" href="templates/admin/assets\images\favicon.ico">
 
     <!-- Plugins css-->
-    <link href="assets\libs\sweetalert2\sweetalert2.min.css" rel="stylesheet" type="text/css">
+    <link href="templates/admin/assets\libs\sweetalert2\sweetalert2.min.css" rel="stylesheet" type="text/css">
 
     <!-- App css -->
-    <link href="assets\css\bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
-    <link href="assets\css\icons.min.css" rel="stylesheet" type="text/css">
-    <link href="assets\css\app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">
+    <link href="templates/admin/assets\css\bootstrap.min.css" rel="stylesheet" type="text/css"
+        id="bootstrap-stylesheet">
+    <link href="templates/admin/assets\css\icons.min.css" rel="stylesheet" type="text/css">
+    <link href="templates/admin/assets\css\app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">
 
 </head>
 
 <body>
     <?php
-    include_once "../../models/user.php";
-    ?>
+    include 'models/UserModel.php';
+
+    session_start();
+
+    if (!isset($_SESSION['admin'])) {
+        header('location: ?action=login');
+    } ?>
+
     <!-- Begin page -->
     <div id="wrapper">
 
+        <?php
 
+        ?>
         <!-- Topbar Start -->
         <div class="navbar-custom">
             <ul class="list-unstyled topnav-menu float-right mb-0">
 
 
-
-                <li class="dropdown notification-list">
-                    <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="false" aria-expanded="false">
-                        <i class="mdi mdi-email-outline noti-icon"></i>
-                        <span class="badge badge-purple rounded-circle noti-icon-badge">3</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-
-                        <!-- item-->
-                        <div class="dropdown-item noti-title">
-                            <h5 class="font-16 m-0">
-                                <span class="float-right">
-                                    <a href="" class="text-dark">
-                                        <small>Clear All</small>
-                                    </a>
-                                </span>Chat
-                            </h5>
-                        </div>
-
-                        <div class="slimscroll noti-scroll">
-
-                            <div class="inbox-widget">
-                                <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-item-img"><img src="assets\images\users\avatar-1.jpg"
-                                                class="rounded-circle" alt=""></div>
-                                        <p class="inbox-item-author">Cristina Pride</p>
-                                        <p class="inbox-item-text text-truncate">Hi, How are you? What about our next
-                                            meeting</p>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-item-img"><img src="assets\images\users\avatar-2.jpg"
-                                                class="rounded-circle" alt=""></div>
-                                        <p class="inbox-item-author">Sam Garret</p>
-                                        <p class="inbox-item-text text-truncate">Yeah everything is fine</p>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-item-img"><img src="assets\images\users\avatar-3.jpg"
-                                                class="rounded-circle" alt=""></div>
-                                        <p class="inbox-item-author">Karen Robinson</p>
-                                        <p class="inbox-item-text text-truncate">Wow that's great</p>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-item-img"><img src="assets\images\users\avatar-4.jpg"
-                                                class="rounded-circle" alt=""></div>
-                                        <p class="inbox-item-author">Sherry Marshall</p>
-                                        <p class="inbox-item-text text-truncate">Hi, How are you? What about our next
-                                            meeting</p>
-                                    </div>
-                                </a>
-                                <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-item-img"><img src="assets\images\users\avatar-5.jpg"
-                                                class="rounded-circle" alt=""></div>
-                                        <p class="inbox-item-author">Shawn Millard</p>
-                                        <p class="inbox-item-text text-truncate">Yeah everything is fine</p>
-
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end inbox-widget -->
-
-                        </div>
-                        <!-- All-->
-                        <a href="javascript:void(0);"
-                            class="dropdown-item text-center text-primary notify-item notify-all">
-                            View all
-                            <i class="fi-arrow-right"></i>
-                        </a>
-
-                    </div>
-                </li>
-
-                <li class="dropdown notification-list">
-                    <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="false" aria-expanded="false">
-                        <i class="mdi mdi-bell-outline noti-icon"></i>
-                        <span class="badge badge-pink rounded-circle noti-icon-badge">4</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-
-                        <!-- item-->
-                        <div class="dropdown-item noti-title">
-                            <h5 class="font-16 m-0">
-                                <span class="float-right">
-                                    <a href="" class="text-dark">
-                                        <small>Clear All</small>
-                                    </a>
-                                </span>Notification
-                            </h5>
-                        </div>
-
-                        <div class="slimscroll noti-scroll">
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon">
-                                    <i class="mdi mdi-comment-account-outline text-info"></i>
-                                </div>
-                                <p class="notify-details">Caleb Flakelar commented on Admin
-                                    <small class="noti-time">1 min ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon text-success">
-                                    <i class="mdi mdi-account-plus text-primary"></i>
-                                </div>
-                                <p class="notify-details">New user registered.
-                                    <small class="noti-time">5 hours ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon text-danger">
-                                    <i class="mdi mdi-heart text-danger"></i>
-                                </div>
-                                <p class="notify-details">Carlos Crouch liked
-                                    <small class="noti-time">3 days ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon text-warning">
-                                    <i class="mdi mdi-comment-account-outline text-primary"></i>
-                                </div>
-                                <p class="notify-details">Caleb Flakelar commented on Admi
-                                    <small class="noti-time">4 days ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon text-purple">
-                                    <i class="mdi mdi-account-plus text-danger"></i>
-                                </div>
-                                <p class="notify-details">New user registered.
-                                    <small class="noti-time">7 days ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon text-danger">
-                                    <i class="mdi mdi-heart text-danger"></i>
-                                </div>
-                                <p class="notify-details">Carlos Crouch liked <b>Admin</b>.
-                                    <small class="noti-time">Carlos Crouch liked</small>
-                                </p>
-                            </a>
-                        </div>
-
-                        <!-- All-->
-                        <a href="javascript:void(0);" class="dropdown-item text-center notify-item notify-all">
-                            See all notifications
-                        </a>
-
-                    </div>
-                </li>
-
                 <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#"
                         role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="assets\images\users\avatar-1.jpg" alt="user-image" class="rounded-circle">
+                        <img src="templates/admin/assets\images\users\avatar-1.jpg" alt="user-image"
+                            class="rounded-circle">
                         <span class="pro-user-name ml-1">
-                            Thompson <i class="mdi mdi-chevron-down"></i>
+                            <?= $_SESSION['admin'][0]['firstName'] . " " . $_SESSION['admin'][0]['lastName'] ?> <i
+                                class="mdi mdi-chevron-down"></i>
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
@@ -236,10 +77,10 @@
                             <span>Màn hình khoá</span>
                         </a>
 
-                        <div class="dropdown-divider"></div>
+                        <div class="dropddown-divider"></div>
 
                         <!-- item-->
-                        <a href="logout.php" class="dropdown-item notify-item">
+                        <a href="?action=logout" class="dropdown-item notify-item">
                             <i class="mdi mdi-logout-variant"></i>
                             <span>Đăng xuất</span>
                         </a>
@@ -247,36 +88,29 @@
                     </div>
                 </li>
 
-                <li class="dropdown notification-list">
-                    <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect">
-                        <i class="mdi mdi-settings-outline noti-icon"></i>
-                    </a>
-                </li>
-
-
             </ul>
 
             <!-- LOGO -->
             <div class="logo-box">
                 <a href="index.html" class="logo text-center logo-dark">
                     <span class="logo-lg">
-                        <img src="assets\images\logo-dark.png" alt="" height="18">
+                        <img src="templates/admin/assets\images\logo-dark.png" alt="" height="18">
                         <!-- <span class="logo-lg-text-dark">Velonic</span> -->
                     </span>
                     <span class="logo-sm">
                         <!-- <span class="logo-lg-text-dark">V</span> -->
-                        <img src="assets\images\logo-sm.png" alt="" height="22">
+                        <img src="templates/admin/assets\images\logo-sm.png" alt="" height="22">
                     </span>
                 </a>
 
                 <a href="index.html" class="logo text-center logo-light">
                     <span class="logo-lg">
-                        <img src="assets\images\logo-light.png" alt="" height="18">
+                        <img src="templates/admin/assets\images\logo-light.png" alt="" height="18">
                         <!-- <span class="logo-lg-text-dark">Velonic</span> -->
                     </span>
                     <span class="logo-sm">
                         <!-- <span class="logo-lg-text-dark">V</span> -->
-                        <img src="assets\images\logo-sm.png" alt="" height="22">
+                        <img src="templates/admin/assets\images\logo-sm.png" alt="" height="22">
                     </span>
                 </a>
             </div>
@@ -318,44 +152,152 @@
                     <ul class="metismenu" id="side-menu">
 
                         <li class="menu-title">Điều hướng</li>
-
+                        <?php
+                        if ($_SESSION['admin'][0]['id_role'] == 1) : ?>
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-speedometer"></i>
-                                <span> Quản trị </span>
+                                <span> San pham</span>
                                 <span class="badge badge-info badge-pill float-right"> 3 </span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li><a href="#">Thêm sản phẩm</a></li>
-                                <li><a href="#">Thêm Blog</a></li>
-                                <li><a href="#">Quản lý thành viên</a></li>
+                                <li><a href="#">Thêm danh muc san pham</a></li>
+                                <li><a href="#">Don hang</a></li>
                             </ul>
                         </li>
-
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-mail"></i>
-                                <span> Email </span>
+                                <span> Tac gia </span>
                                 <span class="badge badge-warning badge-pill float-right">2</span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="email-inbox.html">Hộp thư đến</a></li>
-                                <li><a href="email-compose.html">Soạn email</a></li>
+                                <li><a href="email-inbox.html">Them tac gia</a></li>
+                                <li><a href="email-compose.html">Danh sach tac gia</a></li>
 
                             </ul>
                         </li>
-
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-map"></i>
-                                <span> Bản đồ </span>
+                                <span> Blog</span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="maps-gmap.html"> Google Map</a></li>
+                                <li><a href="maps-gmap.html">Them blog</a></li>
 
                             </ul>
                         </li>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect">
+                                <i class="ion-md-mail"></i>
+                                <span> NXB</span>
+                                <span class="badge badge-warning badge-pill float-right">2</span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="email-inbox.html">Them NXB</a></li>
+                                <li><a href="email-compose.html">Danh sach NXB</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect">
+                                <i class="ion-md-mail"></i>
+                                <span> Hee</span>
+                                <span class="badge badge-warning badge-pill float-right">2</span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="email-inbox.html">Them NXB</a></li>
+                                <li><a href="email-compose.html">Danh sach NXB</a></li>
+
+                            </ul>
+                        </li>
+
+
+                        <?php endif; ?>
+
+
+                        <?php
+                        if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect">
+                                <i class="ion-md-speedometer"></i>
+                                <span> San pham</span>
+                                <span class="badge badge-info badge-pill float-right"> 3 </span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="#">Thêm sản phẩm</a></li>
+                                <li><a href="#">Thêm danh muc san pham</a></li>
+                                <li><a href="#">Don hang</a></li>
+                            </ul>
+                        </li>
+
+                        <?php endif; ?>
+
+
+                        <?php
+                        if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect">
+                                <i class="ion-md-mail"></i>
+                                <span> Tac gia </span>
+                                <span class="badge badge-warning badge-pill float-right">2</span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="email-inbox.html">Them tac gia</a></li>
+                                <li><a href="email-compose.html">Danh sach tac gia</a></li>
+
+                            </ul>
+                        </li>
+                        <?php endif; ?>
+
+                        <?php
+                        if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect">
+                                <i class="ion-md-mail"></i>
+                                <span> NXB</span>
+                                <span class="badge badge-warning badge-pill float-right">2</span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="email-inbox.html">Them NXB</a></li>
+                                <li><a href="email-compose.html">Danh sach NXB</a></li>
+
+                            </ul>
+                        </li>
+                        <?php endif; ?>
+
+                        <?php
+                        if ($_SESSION['admin'][0]['id_role'] == 3) : ?>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect">
+                                <i class="ion-md-map"></i>
+                                <span> Blog</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="maps-gmap.html">Them blog</a></li>
+
+                            </ul>
+                        </li>
+                        <?php endif; ?>
+
+                        <?php
+                        if ($_SESSION['admin'][0]['id_role'] == 3) : ?>
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect">
+                                <i class="ion-md-map"></i>
+                                <span> He thong</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="maps-gmap.html">Tieu de website</a></li>
+
+                            </ul>
+                        </li>
+                        <?php endif; ?>
                     </ul>
 
                 </div>
@@ -445,7 +387,7 @@
             <div class="p-4">
 
                 <div class="mb-2">
-                    <img src="assets\images\layouts\light.png" class="img-fluid img-thumbnail" alt="">
+                    <img src="templates/admin/assets\images\layouts\light.png" class="img-fluid img-thumbnail" alt="">
                 </div>
                 <div class="custom-control custom-switch mb-3">
                     <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked="">
@@ -453,20 +395,21 @@
                 </div>
 
                 <div class="mb-2">
-                    <img src="assets\images\layouts\dark.png" class="img-fluid img-thumbnail" alt="">
+                    <img src="templates/admin/assets\images\layouts\dark.png" class="img-fluid img-thumbnail" alt="">
                 </div>
                 <div class="custom-control custom-switch mb-3">
-                    <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch"
-                        data-bsstyle="assets/css/bootstrap-dark.min.css" data-appstyle="assets/css/app-dark.min.css">
+                    <input type="checkbox" class="custom-control-input theme-choice" k id="dark-mode-switch"
+                        data-bsstyle="templates/admin/assets/css/bootstrap-dark.min.css"
+                        data-appstyle="templates/admin/assets/css/app-dark.min.css">
                     <label class="custom-control-label" for="dark-mode-switch">Chế độ tối</label>
                 </div>
 
                 <div class="mb-2">
-                    <img src="assets\images\layouts\rtl.png" class="img-fluid img-thumbnail" alt="">
+                    <img src="templates/admin/assets\images\layouts\rtl.png" class="img-fluid img-thumbnail" alt="">
                 </div>
                 <div class="custom-control custom-switch mb-5">
                     <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch"
-                        data-appstyle="assets/css/app-rtl.min.css">
+                        data-appstyle="templates/admin/assets/css/app-rtl.min.css">
                     <label class="custom-control-label" for="rtl-mode-switch">Chế độ RTL</label>
                 </div>
 
@@ -484,29 +427,29 @@
     </a>
 
     <!-- Vendor js -->
-    <script src="assets\js\vendor.min.js"></script>
+    <script src="templates/admin/assets\js\vendor.min.js"></script>
 
     <!-- Sparkline charts -->
-    <script src="assets\libs\jquery-sparkline\jquery.sparkline.min.js"></script>
+    <script src="templates/admin/assets\libs\jquery-sparkline\jquery.sparkline.min.js"></script>
 
-    <script src="assets\libs\moment\moment.min.js"></script>
-    <script src="assets\libs\jquery-scrollto\jquery.scrollTo.min.js"></script>
-    <script src="assets\libs\sweetalert2\sweetalert2.min.js"></script>
+    <script src="templates/admin/assets\libs\moment\moment.min.js"></script>
+    <script src="templates/admin/assets\libs\jquery-scrollto\jquery.scrollTo.min.js"></script>
+    <script src="templates/admin/assets\libs\sweetalert2\sweetalert2.min.js"></script>
 
     <!-- Chat app -->
-    <script src="assets\js\pages\jquery.chat.js"></script>
+    <script src="templates/admin/assets\js\pages\jquery.chat.js"></script>
 
     <!-- Todo app -->
-    <script src="assets\js\pages\jquery.todo.js"></script>
+    <script src="templates/admin/assets\js\pages\jquery.todo.js"></script>
 
     <!--Morris Chart-->
-    <script src="assets\libs\morris-js\morris.min.js"></script>
-    <script src="assets\libs\raphael\raphael.min.js"></script>
+    <script src="templates/admin/assets\libs\morris-js\morris.min.js"></script>
+    <script src="templates/admin/assets\libs\raphael\raphael.min.js"></script>
     <!-- Dashboard init JS -->
-    <script src="assets\js\pages\dashboard3.init.js"></script>
+    <script src="templates/admin/assets\js\pages\dashboard3.init.js"></script>
 
     <!-- App js -->
-    <script src="assets\js\app.min.js"></script>
+    <script src="templates/admin/assets\js\app.min.js"></script>
 
 </body>
 

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -10,25 +12,32 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="templates/admin/css/style.css">
 
 </head>
 
 <body>
     <?php
-	include "../../models/user.php";
-	if (isset($_POST['dangnhap'])) {
-		$user = $_POST['username'];
-		$pass = ($_POST['password']);
-		if (checkLogin($user, $pass)) {
-			session_start();
-			$_SESSION['admin'] = $user;
-			header('location:dashboard.php');
-		} else {
-			echo '<div class="alert alert-danger">Đăng nhập không thành công</div>';
-		}
-	}
-	?>
+    include "models/UserModel.php";
+
+    if (isset($_SESSION['admin'])) {
+        header('location: ?action=dashboard');
+    } else {
+        if (isset($_POST['dangnhap'])) {
+            $user = $_POST['username'];
+            $pass = ($_POST['password']);
+            if (checkLogin($user, $pass)) {
+                $users = getInfoOfUser($user);
+                $_SESSION['admin'] = $users;
+                header('location: ?action=dashboard');
+            } else {
+                echo '<div class="alert alert-danger">Đăng nhập không thành công</div>';
+            }
+        }
+    }
+
+
+    ?>
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -40,8 +49,8 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap py-5">
                         <div class="img d-flex align-items-center justify-content-center"
-                            style="background-image: url(images/bg.jpg);"></div>
-                        <h3 class="text-center mb-0">Xin Chào</h3>
+                            style="background-image: url(templates/admin/images/bg.jpg);"></div>
+                        <h3 class="text-center mb-0">Đăng nhập</h3>
                         <p class="text-center"></p>
                         <form action="#" class="login-form" method="POST">
                             <div class="form-group">
