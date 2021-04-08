@@ -1726,7 +1726,7 @@ body{
 }
 /* Sinlge Product */
 .single-product{
-	margin-top:50px;
+	/* margin-top:50px; */
 }
 .single-product .product-img {
   position: relative;
