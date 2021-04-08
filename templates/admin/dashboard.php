@@ -151,66 +151,87 @@
                 <div id="sidebar-menu">
                     <ul class="metismenu" id="side-menu">
 
-                        <li class="menu-title">Điều hướng</li>
+                        <li class="menu-title">Điều Hướng</li>
                         <?php
                         if ($_SESSION['admin'][0]['id_role'] == 1) : ?>
+                        <!--sản phẩm -->
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-speedometer"></i>
-                                <span> San pham</span>
-                                <span class="badge badge-info badge-pill float-right"> 3 </span>
+                                <span> Sản Phẩm</span>
+
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li><a href="#">Thêm sản phẩm</a></li>
-                                <li><a href="#">Thêm danh muc san pham</a></li>
-                                <li><a href="#">Don hang</a></li>
+                                <li><a href="#">Thêm Danh Mục Sản Phẩm</a></li>
+                                <li><a href="#">Đơn Hàng</a></li>
                             </ul>
                         </li>
+                        <!--tác giả-->
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-mail"></i>
-                                <span> Tac gia </span>
-                                <span class="badge badge-warning badge-pill float-right">2</span>
+                                <span>Tác Giả</span>
+
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="email-inbox.html">Them tac gia</a></li>
-                                <li><a href="email-compose.html">Danh sach tac gia</a></li>
+                                <li><a href="email-inbox.html">Thêm Tác Giả</a></li>
+                                <li><a href="email-compose.html">Danh Sách Tác Giả</a></li>
 
                             </ul>
                         </li>
+                        <!--blog-->
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-map"></i>
-                                <span> Blog</span>
+                                <span> Tin Tức</span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="maps-gmap.html">Them blog</a></li>
+                                <li><a href="maps-gmap.html">Thêm Tin Tức</a></li>
+                                <li><a href="maps-gmap.html">Danh Sách Tin Tức</a></li>
+                                <li><a href="maps-gmap.html">Thêm Danh Mục Tin Tức</a></li>
+
 
                             </ul>
                         </li>
+                        <!--NXB-->
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-mail"></i>
-                                <span> NXB</span>
-                                <span class="badge badge-warning badge-pill float-right">2</span>
+                                <span>Nhà Xuất Bản</span>
+
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="email-inbox.html">Them NXB</a></li>
-                                <li><a href="email-compose.html">Danh sach NXB</a></li>
+                                <li><a href="email-inbox.html">Thêm Nhà Xuất Bản</a></li>
+                                <li><a href="email-compose.html">Danh Sách NXB</a></li>
 
                             </ul>
                         </li>
+                        <!--hệ thống-->
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-mail"></i>
-                                <span> Hee</span>
-                                <span class="badge badge-warning badge-pill float-right">2</span>
+                                <span> Hệ Thống</span>
+
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="email-inbox.html">Them NXB</a></li>
-                                <li><a href="email-compose.html">Danh sach NXB</a></li>
 
+                                <li><a href="email-compose.html">Tiêu Đề Website</a></li>
+
+                            </ul>
+                        </li>
+                        <!--quản lý thành viên-->
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect">
+                                <i class="ion-md-mail"></i>
+                                <span>Quản Lý Thành Viên</span>
+
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+
+                                <li><a href="email-compose.html">Thêm Thành Viên</a></li>
+                                <li><a href="email-compose.html">Danh Sách Thành Viên</a></li>
                             </ul>
                         </li>
 
@@ -224,13 +245,14 @@
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-speedometer"></i>
-                                <span> San pham</span>
-                                <span class="badge badge-info badge-pill float-right"> 3 </span>
+                                <span>Sản Phẩm</span>
+
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="#">Thêm sản phẩm</a></li>
-                                <li><a href="#">Thêm danh muc san pham</a></li>
-                                <li><a href="#">Don hang</a></li>
+                                <li><a href="#">Thêm Sản Phẩm</a></li>
+                                <li><a href="#">Thêm Danh Mục Sản Phẩm</a></li>
+                                <li><a href="#"> Đơn Hàng</a></li>
+                                <li><a href="#">Danh Sách Sản Phẩm</a></li>
                             </ul>
                         </li>
 
@@ -242,12 +264,12 @@
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-mail"></i>
-                                <span> Tac gia </span>
-                                <span class="badge badge-warning badge-pill float-right">2</span>
+                                <span> Tác Giả </span>
+
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="email-inbox.html">Them tac gia</a></li>
-                                <li><a href="email-compose.html">Danh sach tac gia</a></li>
+                                <li><a href="email-inbox.html">Thêm Tác Giả</a></li>
+                                <li><a href="email-compose.html">Danh Sách Tác Giả</a></li>
 
                             </ul>
                         </li>
@@ -258,12 +280,12 @@
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-mail"></i>
-                                <span> NXB</span>
-                                <span class="badge badge-warning badge-pill float-right">2</span>
+                                <span> Nhà Xuất Bản</span>
+
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="email-inbox.html">Them NXB</a></li>
-                                <li><a href="email-compose.html">Danh sach NXB</a></li>
+                                <li><a href="email-inbox.html">Thêm Nhà Xuất Bản</a></li>
+                                <li><a href="email-compose.html">Danh Sách NXB</a></li>
 
                             </ul>
                         </li>
@@ -274,30 +296,19 @@
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-map"></i>
-                                <span> Blog</span>
+                                <span> Tin Tức</span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="maps-gmap.html">Them blog</a></li>
+                                <li><a href="maps-gmap.html">Thêm Tin Tức</a></li>
+                                <li><a href="maps-gmap.html">Danh Sách Tin Tức</a></li>
+                                <li><a href="maps-gmap.html">Thêm Danh Mục Tin Tức</a></li>
 
                             </ul>
                         </li>
                         <?php endif; ?>
 
-                        <?php
-                        if ($_SESSION['admin'][0]['id_role'] == 3) : ?>
-                        <li>
-                            <a href="javascript: void(0);" class="waves-effect">
-                                <i class="ion-md-map"></i>
-                                <span> He thong</span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="maps-gmap.html">Tieu de website</a></li>
 
-                            </ul>
-                        </li>
-                        <?php endif; ?>
                     </ul>
 
                 </div>
