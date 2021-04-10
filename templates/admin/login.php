@@ -26,7 +26,8 @@
         if (isset($_POST['dangnhap'])) {
             $user = $_POST['username'];
             $pass = ($_POST['password']);
-            if (checkLogin($user, $pass)) {
+            md5($pass);
+            if (checkLogin($user, md5($pass))) {
                 $users = getInfoOfUser($user);
                 $_SESSION['admin'] = $users;
                 header('location: ?action=dashboard');

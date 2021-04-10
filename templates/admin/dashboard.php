@@ -231,7 +231,7 @@
                             <ul class="nav-second-level" aria-expanded="false">
 
                                 <li><a href="email-compose.html">Thêm Thành Viên</a></li>
-                                <li><a href="email-compose.html">Danh Sách Thành Viên</a></li>
+                                <li><a href="/book_project/?action=userlist">Danh Sách Thành Viên</a></li>
                             </ul>
                         </li>
 
@@ -334,52 +334,41 @@
 
                     <!-- start page title -->
                     <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box">
-                                <h4 class="page-title">Sản phẩm</h4>
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb p-0 m-0">
-                                        <li class="breadcrumb-item"><a href="#">Velonic</a></li>
-                                        <li class="breadcrumb-item"><a href="#">Quản trị</a></li>
-                                        <li class="breadcrumb-item active">Sản phẩm</li>
-                                    </ol>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
+                        <!--view-->
                     </div>
-                    <!-- end page title -->
-
-
-                    <!-- /Portlet -->
-
-
-                    <!-- End row -->
-
                 </div>
-                <!-- end container-fluid -->
+                <!-- end page title -->
+
+
+                <!-- /Portlet -->
+
+
+                <!-- End row -->
 
             </div>
-            <!-- end content -->
-
-
-
-            <!-- Footer Start -->
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- end Footer -->
+            <!-- end container-fluid -->
 
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
+        <!-- end content -->
+
+
+
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
 
     </div>
     <!-- END wrapper -->

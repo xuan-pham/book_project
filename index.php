@@ -32,4 +32,8 @@ else if ($action == 'login') {
     $adminController->logout();
 } else if ($action == 'dashboard') {
     $adminController->index();
+} else if ($action == 'userlist') {
+    $adminController->userlist();
+} else if ($action == 'detele') {
+    $adminController->delete();
 }
