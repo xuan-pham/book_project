@@ -1,7 +1,6 @@
 <?php include('templates/admin/layouts/header.php'); ?>
 <div class="content-page">
     <div class="content">
-
         <form>
             <!-- Text input-->
             <div class="form-group">
