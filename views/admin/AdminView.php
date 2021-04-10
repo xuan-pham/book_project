@@ -16,6 +16,18 @@ class AdminView
     {
         require_once("templates/admin/logout.php");
     }
+    public function publisher($publisherItem)
+    {
+        require_once("templates/admin/publishers/index.php");
+    }
+    public function author($authorItem)
+    {
+        require_once("templates/admin/author/index.php");
+    }
+    public function setting($authorItem)
+    {
+        require_once("templates/admin/setting/index.php");
+    }
     public function userlist()
     {
         require_once("templates/admin/userlist.php");
