@@ -28,4 +28,12 @@ class AdminView
     {
         require_once("templates/admin/setting/index.php");
     }
+    public function userlist()
+    {
+        require_once("templates/admin/userlist.php");
+    }
+    public function delete()
+    {
+        require_once("templates/admin/delete.php");
+    }
 }

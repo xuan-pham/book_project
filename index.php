@@ -37,4 +37,8 @@ else if ($action == 'login') {
 }
 else if ($action == 'admin-author') {
     $adminController->author();
+} else if ($action == 'userlist') {
+    $adminController->userlist();
+} else if ($action == 'detele') {
+    $adminController->delete();
 }

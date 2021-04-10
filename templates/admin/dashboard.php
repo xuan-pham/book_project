@@ -9,30 +9,16 @@
 
                     <!-- start page title -->
                     <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box">
-                                <h4 class="page-title">Sản phẩm</h4>
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb p-0 m-0">
-                                        <li class="breadcrumb-item"><a href="#">Velonic</a></li>
-                                        <li class="breadcrumb-item"><a href="#">Quản trị</a></li>
-                                        <li class="breadcrumb-item active">Sản phẩm</li>
-                                    </ol>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
+                        <!--view-->
                     </div>
-                    <!-- end page title -->
-
-
-                    <!-- /Portlet -->
-
-
-                    <!-- End row -->
-
                 </div>
-                <!-- end container-fluid -->
+                <!-- end page title -->
+
+
+                <!-- /Portlet -->
+
+
+                <!-- End row -->
 
             </div>
             <!-- end content -->
@@ -44,15 +30,21 @@
                     <div class="row">
                         <div class="col-md-12">
 
-                        </div>
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+
                     </div>
                 </div>
-            </footer>
-            <!-- end Footer -->
+            </div>
+        </footer>
+        <!-- end Footer -->
 
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
 
         <?php include('templates/admin/layouts/footer.php'); ?>

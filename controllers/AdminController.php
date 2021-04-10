@@ -54,4 +54,16 @@ class AdminController
         $loginView = new AdminView();
         $loginView->setting($settingItem);
     }
+    public function userlist()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->userlist();
+    }
+    public function delete()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->delete();
+    }
 }
