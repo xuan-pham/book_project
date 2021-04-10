@@ -66,7 +66,7 @@
                     <th>' . $users['created_at'] . '</th>
                     <th>' . $users['updated_at'] . '</th>
                     <th>
-                    <a href="?action=delete' . $users['id'] . '">xoa</a>
+                    <a href="templates/admin/delete.php?deleteId=' . $users['id'] . '">xoa</a>
                     <a href="idsua.php?action' . $users['id'] . '">sua</a>
                     </th>
                 </tr>
