@@ -31,8 +31,9 @@ class AdminController
     }
     public function delete()
     {
-        require_once('views/admin/AdminView.php');
-        $loginView = new AdminView();
-        $loginView->delete();
+        // require_once('views/admin/AdminView.php');
+        // $loginView = new AdminView();
+        // $loginView->delete();
+        echo "okk";
     }
 }

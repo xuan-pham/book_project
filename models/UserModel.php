@@ -66,6 +66,7 @@
     }
     function getDelete($id)
     {
+
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
@@ -76,14 +77,11 @@
             "DELETE FROM user WHERE id='$id'
             "
         );
-        $users = array();
-
-        if ($result->num_rows > 0) {
-            while ($blog = mysqli_fetch_assoc($result)) {
-                $users[] = $blog;
-            };
+        if ($result == true) {
+            header("Location: /book_project/?action=userlist");
+        } else {
+            echo "Record does not delete try again";
         }
-        return $users;
     }
     function getAddUser()
     {

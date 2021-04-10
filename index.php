@@ -1,7 +1,7 @@
 <?php
 
 $url = $_SERVER['REQUEST_URI'];
-$action = $_GET['action'];
+$action = isset($_GET['action']) ? $_GET['action'] : "";
 
 if ($url == "/book_project/") {
     header('Location: /book_project/?action=home');
@@ -34,6 +34,6 @@ else if ($action == 'login') {
     $adminController->index();
 } else if ($action == 'userlist') {
     $adminController->userlist();
-} else if ($action == 'detele') {
+} else if ($action == 'user-detele') {
     $adminController->delete();
 }
