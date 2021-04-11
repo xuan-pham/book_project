@@ -20,7 +20,7 @@ class PublisherModel {
         }
         return $publishers;
     }
-    public function addPublisher($id, $name, $status, $ord_num){
+    public function getPublisherByID($id){
         // Connect database
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         mysqli_set_charset($conn,"utf8");
@@ -28,13 +28,18 @@ class PublisherModel {
             echo "Connect error" . mysqli_connect_error();
         }
 
-        $conn->query("INSERT INTO publisher 
-                    VALUES(name = '$name', status = '$status', ordinal_number = '$ord_num')
-                    WHERE id = '$id'
-                    ");
+        $result = $conn->query("SELECT * FROM publisher WHERE id = '$id'");
+        $publishers = array();
+
+        if ($result->num_rows > 0) {
+            while ($publisher = mysqli_fetch_assoc($result)) {
+                $publishers[] = $publisher;
+            };
+        }
+        return $publishers;
     }
-    public function editPublisher($id, $name, $status, $ord_num){
-        // Connect database
+    public function editPublisher($id, $name, $status, $ord_num, $update){
+        // Connect database 
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         mysqli_set_charset($conn,"utf8");
         if (mysqli_connect_errno()) {
@@ -42,21 +47,26 @@ class PublisherModel {
         }
 
         $conn->query("UPDATE publisher 
-                    SET name = '$name', status = '$status', ordinal_number = '$ord_num' WHERE id = '$id'
+                    SET name = '$name', status = '$status', ordinal_number = '$ord_num', updated_at ='$update'  
+                    WHERE id = '$id'
                     ");
+        
     }
-    public function deletePublisher($id){
-        // Connect database
+    public function deletePB($id){
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        mysqli_set_charset($conn,"utf8");
+        mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
             echo "Connect error" . mysqli_connect_error();
         }
 
-        $conn->query("DELETE * 
-                    FROM publisher 
-                    WHERE id = '$id'
-                    ");
-        
+        $result = $conn->query(
+            "DELETE FROM publisher WHERE id='$id'
+            "
+        );
+        if ($result == true) {
+            header("Location: http://localhost/book_project/?action=admin-publisher");
+        } else {
+            echo "bad"; 
+        }
     }
 }

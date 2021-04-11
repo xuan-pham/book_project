@@ -20,8 +20,8 @@
                             <td><?= $item['name'] ?></td>
                             <td><?= $item['status'] ?></td>
                             <td>
-                            <a href="?action=admin-edit-publisher-id-<?= $item['id'] ?>"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                            <a href="?action=admin-delete-publisher-id-<?= $item['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <a href="templates/admin/publishers/editPublisher.php?edid=<?= $item['id'] ?> "><i class="fa fa-edit" aria-hidden="true"></i></a>
+                            <a href="templates/admin/publishers/deletePublisher.php?pdid=<?= $item['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

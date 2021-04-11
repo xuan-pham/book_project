@@ -98,7 +98,6 @@
             '$gender',phone='$phone',birthday='$brithday',id_role='$role',created_at='$created',updated_at='$update' WHERE id ='$id'"
 
         );
-        $users = array();
 
         if ($result == true) {
             header("Location: /book_project/?action=userlist");

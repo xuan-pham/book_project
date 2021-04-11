@@ -34,11 +34,17 @@ else if ($action == 'login') {
     $adminController->index();
 } else if ($action == 'admin-publisher') {
     $adminController->publisher();
+} else if ($action == 'admin-add-publisher') {
+    $adminController->addPublisher();
+} else if ($action == 'admin-delete-publisher') {
+    $adminController->deletePublisher();
+} else if ($action == 'admin-edit-publisher') {
+    $adminController->editPublisher();
 } else if ($action == 'admin-author') {
     $adminController->author();
 } else if ($action == 'userlist') {
     $adminController->userlist();
-} else if ($action == 'user-detele') {
+} else if ($action == 'user-delete') {
     $adminController->delete();
 } else if ($action == 'user-fix') {
     $adminController->fixuser();

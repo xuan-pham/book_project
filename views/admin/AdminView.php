@@ -20,6 +20,18 @@ class AdminView
     {
         require_once("templates/admin/publishers/index.php");
     }
+    public function addPublisher()
+    {
+        require_once("templates/admin/publishers/addPublisher.php");
+    }
+    public function deletePublisher()
+    {
+        require_once("templates/admin/publishers/deletePublisher.php");
+    }
+    public function editPublisher()
+    {
+        require_once("templates/admin/publishers/editPublisher.php");
+    }
     public function author($authorItem)
     {
         require_once("templates/admin/author/index.php");
