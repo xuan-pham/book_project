@@ -21,17 +21,8 @@
         return $products;
     }
 
-    // Delete a product
-    function deleteProducts($id){
-        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        if (mysqli_connect_errno()) {
-            echo "Connect error" . mysqli_connect_error();
-        }
-         
-        $result = $conn->query("DELETE product WHERE id = '$id'");
+  
     
-        header('location: index.php');
-    }
 
     // Prepare for remove
     function insertProduct($name,$image,$status,$quantity, $price,$decription,$detail){
@@ -90,4 +81,68 @@
             header('location:?action=dashboard');
         }
     }
+    function getDeleteProduct($id)
+    {
+
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+
+        $result = $conn->query(
+            "DELETE FROM product WHERE id='$id'
+            "
+        );
+        if ($result == true) {
+            header("Location: /book_project/?action=admin-product");
+        } else {
+            echo "Record does not delete try again";
+        }
+    }
+    function getProduct($id)
+    {
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+
+        $result = $conn->query(
+            "SELECT * 
+            FROM product  WHERE id = '$id'
+            "
+        );
+        $editProduct = array ();
+        if ($result->num_rows > 0) {
+            while ($edit = mysqli_fetch_assoc($result)) {
+                $editProduct[] = $edit;
+            };
+        }
+        return $editProduct;
+    }
+    function UpdateProduct ($id, $name, $quantity, $status,
+    $price, $decription, $detail, $id_user, $id_productCategory,
+    $id_Author,$id_Publisher, $created_at, $updated_at)
+    {
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+
+        $result = $conn->query(
+            "UPDATE `product` SET name='$name',status='$status',price='$price',quantity='$quantity',decription='$decription',detail=
+            '$detail',created_at='$created_at',updated_at='$updated_at',id_user='$id_user',id_Author='$id_Author',id_Publisher='$id_Publisher',id_productCategory='$id_productCategory' WHERE id ='$id'"
+
+        );
+        $editProduct = array();
+
+        if ($result == true) {
+            header("Location: /book_project/?action=admin-add-product");
+        } else {
+            echo "Record does not delete try again";
+        }
+    }
+ 
 ?>

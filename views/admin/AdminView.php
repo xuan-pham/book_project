@@ -38,15 +38,19 @@ class AdminView
         require_once("templates/admin/delete.php");
 
     }
-    public function products()
+    public function deleteproduct()
+    {
+        require_once("templates/admin/products/delete.php");
+
+    }
+    public function productList()
     {
         require_once("templates/admin/products/index.php");
     }
-    public function addproducts()
+    public function addproduct()
     {
         require_once("templates/admin/products/create.php");
 
-        require_once("templates/admin/users/delete.php");
     }
     public function fixuser()
     {
@@ -56,4 +60,9 @@ class AdminView
     {
         require_once("templates/admin/users/adduser.php");
     }
+    public function editProduct()
+    {
+        require_once("templates/admin/products/edit.php");
+    }
+
 }
