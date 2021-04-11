@@ -46,6 +46,11 @@ else if ($action == 'login') {
     $adminController->userlist();
 } else if ($action == 'user-delete') {
     $adminController->delete();
+}
+ else if ($action == 'admin-product') {
+    $adminController->products();
+}else if ($action == 'admin-add-product') {
+    $adminController->addproducts();
 } else if ($action == 'user-fix') {
     $adminController->fixuser();
 } else if ($action == 'user-add') {
