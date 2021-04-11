@@ -37,6 +37,18 @@ class AdminView
     {
         require_once("templates/admin/author/index.php");
     }
+    public function addAuthor()
+    {
+        require_once("templates/admin/author/addAuthor.php");
+    }
+    public function editAuthor()
+    {
+        require_once("templates/admin/author/editAuthor.php");
+    }
+    public function deleteAuthor()
+    {
+        require_once("templates/admin/author/deleteAuthor.php");
+    }
     public function setting($authorItem)
     {
         require_once("templates/admin/setting/index.php");

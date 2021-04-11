@@ -21,18 +21,15 @@ if (isset($_POST['bthSub'])) {
             VALUES
             ('$id','$name','$ornum', '$status','$created','$update')";
     $result = $DBH->exec($query);
-    if ($result == true) {
+
         header("Location: http://localhost/book_project/?action=admin-publisher");
-    } else {
-        echo "bad"; 
-    }
 }
 
 
 ?>
 <div class="content-page">
     <div class="content">
-        <form action="" method="POST" target="_self">
+        <form action="" method="POST"w>
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="id">Mã NXB</label>

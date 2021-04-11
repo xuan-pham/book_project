@@ -42,6 +42,10 @@ else if ($action == 'login') {
     $adminController->editPublisher();
 } else if ($action == 'admin-author') {
     $adminController->author();
+} else if ($action == 'admin-add-author') {
+    $adminController->addAuthor();
+} else if ($action == 'admin-delete-author') {
+    $adminController->deleteAuthor();
 } else if ($action == 'userlist') {
     $adminController->userlist();
 } else if ($action == 'user-delete') {

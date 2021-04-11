@@ -92,7 +92,7 @@
 
             <!-- LOGO -->
             <div class="logo-box">
-                <a href="index.html" class="logo text-center logo-dark">
+                <a href="?action=dashboard" class="logo text-center logo-dark">
                     <span class="logo-lg">
                         <img src="templates/admin/assets\images\logo-dark.png" alt="" height="18">
                         <!-- <span class="logo-lg-text-dark">Velonic</span> -->
@@ -103,7 +103,7 @@
                     </span>
                 </a>
 
-                <a href="index.html" class="logo text-center logo-light">
+                <a href="?action=dashboard" class="logo text-center logo-light">
                     <span class="logo-lg">
                         <img src="templates/admin/assets\images\logo-light.png" alt="" height="18">
                         <!-- <span class="logo-lg-text-dark">Velonic</span> -->

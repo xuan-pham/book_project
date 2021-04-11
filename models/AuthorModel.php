@@ -18,4 +18,22 @@ class AuthorModel{
          }
          return $authors;
     }
+    public function deleteAuthor($id)
+    {
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+
+        $result = $conn->query(
+            "DELETE FROM author WHERE id='$id'
+            "
+        );
+        if ($result == true) {
+            header("Location: http://localhost/book_project/?action=admin-author");
+        } else {
+            echo "bad";
+        }
+    }
 }
