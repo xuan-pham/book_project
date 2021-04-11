@@ -13,7 +13,6 @@ class HomeController
         // Get data of categories sidebar
         $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
 
-
         // Get data of banners
         require_once('models/BannerModel.php');
         $bannerModel = new BannerModel();

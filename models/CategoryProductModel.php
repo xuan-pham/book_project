@@ -41,6 +41,7 @@ class CategoryProductModel
             "SELECT * 
             FROM product_category
             WHERE featured = 1
+            LIMIT 10
             "
         );
         $categories = array();
