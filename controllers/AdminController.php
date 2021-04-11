@@ -61,11 +61,21 @@ class AdminController
         $loginView = new AdminView();
         $loginView->userlist();
     }
-    public function delete()
+    public function products()
     {
-        // require_once('views/admin/AdminView.php');
-        // $loginView = new AdminView();
-        // $loginView->delete();
-        echo "okk";
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->products();
     }
+    public function addproducts()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->addproducts();
+    } public function delete()
+    {
+        
+    
+    }
+
 }

@@ -32,6 +32,7 @@ else if ($action == 'login') {
     $adminController->logout();
 } else if ($action == 'dashboard') {
     $adminController->index();
+
 }else if ($action == 'admin-publisher') {
     $adminController->publisher();
 }
@@ -42,3 +43,9 @@ else if ($action == 'admin-author') {
 } else if ($action == 'user-detele') {
     $adminController->delete();
 }
+ else if ($action == 'admin-product') {
+    $adminController->products();
+}else if ($action == 'admin-add-product') {
+    $adminController->addproducts();
+}
+

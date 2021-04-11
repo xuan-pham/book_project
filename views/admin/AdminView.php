@@ -16,6 +16,7 @@ class AdminView
     {
         require_once("templates/admin/logout.php");
     }
+
     public function publisher($publisherItem)
     {
         require_once("templates/admin/publishers/index.php");
@@ -35,5 +36,15 @@ class AdminView
     public function delete()
     {
         require_once("templates/admin/delete.php");
+
+    }
+    public function products()
+    {
+        require_once("templates/admin/products/index.php");
+    }
+    public function addproducts()
+    {
+        require_once("templates/admin/products/create.php");
+
     }
 }
