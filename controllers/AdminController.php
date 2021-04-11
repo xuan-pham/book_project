@@ -30,6 +30,7 @@ class AdminController
         $publisherModel = new PublisherModel();
         $publisherItem = $publisherModel->getAllPublisher();
 
+
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
         $loginView->publisher($publisherItem);
