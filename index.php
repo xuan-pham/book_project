@@ -32,11 +32,9 @@ else if ($action == 'login') {
     $adminController->logout();
 } else if ($action == 'dashboard') {
     $adminController->index();
-
-}else if ($action == 'admin-publisher') {
+} else if ($action == 'admin-publisher') {
     $adminController->publisher();
-}
-else if ($action == 'admin-author') {
+} else if ($action == 'admin-author') {
     $adminController->author();
 } else if ($action == 'userlist') {
     $adminController->userlist();
@@ -47,5 +45,8 @@ else if ($action == 'admin-author') {
     $adminController->products();
 }else if ($action == 'admin-add-product') {
     $adminController->addproducts();
+} else if ($action == 'user-fix') {
+    $adminController->fixuser();
+} else if ($action == 'user-add') {
+    $adminController->adduser();
 }
-

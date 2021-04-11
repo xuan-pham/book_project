@@ -8,7 +8,6 @@ class AdminController
         require_once('views/admin/AdminView.php');
         $loginView =  new AdminView();
         $loginView->index();
-
     }
 
     public function login()
@@ -25,7 +24,8 @@ class AdminController
         $loginView->logout();
     }
 
-    public function publisher(){
+    public function publisher()
+    {
         require_once('models/PublisherModel.php');
         $publisherModel = new PublisherModel();
         $publisherItem = $publisherModel->getAllPublisher();
@@ -36,7 +36,8 @@ class AdminController
         $loginView->publisher($publisherItem);
     }
 
-    public function author(){
+    public function author()
+    {
         require_once('models/AuthorModel.php');
         $auhtorModel = new AuthorModel();
         $auhtorItem = $auhtorModel->getAllAuthor();
@@ -46,7 +47,8 @@ class AdminController
         $loginView->author($auhtorItem);
     }
 
-    public function setting(){
+    public function setting()
+    {
         require_once('models/SettingModel.php');
         $settingModel = new SettingModel();
         $settingItem = $settingModel->getAllSetting();
@@ -74,8 +76,20 @@ class AdminController
         $loginView->addproducts();
     } public function delete()
     {
-        
-    
+        $loginView = new AdminView();
+        $loginView->delete();
+    }
+    public function fixuser()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->fixuser();
+    }
+    public function adduser()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->adduser();
     }
 
 }

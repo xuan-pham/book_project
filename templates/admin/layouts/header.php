@@ -46,7 +46,7 @@
                 <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#"
                         role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="templates/admin/assets\images\users\avatar-1.jpg" alt="user-image"
+                        <img src="templates/admin/images/Users/<?= $_SESSION['admin'][0]['avatar'] ?>" alt="user-image"
                             class="rounded-circle">
                         <span class="pro-user-name ml-1">
                             <?= $_SESSION['admin'][0]['firstName'] . " " . $_SESSION['admin'][0]['lastName'] ?> <i
@@ -230,8 +230,8 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
 
-                                <li><a href="email-compose.html">Thêm Thành Viên</a></li>
-                                <li><a href="email-compose.html">Danh Sách Thành Viên</a></li>
+                                <li><a href="?action=user-add">Thêm Thành Viên</a></li>
+                                <li><a href="?action=userlist">Danh Sách Thành Viên</a></li>
                             </ul>
                         </li>
 
@@ -325,4 +325,3 @@
         <!-- ============================================================== -->
         <!-- Start Page Content here -->
         <!-- ============================================================== -->
-        
