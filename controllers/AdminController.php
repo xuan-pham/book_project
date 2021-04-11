@@ -94,21 +94,27 @@ class AdminController
         $loginView = new AdminView();
         $loginView->userlist();
     }
-    public function products()
+    public function productList()
     {
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
-        $loginView->products();
+        $loginView->productList();
     }
-    public function addproducts()
+
+    public function addproduct()
     {
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
-        $loginView->addproducts();
+        $loginView->addproduct();
     } public function delete()
     {
         $loginView = new AdminView();
         $loginView->delete();
+    }
+    public function deleteproduct()
+    {
+        $loginView = new AdminView();
+        $loginView->deleteproduct();
     }
     public function fixuser()
     {
@@ -122,5 +128,10 @@ class AdminController
         $loginView = new AdminView();
         $loginView->adduser();
     }
-
+    public function editProduct()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->editProduct();
+    }
 }

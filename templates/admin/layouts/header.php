@@ -153,17 +153,18 @@
 
                         <li class="menu-title">Điều Hướng</li>
                         <?php
+                        //role 1
                         if ($_SESSION['admin'][0]['id_role'] == 1) : ?>
                         <!--sản phẩm -->
                         <li>
                             <a href="javascript: void(0);" class="waves-effect">
                                 <i class="ion-md-speedometer"></i>
                                 <span> Sản Phẩm</span>
-
+                               <a href="#"></a>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="#">Thêm sản phẩm</a></li>
-                                <li><a href="#">Thêm Danh Mục Sản Phẩm</a></li>
+                                <li><a href="?action=admin-add-product">Thêm sản phẩm</a></li>
+                                <li><a href="?action=admin-product">Danh Mục Sản Phẩm</a></li>
                                 <li><a href="#">Đơn Hàng</a></li>
                             </ul>
                         </li>
@@ -235,9 +236,8 @@
                             </ul>
                         </li>
 
-
                         <?php endif; ?>
-
+// hết role 1
 
                         <?php
                         if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
@@ -284,7 +284,7 @@
 
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="?action=admin-add-publisher">Thêm Nhà Xuất Bản</a></li>
+                                <li><a href="?action=admin-add-publisher">Thêm Nhà Xuất Bảnaa</a></li>
                                 <li><a href="?action=admin-publisher">Danh Sách NXB</a></li>
 
                             </ul>
