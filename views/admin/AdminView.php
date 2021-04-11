@@ -30,10 +30,18 @@ class AdminView
     }
     public function userlist()
     {
-        require_once("templates/admin/userlist.php");
+        require_once("templates/admin/users/userlist.php");
     }
     public function delete()
     {
-        require_once("templates/admin/delete.php");
+        require_once("templates/admin/users/delete.php");
+    }
+    public function fixuser()
+    {
+        require_once("templates/admin/users/fixuser.php");
+    }
+    public function adduser()
+    {
+        require_once("templates/admin/users/adduser.php");
     }
 }

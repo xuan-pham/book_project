@@ -1,0 +1,55 @@
+.page-title-box {
+    display: flex;
+}
+
+.page-title-box .page-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    color: #36404c;
+    line-height: 1.2;
+}
+
+.breadcrumb {
+    float: right;
+    background-color: transparent !important;
+}
+
+.breadcrumb-item>a {
+    color: #98a6ad;
+}
+
+a {
+    color: #36404c;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.breadcrumb-item.active {
+    color: #797979;
+}
+
+.breadcrumb-item+.breadcrumb-item {
+    padding-left: 0.5rem;
+}
+
+.page-title-right {
+    margin-left: 63%;
+}
+
+form.content {
+    margin-left: 42%;
+    /* padding: 33px; */
+    margin-top: 5%;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+button.sub {
+    margin-left: 6%;
+    margin-top: 10px;
+    width: 10%;
+}
