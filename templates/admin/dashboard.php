@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+<?php include('templates/admin/layouts/header.php'); ?>
+
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <!--view-->
+                    </div>
+=======
 ﻿<?php include('templates/admin/layouts/header.php'); ?>
 
 
@@ -42,9 +57,14 @@
                     </footer>
                     <!-- end Footer -->
 
+>>>>>>> 425d34df6a9e5fd291b1a6138d3a28fa27c97f69
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Page content -->
                 <!-- ============================================================== -->
 
+<<<<<<< HEAD
+        <?php include('templates/admin/layouts/footer.php'); ?>
+=======
                 <?php include('templates/admin/layouts/footer.php'); ?>
+>>>>>>> 425d34df6a9e5fd291b1a6138d3a28fa27c97f69

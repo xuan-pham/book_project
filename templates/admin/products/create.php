@@ -1,14 +1,63 @@
 <?php include('templates/admin/layouts/header.php'); ?>
+<style>
+label.col-md-4.control-label {
+    width: 239px;
+}
+
+.conten {
+    margin-left: 27%;
+}
+</style>
 <?php
-    include '../models/UserModel.php';
+ 
 
-    // session_start();
+    session_start();
 
-    // if (!isset($_SESSION['admin'])) {
-    //     header('location: ?action=login');
-    // } ?>
-<?php include 'models/admin/ProductModel.php';?>
-<?php  $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+    if (!isset($_SESSION['admin'])) {
+        header('location: ?action=login');
+    } ?>
+
+<?php 
+
+
+if (isset($_POST['btnSubmit'])) {
+    $name = $_POST['name'];
+    $status = $_POST['status'];
+    $price = $_POST['price'];
+    $quantity = $_POST['quantity'];
+    $decription = $_POST['decription'];
+    $detail = $_POST['detail'];
+    $created_at = $_POST['created_at'];
+    $updated_at = $_POST['updated_at'];
+    $id_user = $_POST['id_user'];          
+    $id_Author = $_POST['id_Author'];
+    $id_Publisher = $_POST['id_Publisher'];
+    $id_productCategory = $_POST['id_productCategory'];
+    
+    $targetDir = "templates/images/products/";
+    $fileName = basename($_FILES["image"]['name']);
+    $targetFilePath = $targetDir . $fileName;
+    move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath);
+    
+    $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+
+    $result = $conn->query(
+        "INSERT INTO product ( name, image , quantity,
+            status, price, decription, detail, id_user,
+            id_productCategory, id_Author, id_Publisher, created_at,
+            updated_at) 
+        values('$name', '$fileName','$quantity', '$status',
+            '$price', '$decription','$detail','$id_user','$id_productCategory',
+           ' $id_Author','$id_Publisher','$created_at','$updated_at')");
+$products = array();
+    if ($product ->num_rows > 0) {
+        while ($product = mysqli_fetch_assoc($result)) {
+              $products[]=$result;
+        }
+        header('location:?action=index');
+    }
+}
+$conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         if (mysqli_connect_errno()) {
             echo "Connect error" . mysqli_connect_error();
         }

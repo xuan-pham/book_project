@@ -44,13 +44,15 @@ class HomeController
 
     public function products(){
         require_once('views/ProductView.php');
-        $blogView = new ProductView();
-        $blogView->index();
+        $productModel= new ProductView();
+        $productModel->index();
     }
-
+  
     public function contact(){
         require_once('views/ContactView.php');
         $blogView = new ContactView();
         $blogView->index();
     }
+   
+
 }
