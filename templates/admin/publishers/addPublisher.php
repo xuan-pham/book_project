@@ -9,20 +9,18 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 include "models/PublisherModel.php";
 
 if (isset($_POST['bthSub'])) {
-    $id = $_POST['id'];
     $name = $_POST['name'];
-    $ornum = $_POST['ordinal_number'];
     $status = $_POST['status'];
-    $created = $_POST['created_at'];
-    $update = $_POST['updated_at'];
+    $date = date('Y-m-d H:i:s');
 
     $DBH = new PDO('mysql:host=localhost;dbname=qlbansach', 'root', '');
-    $query = "INSERT INTO publisher(id, name, ordinal_number, status, created_at, updated_at) 
+    $query = "INSERT INTO publisher(name, status, created_at, updated_at) 
             VALUES
-            ('$id','$name','$ornum', '$status','$created','$update')";
+            ('$name','$status',now(), now())";
     $result = $DBH->exec($query);
     if ($result == true) {
-        header("Location: http://localhost/book_project/?action=admin-publisher");
+        $_SESSION['success'] = "Thêm thành công";
+        header("Location: ?action=admin-publisher");
     } else {
         echo "bad"; 
     }
@@ -32,65 +30,45 @@ if (isset($_POST['bthSub'])) {
 ?>
 <div class="content-page">
     <div class="content">
-        <form action="" method="POST" target="_self">
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="id">Mã NXB</label>
-                <div class="col-md-4">
-                    <input id="id" name="id" placeholder="Mã NXB..." class="form-control input-md" required="" type="text">
+        <div class="row">
+            <div class="col-12 mx-auto p-5">
+                <div class="card">
+                    <div class="card-title text-center p-3">
+                        <h3 class="font-weight-bold"> Danh sách nhà xuất bản</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-4 mx-auto">
+                            <form action="" method="POST" target="_self">
 
-                </div>
-            </div>
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="name">Tên NXB</label>
-                <div class="col-md-4">
-                    <input id="name" name="name" placeholder="Tên NXB..." class="form-control input-md" required="" type="text">
-                </div>
-            </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label for="name">Tên NXB</label>
 
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="ordinal_number">Số thứ tự</label>
-                <div class="col-md-4">
-                    <input id="ordinal_number" name="ordinal_number" placeholder="Số thứ tự..." class="form-control input-md" required="" type="text">
-                </div>
-            </div>
+                                    <input id="name" name="name" placeholder="Tên NXB..." class="form-control input-md"
+                                        required="" type="text">
+                                </div>
 
-            <!-- Select Basic -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="status">Trạng Thái</label>
-                <div class="col-md-4">
-                    <select id="status" name="status" class="form-control">
-                        <option value="1">Hoạt động</option>
-                        <option value="0">Tạm ngưng</option>
-                    </select>
-                </div>
-            </div>
+                                <!-- Select Basic -->
+                                <div class="form-group">
+                                    <label for="status">Trạng Thái</label>
 
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="name">Ngày Thêm</label>
-                <div class="col-md-4">
-                    <input id="created_at" name="created_at" placeholder="Tên NXB..." class="form-control input-md" required="" type="date">
-                </div>
-            </div>
+                                    <select id="status" name="status" class="form-control">
+                                        <option value="1">Hoạt động</option>
+                                        <option value="0">Tạm ngưng</option>
+                                    </select>
+                                </div>
 
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="name">Ngày Cập Nhật</label>
-                <div class="col-md-4">
-                    <input id="updated_at" name="updated_at" placeholder="Tên NXB..." class="form-control input-md" required="" type="date">
+                                <!-- Button -->
+                                <div class="form-group">
+                                    <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary float-right"
+                                        value="Thêm">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Button -->
-            <div class="form-group">
-                <div class="col-md-4">
-                    <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary" value="Thêm">
-                </div>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 <?php include('templates/admin/layouts/footer.php'); ?>

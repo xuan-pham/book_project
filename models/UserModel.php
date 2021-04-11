@@ -1,4 +1,4 @@
-<?php {
+<?php 
 
     function checkLogin($user, $pass)
     {
@@ -42,6 +42,7 @@
         }
         return $users;
     }
+
     function getAllUser()
     {
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
@@ -64,6 +65,7 @@
         }
         return $users;
     }
+
     function getDelete($id)
     {
 
@@ -105,6 +107,7 @@
             echo "Record does not delete try again";
         }
     }
+
     function getUser($id)
     {
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
@@ -127,4 +130,3 @@
         }
         return $fixuser;
     }
-}

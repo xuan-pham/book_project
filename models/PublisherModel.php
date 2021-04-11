@@ -63,10 +63,15 @@ class PublisherModel {
             "DELETE FROM publisher WHERE id='$id'
             "
         );
+        
         if ($result == true) {
-            header("Location: http://localhost/book_project/?action=admin-publisher");
+            session_start();
+            $_SESSION['success'] = "Xóa thành công";
+            header("Location: ../../../?action=admin-publisher");
         } else {
-            echo "bad"; 
+            session_start();
+            $_SESSION['failed'] = "Vui lòng xóa sản phẩm thuộc về danh mục này trước khi xóa danh mục";
+            header("Location: ../../../?action=admin-publisher");
         }
     }
 }
