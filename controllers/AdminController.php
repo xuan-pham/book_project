@@ -30,21 +30,38 @@ class AdminController
         $publisherModel = new PublisherModel();
         $publisherItem = $publisherModel->getAllPublisher();
 
-
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
         $loginView->publisher($publisherItem);
     }
 
+    public function addPublisher()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->addPublisher();
+    }
+    public function deletePublisher()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->deletePublisher();
+    }
+    public function editPublisher()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->editPublisher();
+    }
     public function author()
     {
         require_once('models/AuthorModel.php');
         $auhtorModel = new AuthorModel();
-        $auhtorItem = $auhtorModel->getAllAuthor();
+        $authorItem = $auhtorModel->getAllAuthor();
 
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
-        $loginView->author($auhtorItem);
+        $loginView->author($authorItem);
     }
 
     public function setting()
