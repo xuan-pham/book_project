@@ -41,7 +41,7 @@ class PublisherModel
         }
         return $publishers;
     }
-    public function editPublisher($id, $name, $status, $ord_num, $update)
+    public function editPublisher($id, $name, $status, $update)
     {
         // Connect database 
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
@@ -49,15 +49,16 @@ class PublisherModel
         if (mysqli_connect_errno()) {
             echo "Connect error" . mysqli_connect_error();
         }
-
-        $result = $conn->query("UPDATE publisher 
-                    SET name = '$name', status = '$status', ordinal_number = '$ord_num', updated_at ='$update'  
-                    WHERE id = '$id'
+        $result = $conn->query("UPDATE `publisher` 
+                    SET `name` = '$name', `status` = '$status', `updated_at` = '$update'
+                    WHERE `id` = '$id'
                     ");
         if ($result == true) {
+            session_start();
+            $_SESSION['success'] = "Sửa thành công";
             header("Location: http://localhost/book_project/?action=admin-publisher");
         } else {
-            echo "bad";
+            $_SESSION['failed'] = "Sửa thất bại";
         }
     }
     public function deletePB($id)
@@ -72,7 +73,7 @@ class PublisherModel
             "DELETE FROM publisher WHERE id='$id'
             "
         );
-        
+
         if ($result == true) {
             session_start();
             $_SESSION['success'] = "Xóa thành công";

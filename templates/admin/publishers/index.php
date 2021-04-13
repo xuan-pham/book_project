@@ -7,7 +7,7 @@
             <div class="col-12 mx-auto p-5">
                 <div class="card">
                     <div class="card-title text-center p-3 mx-auto">
-                        <h3 class="font-weight-bold"> Thêm nhà xuất bản</h3>
+                        <h3 class="font-weight-bold"> Danh sách nhà xuất bản</h3>
                     </div>
 
                     <?php if (isset($_SESSION['failed'])): ?>
@@ -46,7 +46,7 @@
                                     <td class="text-center"><?= $item['name'] ?></td>
                                     <td class="text-center"><?= $item['status'] ?></td>
                                     <td class="text-center">
-                                        <a href="templates/admin/publishers/editPublisher.php?edid=<?= $item['id'] ?> "><i
+                                        <a href="?action=admin-edit-publisher&edid=<?= $item['id'] ?>"><i
                                                 class="fa fa-edit" aria-hidden="true"></i></a>
                                         <a onclick="return confirm('Bạn có muốn xóa?')"
                                             href="templates/admin/publishers/deletePublisher.php?pdid=<?= $item['id'] ?>"><i

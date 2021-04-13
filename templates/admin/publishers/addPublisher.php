@@ -22,7 +22,8 @@ if (isset($_POST['bthSub'])) {
         $_SESSION['success'] = "Thêm thành công";
         header("Location: ?action=admin-publisher");
     } else {
-        echo "bad"; 
+        session_start();
+        $_SESSION['failed'] = "Thêm thất bại";;
     }
 }
 
@@ -34,7 +35,7 @@ if (isset($_POST['bthSub'])) {
             <div class="col-12 mx-auto p-5">
                 <div class="card">
                     <div class="card-title text-center p-3">
-                        <h3 class="font-weight-bold"> Danh sách nhà xuất bản</h3>
+                        <h3 class="font-weight-bold">Thêm nhà xuất bản</h3>
                     </div>
                     <div class="card-body">
                         <div class="col-4 mx-auto">
@@ -60,7 +61,7 @@ if (isset($_POST['bthSub'])) {
 
                                 <!-- Button -->
                                 <div class="form-group">
-                                    <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary float-right"
+                                    <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary"
                                         value="Thêm">
                                 </div>
                             </form>
