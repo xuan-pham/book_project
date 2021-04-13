@@ -42,16 +42,24 @@ else if ($action == 'login') {
     $adminController->editPublisher();
 } else if ($action == 'admin-author') {
     $adminController->author();
+} else if ($action == 'admin-add-author') {
+    $adminController->addAuthor();
+} else if ($action == 'admin-delete-author') {
+    $adminController->deleteAuthor();
 } else if ($action == 'userlist') {
     $adminController->userlist();
 } else if ($action == 'user-delete') {
     $adminController->delete();
 } else if ($action == 'admin-product') {
-    $adminController->products();
+    $adminController->productList();
 } else if ($action == 'admin-add-product') {
-    $adminController->addproducts();
-} else if (strstr($action, 'fixuserId')) {
+    $adminController->addproduct();
+} else if ($action == 'admin-delete-product') {
+    $adminController->deleteproduct();
+} else if ($action == 'user-fix') {
     $adminController->fixuser();
 } else if ($action == 'user-add') {
     $adminController->adduser();
+} else if ($action == 'admin-edit-product') {
+    $adminController->editProduct();
 }

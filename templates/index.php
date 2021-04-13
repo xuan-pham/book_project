@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php include_once('layouts/header.php'); ?>
+=======
+<?php include('layouts/header.php'); ?>
+>>>>>>> 8df64e6fa8cfef54eb2c920962f70d72a27ce77c
 <!-- Preloader -->
 <!-- <div class="preloader">
         <div class="preloader-inner">

@@ -145,6 +145,11 @@
                         <div class="col-lg-3">
                             <div class="all-category">
                                 <h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
+                                <ul class="main-category">
+                                    <?php foreach ($categoriesProduct as $item) : ?>
+                                    <li><a><?= $item['name'] ?></a></li>
+                                    <?php endforeach; ?>
+                                </ul>
                             </div>
                         </div>
                         <div class="col-lg-9 col-12">

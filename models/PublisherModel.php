@@ -1,11 +1,13 @@
-<?php 
+<?php
 
-class PublisherModel {
-    
-    public function getAllPublisher(){
+class PublisherModel
+{
+
+    public function getAllPublisher()
+    {
         // Connect database
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        mysqli_set_charset($conn,"utf8");
+        mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
             echo "Connect error" . mysqli_connect_error();
         }
@@ -20,10 +22,11 @@ class PublisherModel {
         }
         return $publishers;
     }
-    public function getPublisherByID($id){
+    public function getPublisherByID($id)
+    {
         // Connect database
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        mysqli_set_charset($conn,"utf8");
+        mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
             echo "Connect error" . mysqli_connect_error();
         }
@@ -38,21 +41,27 @@ class PublisherModel {
         }
         return $publishers;
     }
-    public function editPublisher($id, $name, $status, $ord_num, $update){
+    public function editPublisher($id, $name, $status, $ord_num, $update)
+    {
         // Connect database 
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        mysqli_set_charset($conn,"utf8");
+        mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
             echo "Connect error" . mysqli_connect_error();
         }
 
-        $conn->query("UPDATE publisher 
+        $result = $conn->query("UPDATE publisher 
                     SET name = '$name', status = '$status', ordinal_number = '$ord_num', updated_at ='$update'  
                     WHERE id = '$id'
                     ");
-        
+        if ($result == true) {
+            header("Location: http://localhost/book_project/?action=admin-publisher");
+        } else {
+            echo "bad";
+        }
     }
-    public function deletePB($id){
+    public function deletePB($id)
+    {
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
@@ -63,10 +72,15 @@ class PublisherModel {
             "DELETE FROM publisher WHERE id='$id'
             "
         );
+        
         if ($result == true) {
-            header("Location: http://localhost/book_project/?action=admin-publisher");
+            session_start();
+            $_SESSION['success'] = "Xóa thành công";
+            header("Location: ../../../?action=admin-publisher");
         } else {
-            echo "bad"; 
+            session_start();
+            $_SESSION['failed'] = "Vui lòng xóa sản phẩm thuộc về danh mục này trước khi xóa danh mục";
+            header("Location: ../../../?action=admin-publisher");
         }
     }
 }

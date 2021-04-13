@@ -63,7 +63,24 @@ class AdminController
         $loginView = new AdminView();
         $loginView->author($authorItem);
     }
-
+    public function addAuthor()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->addAuthor();
+    }
+    public function editAuthor()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->editAuthor();
+    }
+    public function deleteAuthor()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->deleteAuthor();
+    }
     public function setting()
     {
         require_once('models/SettingModel.php');
@@ -80,13 +97,14 @@ class AdminController
         $loginView = new AdminView();
         $loginView->userlist();
     }
-    public function products()
+    public function productList()
     {
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
-        $loginView->products();
+        $loginView->productList();
     }
-    public function addproducts()
+
+    public function addproduct()
     {
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
@@ -96,6 +114,11 @@ class AdminController
     {
         $loginView = new AdminView();
         $loginView->delete();
+    }
+    public function deleteproduct()
+    {
+        $loginView = new AdminView();
+        $loginView->deleteproduct();
     }
     public function fixuser()
     {

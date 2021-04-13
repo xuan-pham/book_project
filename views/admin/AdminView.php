@@ -37,6 +37,18 @@ class AdminView
     {
         require_once("templates/admin/author/index.php");
     }
+    public function addAuthor()
+    {
+        require_once("templates/admin/author/addAuthor.php");
+    }
+    public function editAuthor()
+    {
+        require_once("templates/admin/author/editAuthor.php");
+    }
+    public function deleteAuthor()
+    {
+        require_once("templates/admin/author/deleteAuthor.php");
+    }
     public function setting($authorItem)
     {
         require_once("templates/admin/setting/index.php");
@@ -49,15 +61,19 @@ class AdminView
     {
         require_once("templates/admin/delete.php");
     }
-    public function products()
+    public function deleteproduct()
+    {
+        require_once("templates/admin/products/delete.php");
+
+    }
+    public function productList()
     {
         require_once("templates/admin/products/index.php");
     }
-    public function addproducts()
+    public function addproduct()
     {
         require_once("templates/admin/products/create.php");
 
-        require_once("templates/admin/users/delete.php");
     }
     public function fixuser()
     {
@@ -67,4 +83,9 @@ class AdminView
     {
         require_once("templates/admin/users/adduser.php");
     }
+    public function editProduct()
+    {
+        require_once("templates/admin/products/edit.php");
+    }
+
 }

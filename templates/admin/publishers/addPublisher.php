@@ -9,20 +9,18 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 include "models/PublisherModel.php";
 
 if (isset($_POST['bthSub'])) {
-    $id = $_POST['id'];
     $name = $_POST['name'];
-    $ornum = $_POST['ordinal_number'];
     $status = $_POST['status'];
-    $created = $_POST['created_at'];
-    $update = $_POST['updated_at'];
+    $date = date('Y-m-d H:i:s');
 
     $DBH = new PDO('mysql:host=localhost;dbname=qlbansach', 'root', '');
-    $query = "INSERT INTO publisher(id, name, ordinal_number, status, created_at, updated_at) 
+    $query = "INSERT INTO publisher(name, status, created_at, updated_at) 
             VALUES
-            ('$id','$name','$ornum', '$status','$created','$update')";
+            ('$name','$status',now(), now())";
     $result = $DBH->exec($query);
     if ($result == true) {
-        header("Location: http://localhost/book_project/?action=admin-publisher");
+        $_SESSION['success'] = "Thêm thành công";
+        header("Location: ?action=admin-publisher");
     } else {
         echo "bad";
     }
@@ -91,11 +89,14 @@ if (isset($_POST['bthSub'])) {
 
             <!-- Button -->
             <div class="form-group">
-                <div class="col-md-4">
-                    <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary" value="Thêm">
-                </div>
+                <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary float-right" value="Thêm">
             </div>
         </form>
     </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <?php include_once('templates/admin/layouts/footer.php'); ?>

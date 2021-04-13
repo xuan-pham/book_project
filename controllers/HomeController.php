@@ -13,7 +13,6 @@ class HomeController
         // Get data of categories sidebar
         $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
 
-
         // Get data of banners
         require_once('models/BannerModel.php');
         $bannerModel = new BannerModel();
@@ -44,13 +43,15 @@ class HomeController
 
     public function products(){
         require_once('views/ProductView.php');
-        $blogView = new ProductView();
-        $blogView->index();
+        $productModel= new ProductView();
+        $productModel->index();
     }
-
+  
     public function contact(){
         require_once('views/ContactView.php');
         $blogView = new ContactView();
         $blogView->index();
     }
+   
+
 }
