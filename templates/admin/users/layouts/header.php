@@ -9,22 +9,21 @@
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="templates/admin/assets\images\favicon.ico">
+    <link rel="shortcut icon" href="../../admin/assets\images\favicon.ico">
 
     <!-- Plugins css-->
-    <link href="templates/admin/assets\libs\sweetalert2\sweetalert2.min.css" rel="stylesheet" type="text/css">
+    <link href="../../admin/assets\libs\sweetalert2\sweetalert2.min.css" rel="stylesheet" type="text/css">
 
     <!-- App css -->
-    <link href="templates/admin/assets\css\bootstrap.min.css" rel="stylesheet" type="text/css"
-        id="bootstrap-stylesheet">
-    <link href="templates/admin/assets\css\icons.min.css" rel="stylesheet" type="text/css">
-    <link href="templates/admin/assets\css\app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">
+    <link href="../../admin/assets\css\bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
+    <link href="../../admin/assets\css\icons.min.css" rel="stylesheet" type="text/css">
+    <link href="../../admin/assets\css\app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">
 
 </head>
 
 <body>
     <?php
-    include 'models/UserModel.php';
+    include '../../../models/UserModel.php';
 
     session_start();
 

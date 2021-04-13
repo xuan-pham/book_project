@@ -1,4 +1,4 @@
-<?php include('templates/admin/layouts/header.php'); ?>
+<?php include_once('templates/admin/layouts/header.php'); ?>
 <div class="content-page">
     <div class="content">
 
@@ -17,18 +17,18 @@
                 </thead>
                 <tbody>
                     <?php foreach ($authorItem as $item) : ?>
-                        <tr>
-                            <th scope="row"><?= $item['id'] ?></th>
-                            <td><?= $item['avatar'] ?></td>
-                            <td><?= $item['firstName'] ?></td>
-                            <td><?= $item['lastName'] ?></td>
-                            <td><?= $item['gender'] ?></td>
-                            <td><?= $item['birthday'] ?></td>
-                        </tr>
+                    <tr>
+                        <th scope="row"><?= $item['id'] ?></th>
+                        <td><?= $item['avatar'] ?></td>
+                        <td><?= $item['firstName'] ?></td>
+                        <td><?= $item['lastName'] ?></td>
+                        <td><?= $item['gender'] ?></td>
+                        <td><?= $item['birthday'] ?></td>
+                    </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<?php include('templates/admin/layouts/footer.php'); ?>
+<?php include_once('templates/admin/layouts/footer.php'); ?>

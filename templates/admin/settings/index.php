@@ -1,4 +1,4 @@
-<?php include('templates/admin/layouts/header.php'); ?>
+<?php include_once('templates/admin/layouts/header.php'); ?>
 <div class="content-page">
     <div class="content">
 
@@ -19,20 +19,20 @@
                 </thead>
                 <tbody>
                     <?php foreach ($settingItem as $item) : ?>
-                        <tr>
-                            <th scope="row"><?= $item['id'] ?></th>
-                            <td><?= $item['name'] ?></td>
-                            <td><?= $item['logo'] ?></td>
-                            <td><?= $item['company'] ?></td>
-                            <td><?= $item['address'] ?></td>
-                            <td><?= $item['email'] ?></td>
-                            <td><?= $item['phone'] ?></td>
-                            <td><?= $item['social'] ?></td>
-                        </tr>
+                    <tr>
+                        <th scope="row"><?= $item['id'] ?></th>
+                        <td><?= $item['name'] ?></td>
+                        <td><?= $item['logo'] ?></td>
+                        <td><?= $item['company'] ?></td>
+                        <td><?= $item['address'] ?></td>
+                        <td><?= $item['email'] ?></td>
+                        <td><?= $item['phone'] ?></td>
+                        <td><?= $item['social'] ?></td>
+                    </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<?php include('templates/admin/layouts/footer.php'); ?>
+<?php include_once('templates/admin/layouts/footer.php'); ?>

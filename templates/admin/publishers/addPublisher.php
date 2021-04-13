@@ -1,4 +1,4 @@
-<?php include('templates/admin/layouts/header.php'); ?>
+<?php include_once('templates/admin/layouts/header.php'); ?>
 <?php
 $host = 'localhost';
 $dbname = 'qlbansach';
@@ -24,7 +24,7 @@ if (isset($_POST['bthSub'])) {
     if ($result == true) {
         header("Location: http://localhost/book_project/?action=admin-publisher");
     } else {
-        echo "bad"; 
+        echo "bad";
     }
 }
 
@@ -37,7 +37,8 @@ if (isset($_POST['bthSub'])) {
             <div class="form-group">
                 <label class="col-md-4 control-label" for="id">Mã NXB</label>
                 <div class="col-md-4">
-                    <input id="id" name="id" placeholder="Mã NXB..." class="form-control input-md" required="" type="text">
+                    <input id="id" name="id" placeholder="Mã NXB..." class="form-control input-md" required=""
+                        type="text">
 
                 </div>
             </div>
@@ -45,7 +46,8 @@ if (isset($_POST['bthSub'])) {
             <div class="form-group">
                 <label class="col-md-4 control-label" for="name">Tên NXB</label>
                 <div class="col-md-4">
-                    <input id="name" name="name" placeholder="Tên NXB..." class="form-control input-md" required="" type="text">
+                    <input id="name" name="name" placeholder="Tên NXB..." class="form-control input-md" required=""
+                        type="text">
                 </div>
             </div>
 
@@ -53,7 +55,8 @@ if (isset($_POST['bthSub'])) {
             <div class="form-group">
                 <label class="col-md-4 control-label" for="ordinal_number">Số thứ tự</label>
                 <div class="col-md-4">
-                    <input id="ordinal_number" name="ordinal_number" placeholder="Số thứ tự..." class="form-control input-md" required="" type="text">
+                    <input id="ordinal_number" name="ordinal_number" placeholder="Số thứ tự..."
+                        class="form-control input-md" required="" type="text">
                 </div>
             </div>
 
@@ -72,7 +75,8 @@ if (isset($_POST['bthSub'])) {
             <div class="form-group">
                 <label class="col-md-4 control-label" for="name">Ngày Thêm</label>
                 <div class="col-md-4">
-                    <input id="created_at" name="created_at" placeholder="Tên NXB..." class="form-control input-md" required="" type="date">
+                    <input id="created_at" name="created_at" placeholder="Tên NXB..." class="form-control input-md"
+                        required="" type="date">
                 </div>
             </div>
 
@@ -80,7 +84,8 @@ if (isset($_POST['bthSub'])) {
             <div class="form-group">
                 <label class="col-md-4 control-label" for="name">Ngày Cập Nhật</label>
                 <div class="col-md-4">
-                    <input id="updated_at" name="updated_at" placeholder="Tên NXB..." class="form-control input-md" required="" type="date">
+                    <input id="updated_at" name="updated_at" placeholder="Tên NXB..." class="form-control input-md"
+                        required="" type="date">
                 </div>
             </div>
 
@@ -93,4 +98,4 @@ if (isset($_POST['bthSub'])) {
         </form>
     </div>
 </div>
-<?php include('templates/admin/layouts/footer.php'); ?>
+<?php include_once('templates/admin/layouts/footer.php'); ?>

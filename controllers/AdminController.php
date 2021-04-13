@@ -91,7 +91,8 @@ class AdminController
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
         $loginView->addproducts();
-    } public function delete()
+    }
+    public function delete()
     {
         $loginView = new AdminView();
         $loginView->delete();
@@ -108,5 +109,4 @@ class AdminController
         $loginView = new AdminView();
         $loginView->adduser();
     }
-
 }

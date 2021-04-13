@@ -17,8 +17,9 @@
 </head>
 
 <body>
+
     <?php
-    include "models/UserModel.php";
+    include_once("models/UserModel.php");
 
     if (isset($_SESSION['admin'])) {
         header('location: ?action=dashboard');
