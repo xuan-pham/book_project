@@ -3,12 +3,12 @@
     include 'models/UserModel.php';
 
     session_start();
-    
+
     if (!isset($_SESSION['admin'])) {
         echo '<script>
         window.location.replace("?action=login");
         </script>';
-    } 
+    }
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -43,7 +43,7 @@
 
             <?php
 
-        ?>
+            ?>
             <!-- Topbar Start -->
             <div class="navbar-custom">
                 <ul class="list-unstyled topnav-menu float-right mb-0">
@@ -60,29 +60,6 @@
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow m-0">xin chào !</h6>
-                            </div>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="mdi mdi-account-outline"></i>
-                                <span>Hồ sơ</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="mdi mdi-settings-outline"></i>
-                                <span> Cài đặt</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="mdi mdi-lock-outline"></i>
-                                <span>Màn hình khoá</span>
-                            </a>
-
                             <div class="dropddown-divider"></div>
 
                             <!-- item-->
@@ -159,7 +136,7 @@
 
                             <li class="menu-title">Điều Hướng</li>
                             <?php
-                        if ($_SESSION['admin'][0]['id_role'] == 1) : ?>
+                            if ($_SESSION['admin'][0]['id_role'] == 1) : ?>
                             <!--sản phẩm -->
                             <li>
                                 <a href="javascript: void(0);" class="waves-effect">
@@ -246,7 +223,7 @@
 
 
                             <?php
-                        if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
+                            if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
 
                             <li>
                                 <a href="javascript: void(0);" class="waves-effect">
@@ -266,7 +243,7 @@
 
 
                             <?php
-                        if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
+                            if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
                             <li>
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-mail"></i>
@@ -282,7 +259,7 @@
                             <?php endif; ?>
 
                             <?php
-                        if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
+                            if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
                             <li>
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-mail"></i>
@@ -298,7 +275,7 @@
                             <?php endif; ?>
 
                             <?php
-                        if ($_SESSION['admin'][0]['id_role'] == 3) : ?>
+                            if ($_SESSION['admin'][0]['id_role'] == 3) : ?>
                             <li>
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-map"></i>

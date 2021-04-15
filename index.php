@@ -23,6 +23,9 @@ if ($action == 'home') {
     $homeController->products();
 } else if ($action == 'contact') {
     $homeController->contact();
+} else if (strstr($action, 'productId')) {
+    $id = explode('-', strstr($action, 'productId'));
+    $homeController->productId($id[1]);
 }
 // Admin Page
 

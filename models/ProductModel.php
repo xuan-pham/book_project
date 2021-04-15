@@ -1,9 +1,10 @@
 <?php
 class ProductModel
 {
-    public function getFeaturedProduct(){
+    public function getFeaturedProduct()
+    {
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        mysqli_set_charset($conn,"utf8");
+        mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
             echo "Connect error" . mysqli_connect_error();
         }
@@ -21,6 +22,45 @@ class ProductModel
                 $products[] = $product;
             };
         }
-        return $products;   
+        return $products;
+    }
+
+    public function getAllProducts()
+    {
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+        $result = $conn->query(
+            "SELECT * 
+            FROM product
+            "
+        );
+        $products = array();
+
+        if ($result->num_rows > 0) {
+            while ($product = mysqli_fetch_assoc($result)) {
+                $products[] = $product;
+            };
+        }
+        return $products;
+    }
+
+    public function getProductByid($id)
+    {
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+        $result = $conn->query(
+            "SELECT * 
+            FROM product
+            WHERE id = '$id'
+            "
+        );
+        $product = mysqli_fetch_assoc($result);
+        return $product;
     }
 }

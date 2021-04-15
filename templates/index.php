@@ -44,11 +44,11 @@
             <!-- Single Banner  -->
             <?php foreach ($banners as $item) : ?>
 
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="single-banner">
-                        <img src="templates/images/banners/<?= $item['image'] ?>" alt="#">
-                    </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-banner">
+                    <img src="templates/images/banners/<?= $item['image'] ?>" alt="#">
                 </div>
+            </div>
 
             <?php endforeach; ?>
             <!-- /End Single Banner  -->
@@ -79,30 +79,33 @@
                             <div class="tab-single">
                                 <div class="row">
                                     <?php foreach ($productItem as $item) : ?>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                                            <div class="single-product">
-                                                <div class="product-img">
-                                                    <a href="product-details.html">
-                                                        <img class="default-img" src="templates\images\products\<?= $item['image'] ?>" alt="#">
+                                    <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                                        <div class="single-product">
+                                            <div class="product-img">
+                                                <a href="?action=productId-<?= $item['id'] ?>">
+                                                    <img class="default-img"
+                                                        src="templates\images\products\<?= $item['image'] ?>" alt="#">
 
-                                                    </a>
-                                                    <div class="button-head">
-                                                        <div class="product-action">
-                                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                                        </div>
-                                                        <div class="product-action-2">
-                                                            <a title="Add to cart" href="#">Add to cart</a>
-                                                        </div>
+                                                </a>
+                                                <div class="button-head">
+                                                    <div class="product-action">
+                                                        <a data-toggle="modal" data-target="#exampleModal"
+                                                            title="Quick View" href="#"><i
+                                                                class=" ti-eye"></i><span>Quick Shop</span></a>
                                                     </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-details.html"><?= $item['name'] ?></a></h3>
-                                                    <div class="product-price">
-                                                        <span><?= $item['price'] ?></span>
+                                                    <div class="product-action-2">
+                                                        <a title="Add to cart" href="#">Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="product-content">
+                                                <h3><a href="product-details.html"><?= $item['name'] ?></a></h3>
+                                                <div class="product-price">
+                                                    <span><?= $item['price'] ?></span>
+                                                </div>
+                                            </div>
                                         </div>
+                                    </div>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -130,19 +133,19 @@
         <div class="row">
             <?php foreach ($blogItem as $item) : ?>
 
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Blog  -->
-                    <div class="shop-single-blog">
-                        <img src="templates\images\blogs\<?= $item['image'] ?>" alt="#">
-                        <div class="content">
-                            <p class="date"><?= date_format(new DateTime($item['created_at']), 'l jS F Y') ?>
-                            </p>
-                            <a href="#" class="title"><?= $item['title'] ?></a>
-                            <a href="#" class="more-btn">Đọc tiếp</a>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <!-- Start Single Blog  -->
+                <div class="shop-single-blog">
+                    <img src="templates\images\blogs\<?= $item['image'] ?>" alt="#">
+                    <div class="content">
+                        <p class="date"><?= date_format(new DateTime($item['created_at']), 'l jS F Y') ?>
+                        </p>
+                        <a href="#" class="title"><?= $item['title'] ?></a>
+                        <a href="#" class="more-btn">Đọc tiếp</a>
                     </div>
-                    <!-- End Single Blog  -->
                 </div>
+                <!-- End Single Blog  -->
+            </div>
 
             <?php endforeach; ?>
         </div>
@@ -200,7 +203,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close"
+                        aria-hidden="true"></span></button>
             </div>
             <div class="modal-body">
                 <div class="row no-gutters">
@@ -276,13 +280,16 @@
                                 <!-- Input Order -->
                                 <div class="input-group">
                                     <div class="button minus">
-                                        <button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                        <button type="button" class="btn btn-primary btn-number" disabled="disabled"
+                                            data-type="minus" data-field="quant[1]">
                                             <i class="ti-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="text" name="quant[1]" class="input-number" data-min="1" data-max="1000" value="1">
+                                    <input type="text" name="quant[1]" class="input-number" data-min="1" data-max="1000"
+                                        value="1">
                                     <div class="button plus">
-                                        <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
+                                        <button type="button" class="btn btn-primary btn-number" data-type="plus"
+                                            data-field="quant[1]">
                                             <i class="ti-plus"></i>
                                         </button>
                                     </div>
