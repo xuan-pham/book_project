@@ -181,7 +181,7 @@
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="email-inbox.html">Thêm Tác Giả</a></li>
+                                    <li><a href="?action=admin-add-author">Thêm Tác Giả</a></li>
                                     <li><a href="?action=admin-author">Danh Sách Tác Giả</a></li>
 
                                 </ul>
@@ -274,7 +274,7 @@
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="email-inbox.html">Thêm Tác Giả</a></li>
+                                    <li><a href="?action=admin-add-author">Thêm Tác Giả</a></li>
                                     <li><a href="?action=admin-author">Danh Sách Tác Giả</a></li>
 
                                 </ul>

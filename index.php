@@ -46,6 +46,8 @@ else if ($action == 'login') {
     $adminController->addAuthor();
 } else if ($action == 'admin-delete-author') {
     $adminController->deleteAuthor();
+} else if ($action == 'admin-edit-author') {
+    $adminController->editAuthor();
 } else if ($action == 'userlist') {
     $adminController->userlist();
 } else if ($action == 'user-delete') {
