@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-    <?php include_once('templates/admin/layouts/header.php'); ?>=======<?php include('templates/admin/layouts/header.php'); ?>
-    <?php session_start(); ?>>>>>>>> 8df64e6fa8cfef54eb2c920962f70d72a27ce77c
+    <?php include_once('templates/admin/layouts/header.php'); ?>
+    <?php session_start(); ?>
     <div class="content-page">
         <div class="content">
             <div class="row">

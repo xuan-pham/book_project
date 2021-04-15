@@ -70,13 +70,10 @@ foreach ($publisherItem as $publisher)
             <div class="form-group">
                 <label class="col-md-4 control-label" for="name">Ngày Cập Nhật</label>
                 <div class="col-md-4">
-                    <<<<<<< HEAD <input id="updated_at" name="updated_at" placeholder="Tên NXB..."
-                        class="form-control input-md" required="" type="date"
-                        value="<?Php echo '' . $publisher['updated_at'] . ''; ?>">
-                        =======
-                        <input id="updated_at" name="updated_at" placeholder="Tên NXB..." class="form-control input-md"
-                            required="" type="date">
-                        >>>>>>> 8df64e6fa8cfef54eb2c920962f70d72a27ce77c
+                    <input id="updated_at" name="updated_at" placeholder="Tên NXB..." class="form-control input-md"
+                        required="" type="date" value="<?Php echo '' . $publisher['updated_at'] . ''; ?>">
+                    <input id="updated_at" name="updated_at" placeholder="Tên NXB..." class="form-control input-md"
+                        required="" type="date">
                 </div>
             </div>
 
