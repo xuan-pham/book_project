@@ -1,64 +1,68 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="view/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
+    <?php include_once('templates/admin/layouts/footer.php'); ?>
 
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="view/css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <!--===============================================================================================-->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
 
-<?php
+        <title>Document</title>
+    </head>
+
+    <?php
 
 
-include 'models/admin/ProductModel.php';
+    include 'models/admin/ProductModel.php';
 
-session_start();
+    session_start();
 
-if (!isset($_SESSION['admin'])) {
-header('location: ?action=login');
-} ?>
-<form action="" method="post">
+    if (!isset($_SESSION['admin'])) {
+        header('location: ?action=login');
+    } ?>
+    <form action="" method="post">
 
-<div class="card-header">
-    Danh Sách Sản Phẩm
-</div>
-<div class="card-body">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>STT</th>
-                <th>Ảnh</th>
-                <th>Tên</th>
-                <th>Số Lượng</th>
-                <th>Mô Tả</th>
-                <th>Chi Tiết</th>
-                <th>Giá</th>
-                <th>Ngày Xuất Bản</th>
-                <th>Ngày Cập Nhật</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-        <div class="row">
-                <a class="btn btn-secondary m-3" href="?action=admin-add-product"><i class="fas fa-plus-square">Thêm Sản Phẩm</i></a>
-            </div>
-            <?php
-            $results = getAllProducts();
-            foreach ($results as $result) {
-                echo '
+        <div class="card-header">
+            Danh Sách Sản Phẩm
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Ảnh</th>
+                        <th>Tên</th>
+                        <th>Số Lượng</th>
+                        <th>Mô Tả</th>
+                        <th>Chi Tiết</th>
+                        <th>Giá</th>
+                        <th>Ngày Xuất Bản</th>
+                        <th>Ngày Cập Nhật</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <div class="row">
+                        <a class="btn btn-secondary m-3" href="create.php"><i class="fas fa-plus-square">Thêm Sản
+                                Phẩm</i></a>
+                    </div>
+                    <?php
+                    $results = getAllProducts();
+                    foreach ($results as $result) {
+                        echo '
               
   <tr>
-  <td>' .$result['id'].  '</td>            
-  <td><img src ="templates/images/products/' .$result['image'].'"width="50px" height="50px" ></td>
+  <td>' . $result['id'] .  '</td>            
+  <td><img src ="templates/images/products/' . $result['image'] . '"width="50px" height="50px" ></td>
   <td>' .  $result['name'] . '</td>
   <td>' .  $result['quantity'] . '</td>
   <td>' .  $result['decription'] . '</td>
@@ -75,17 +79,17 @@ header('location: ?action=login');
     <i class="fas fa-cog"></i>Sửa
     </td>
 </tr>';
-            }
+                    }
 
-            ?>
+                    ?>
 
 
-        </tbody>
-    </table>
-</div>
-</div>
+                </tbody>
+            </table>
+        </div>
+        </div>
 
-</form>
+    </form>
 
 
 
@@ -114,4 +118,4 @@ header('location: ?action=login');
     <!-- App js -->
     <script src="templates/admin/assets\js\app.min.js"></script>
 
- 
+    <?php include_once('templates/admin/layouts/footer.php'); ?>

@@ -1,4 +1,4 @@
-﻿<?php include('layouts/header.php'); ?>
+﻿<?php include_once('layouts/header.php'); ?>
 
 <!-- Breadcrumbs -->
 <div class="breadcrumbs">
@@ -207,4 +207,4 @@
 </footer>
 <!-- /End Footer Area -->
 
-<?php include('layouts/footer.php'); ?>
+<?php include_once('layouts/footer.php'); ?>

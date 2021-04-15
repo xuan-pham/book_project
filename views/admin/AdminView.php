@@ -60,7 +60,6 @@ class AdminView
     public function delete()
     {
         require_once("templates/admin/delete.php");
-
     }
     public function deleteproduct()
     {

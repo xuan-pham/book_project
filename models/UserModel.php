@@ -1,132 +1,108 @@
-<?php 
+<?php
 
-    function checkLogin($user, $pass)
-    {
-        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        if (mysqli_connect_errno()) {
-            echo "Connect error" . mysqli_connect_error();
-        }
-
-        $result = $conn->query("SELECT id,username FROM user where username='$user' and password='$pass' ");
-        $admin = array();
-
-        if ($result->num_rows > 0) {
-            while ($category = mysqli_fetch_assoc($result)) {
-                $admin[] = $category;
-            };
-        }
-        return $admin;
+function checkLogin($user, $pass)
+{
+    $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+    if (mysqli_connect_errno()) {
+        echo "Connect error" . mysqli_connect_error();
     }
 
-    function getInfoOfUser($username)
-    {
-        // Connect database
-        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        mysqli_set_charset($conn, "utf8");
-        if (mysqli_connect_errno()) {
-            echo "Connect error" . mysqli_connect_error();
-        }
+    $result = $conn->query("SELECT id,username FROM user where username='$user' and password='$pass' ");
+    $admin = array();
 
-        $result = $conn->query(
-            "SELECT * 
+    if ($result->num_rows > 0) {
+        while ($category = mysqli_fetch_assoc($result)) {
+            $admin[] = $category;
+        };
+    }
+    return $admin;
+}
+
+function getInfoOfUser($username)
+{
+    // Connect database
+    $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_connect_errno()) {
+        echo "Connect error" . mysqli_connect_error();
+    }
+
+    $result = $conn->query(
+        "SELECT * 
             FROM user 
             WHERE username = '$username'
             "
-        );
-        $users = array();
+    );
+    $users = array();
 
-        if ($result->num_rows > 0) {
-            while ($blog = mysqli_fetch_assoc($result)) {
-                $users[] = $blog;
-            };
-        }
-        return $users;
+    if ($result->num_rows > 0) {
+        while ($blog = mysqli_fetch_assoc($result)) {
+            $users[] = $blog;
+        };
+    }
+    return $users;
+}
+function getDelete($id)
+{
+
+    $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_connect_errno()) {
+        echo "Connect error" . mysqli_connect_error();
     }
 
-    function getAllUser()
-    {
-        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        mysqli_set_charset($conn, "utf8");
-        if (mysqli_connect_errno()) {
-            echo "Connect error" . mysqli_connect_error();
-        }
-
-        $result = $conn->query(
-            "SELECT * 
-            FROM user 
+    $result = $conn->query(
+        "DELETE FROM user WHERE id='$id'
             "
-        );
-        $users = array();
+    );
+    if ($result == true) {
+        header("Location: /book_project/?action=userlist");
+    } else {
+        echo "Record does not delete try again";
+    }
+}
 
-        if ($result->num_rows > 0) {
-            while ($blog = mysqli_fetch_assoc($result)) {
-                $users[] = $blog;
-            };
-        }
-        return $users;
+
+function getUpdateUser($id, $firstName, $lastName, $username, $pass, $gender, $phone, $brithday, $role, $created, $update, $image)
+{
+    $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_connect_errno()) {
+        echo "Connect error" . mysqli_connect_error();
     }
 
-    function getDelete($id)
-    {
-
-        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        mysqli_set_charset($conn, "utf8");
-        if (mysqli_connect_errno()) {
-            echo "Connect error" . mysqli_connect_error();
-        }
-
-        $result = $conn->query(
-            "DELETE FROM user WHERE id='$id'
-            "
-        );
-        if ($result == true) {
-            header("Location: /book_project/?action=userlist");
-        } else {
-            echo "Record does not delete try again";
-        }
-    }
-
-
-    function getUpdateUser($id, $firstName, $lastName, $username, $pass, $gender, $phone, $brithday, $role, $created, $update, $image)
-    {
-        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        mysqli_set_charset($conn, "utf8");
-        if (mysqli_connect_errno()) {
-            echo "Connect error" . mysqli_connect_error();
-        }
-
-        $result = $conn->query(
-            "UPDATE `user` SET username='$username',password='$pass',avatar='$image',firstName='$firstName',lastName='$lastName',gender=
+    $result = $conn->query(
+        "UPDATE `user` SET username='$username',password='$pass',avatar='$image',firstName='$firstName',lastName='$lastName',gender=
             '$gender',phone='$phone',birthday='$brithday',id_role='$role',created_at='$created',updated_at='$update' WHERE id ='$id'"
 
-        );
+    );
 
-        if ($result == true) {
-            header("Location: /book_project/?action=userlist");
-        } else {
-            echo "Record does not delete try again";
-        }
+    if ($result == true) {
+        header("Location:?action=userlist");
+    } else {
+        echo "Record does not delete try again";
+    }
+}
+
+function getUser($id)
+{
+    $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_connect_errno()) {
+        echo "Connect error" . mysqli_connect_error();
     }
 
-    function getUser($id)
-    {
-        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-        mysqli_set_charset($conn, "utf8");
-        if (mysqli_connect_errno()) {
-            echo "Connect error" . mysqli_connect_error();
-        }
-
-        $result = $conn->query(
-            "SELECT * 
+    $result = $conn->query(
+        "SELECT * 
             FROM user  WHERE id = '$id'
             "
-        );
-        $fixuser = array();
+    );
+    $fixuser = array();
 
-        if ($result->num_rows > 0) {
-            while ($blog = mysqli_fetch_assoc($result)) {
-                $fixuser[] = $blog;
-            };
-        }
-        return $fixuser;
+    if ($result->num_rows > 0) {
+        while ($blog = mysqli_fetch_assoc($result)) {
+            $fixuser[] = $blog;
+        };
     }
+    return $fixuser;
+}

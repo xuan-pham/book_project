@@ -17,8 +17,9 @@
 </head>
 
 <body>
+
     <?php
-    include "models/UserModel.php";
+    include_once("models/UserModel.php");
 
     if (isset($_SESSION['admin'])) {
         header('location: ?action=dashboard');
@@ -32,7 +33,7 @@
                 $_SESSION['admin'] = $users;
                 header('location: ?action=dashboard');
             } else {
-                echo '<div class="alert alert-danger">Đăng nhập không thành công</div>';
+                echo '<script>alert("Đăng nhập không thành công")</script>';
             }
         }
     }
@@ -53,18 +54,18 @@
                             style="background-image: url(templates/admin/images/bg.jpg);"></div>
                         <h3 class="text-center mb-0">Đăng nhập</h3>
                         <p class="text-center"></p>
-                        <form action="#" class="login-form" method="POST">
+                        <form class="login-form" method="POST" onsubmit="return validateForm()">
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span
                                         class="fa fa-user"></span></div>
-                                <input type="text" name="username" class="form-control" placeholder="Tài Khoản"
-                                    required>
+                                <input type="text" name="username" id="username" class="form-control"
+                                    placeholder="Tài Khoản">
                             </div>
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span
                                         class="fa fa-lock"></span></div>
-                                <input type="password" name="password" class="form-control" placeholder="Mật khẩu"
-                                    required>
+                                <input type="password" name="password" id="password" class="form-control"
+                                    placeholder="Mật khẩu">
                             </div>
                             <div class="form-group d-md-flex">
                                 <div class="w-100 text-md-right">
@@ -77,6 +78,7 @@
                                     Nhập</button>
                             </div>
                         </form>
+
                         <div class="w-100 text-center mt-4 text">
                             <p class="mb-0">Không có tài khoản</p>
                             <a href="#">Tạo tài khoản</a>
@@ -91,6 +93,22 @@
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+    function validateForm() {
+        var u = document.getElementById("username").value;
+        var p = document.getElementById("password").value;
+
+        if (u == "") {
+            alert("Bạn chưa nhập tài khoản");
+            return false;
+        }
+        if (p == "") {
+            alert("Bạn chưa nhập mật khẩu");
+            return false;
+        }
+        return true;
+    }
+    </script>
 
 </body>
 

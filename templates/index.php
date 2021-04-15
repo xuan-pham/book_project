@@ -1,7 +1,7 @@
-<?php include('layouts/header.php'); ?>
+<?php include_once('layouts/header.php'); ?>
 <!-- Preloader -->
 <!-- <div class="preloader">
-        <div class="preloader-inner">
+        <div class="preloader-inner">\
             <div class="preloader-icon">
                 <span></span>
                 <span></span>
@@ -82,7 +82,7 @@
                                     <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="product-details.html">
+                                                <a href="?action=productId-<?= $item['id'] ?>">
                                                     <img class="default-img"
                                                         src="templates\images\products\<?= $item['image'] ?>" alt="#">
 
@@ -416,4 +416,4 @@
 </footer>
 <!-- /End Footer Area -->
 
-<?php include('layouts/footer.php'); ?>
+<?php include_once('layouts/footer.php'); ?>

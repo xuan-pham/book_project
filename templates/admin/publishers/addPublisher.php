@@ -1,4 +1,4 @@
-<?php include('templates/admin/layouts/header.php'); ?>
+<?php include_once('templates/admin/layouts/header.php'); ?>
 <?php
 $host = 'localhost';
 $dbname = 'qlbansach';
@@ -41,35 +41,63 @@ if (isset($_POST['bthSub'])) {
                         <div class="col-4 mx-auto">
                             <form action="" method="POST" target="_self">
 
-                                <!-- Text input-->
-                                <div class="form-group">
-                                    <label for="name">Tên NXB</label>
-
-                                    <input id="name" name="name" placeholder="Tên NXB..." class="form-control input-md"
-                                        required="" type="text">
-                                </div>
-
-                                <!-- Select Basic -->
-                                <div class="form-group">
-                                    <label for="status">Trạng Thái</label>
-
-                                    <select id="status" name="status" class="form-control">
-                                        <option value="1">Hoạt động</option>
-                                        <option value="0">Tạm ngưng</option>
-                                    </select>
-                                </div>
-
-                                <!-- Button -->
-                                <div class="form-group">
-                                    <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary"
-                                        value="Thêm">
-                                </div>
-                            </form>
                         </div>
                     </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="name">Tên NXB</label>
+                        <div class="col-md-4">
+                            <input id="name" name="name" placeholder="Tên NXB..." class="form-control input-md" required="" type="text">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="ordinal_number">Số thứ tự</label>
+                        <div class="col-md-4">
+                            <input id="ordinal_number" name="ordinal_number" placeholder="Số thứ tự..." class="form-control input-md" required="" type="text">
+                        </div>
+                    </div>
+
+                    <!-- Select Basic -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="status">Trạng Thái</label>
+                        <div class="col-md-4">
+                            <select id="status" name="status" class="form-control">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Tạm ngưng</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="name">Ngày Thêm</label>
+                        <div class="col-md-4">
+                            <input id="created_at" name="created_at" placeholder="Tên NXB..." class="form-control input-md" required="" type="date">
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary" value="Thêm">
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Button -->
+    <div class="form-group">
+        <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary float-right" value="Thêm">
+    </div>
+    </form>
 </div>
-<?php include('templates/admin/layouts/footer.php'); ?>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<?php include_once('templates/admin/layouts/footer.php'); ?>

@@ -9,7 +9,7 @@ class HomeController
         require_once('models/CategoryProductModel.php');
         $categoriesProductModel = new CategoryProductModel();
         $categoryProduct = $categoriesProductModel->getCategoriesFeatured();
-        
+
         // Get data of categories sidebar
         $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
 
@@ -28,30 +28,51 @@ class HomeController
         $productModel = new ProductModel();
         $productItem = $productModel->getFeaturedProduct();
 
-                
+
         // Call view to return data 
         require_once('views/HomeView.php');
         $homeView = new HomeView();
-        $homeView->index($categoryProduct,$categoriesSidebar, $bannerItem, $blogItem, $productItem);
+        $homeView->index($categoryProduct, $categoriesSidebar, $bannerItem, $blogItem, $productItem);
     }
 
-    public function blogs(){
+    public function blogs()
+    {
         require_once('views/BlogView.php');
         $blogView = new BlogView();
         $blogView->index();
     }
 
-    public function products(){
+    public function products()
+    {
         require_once('views/ProductView.php');
-        $productModel= new ProductView();
-        $productModel->index();
+        require_once('models/ProductModel.php');
+        require_once('models/CategoryProductModel.php');
+
+        $categoriesProductModel = new CategoryProductModel();
+        $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
+
+        $productModel = new ProductModel();
+        $products = $productModel->getAllProducts();
+
+        $productView = new ProductView();
+        $productView->index($products, $categoriesSidebar);
     }
-  
-    public function contact(){
+
+    public function productId($id)
+    {
+        require_once('views/ProductView.php');
+        require_once('models/ProductModel.php');
+        $productModel = new ProductModel();
+        $product = $productModel->getProductByid($id);
+
+        $productView = new ProductView();
+        $productView->detail($product);
+    }
+
+    public function contact()
+    {
         require_once('views/ContactView.php');
         $blogView = new ContactView();
         $blogView->index();
     }
-   
-
 }
