@@ -51,18 +51,15 @@
                                     <th scope="row" class="text-center"><?= $num++ ?></th>
                                     <td class="text-center"><?= $result['name'] ?></td>
 
-                                    <th scope="row" class="text-center"> <select id="status" name="status"
-                                            class="form-control">
-                                            <?php
+                                    <th scope="row" class="text-center">
+                                        <?php
                                                 if ($result['status'] == 1) {
-                                                    echo '<option value="1" selected>Hoạt động</option>';
-                                                    echo '<option value="0">Tạm ngưng</option>';
+                                                    echo '<span class="badge badge-success badge-pill p-2"> Hiện </span>';
                                                 } else {
-                                                    echo '<option value="1">Hoạt động</option>';
-                                                    echo '<option value="0"selected>Tạm ngưng</option>';
+                                                    echo '<span class="badge badge-secondary badge-pill p-2"> Ẩn </span>';
                                                 }
                                                 ?>
-                                        </select>
+
                                     </th>
 
 

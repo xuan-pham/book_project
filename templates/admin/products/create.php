@@ -21,6 +21,7 @@ if (isset($_POST['btnSubmit'])) {
     move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath);
 
     $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+    mysqli_set_charset($conn, "utf8");
 
     $result = $conn->query(
         "INSERT INTO product ( name, image , quantity,
@@ -40,6 +41,8 @@ if (isset($_POST['btnSubmit'])) {
     }
 }
 $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+mysqli_set_charset($conn, "utf8");
+
 if (mysqli_connect_errno()) {
     echo "Connect error" . mysqli_connect_error();
 }
