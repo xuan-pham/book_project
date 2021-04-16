@@ -6,21 +6,21 @@ $user = 'root';
 $pass = '';
 $conn = new PDO('mysql:host=' . $host . ';dbname=' . $dbname, $user, $pass);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-include "models/AuthorModel.php";
+include "models/admin/PostCategoryModel.php";
 
 if (isset($_POST['bthSub'])) {
-    $fullname = $_POST['fullname'];
-    $gender = $_POST['gender'];
+    $name = $_POST['name'];
+    $status = $_POST['status'];
     $date = date('Y-m-d H:i:s');
 
     $DBH = new PDO('mysql:host=localhost;dbname=qlbansach', 'root', '');
-    $query = "INSERT INTO author(fullname, gender, created_at, updated_at) 
+    $query = "INSERT INTO post_category(name, status, created_at, updated_at) 
             VALUES
-            ('$fullname','$gender',now(), now())";
+            ('$name','$status',now(), now())";
     $result = $DBH->exec($query);
     if ($result == true) {
         $_SESSION['success'] = "Thêm thành công";
-        header("Location: ?action=admin-author");
+        header("Location: ?action=admin-postCategory");
     } else {
         session_start();
         $_SESSION['failed'] = "Thêm thất bại";;
@@ -35,7 +35,7 @@ if (isset($_POST['bthSub'])) {
             <div class="col-12 mx-auto p-5">
                 <div class="card">
                     <div class="card-title text-center p-3">
-                        <h3 class="font-weight-bold">Thêm tác giả</h3>
+                        <h3 class="font-weight-bold">Thêm Danh Mục</h3>
                     </div>
                     <div class="card-body">
                         <div class="col-4 mx-auto">
@@ -43,25 +43,26 @@ if (isset($_POST['bthSub'])) {
 
                                 <!-- Text input-->
                                 <div class="form-group">
-                                    <label for="fullname">Tên tác giả</label>
+                                    <label for="name">Tên Danh Mục</label>
 
-                                    <input id="fullname" name="fullname" placeholder="Tên tác giả..."
+                                    <input id="name" name="name" placeholder="Tên danh mục..."
                                         class="form-control input-md" required="" type="text">
                                 </div>
 
-                                <!-- Select Basic -->
                                 <div class="form-group">
-                                    <label for="gender">Giới tính</label>
-                                    <select id="gender" name="gender" class="form-control">
-                                        <option value="1">Nam</option>
-                                        <option value="0">Nữ</option>
-                                    </select>
-                                </div>
-
-                                <!-- Button -->
-                                <div class="form-group">
-                                    <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary" value="Thêm">
-                                </div>
+                                    <label class="col-md-4 control-label" for="status">Trạng Thái</label>
+                                    <div class="col-md-4">
+                                        <select id="status" name="status" style="margin-left: -10px;
+    margin-bottom: 10px;" class="form-control">
+                                            <option value="1">Hoạt động</option>
+                                            <option value="0">Tạm ngưng</option>
+                                        </select>
+                                    </div>
+                                    <!-- Button -->
+                                    <div class="form-group">
+                                        <input type="submit" style="margin-left:3px" id="bthSub" name="bthSub"
+                                            class="btn btn-primary" value="Thêm">
+                                    </div>
                             </form>
                         </div>
                     </div>

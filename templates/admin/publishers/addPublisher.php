@@ -47,7 +47,8 @@ if (isset($_POST['bthSub'])) {
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="name">Tên NXB</label>
                         <div class="col-md-4">
-                            <input id="name" name="name" placeholder="Tên NXB..." class="form-control input-md" required="" type="text">
+                            <input id="name" name="name" placeholder="Tên NXB..." class="form-control input-md"
+                                required="" type="text">
                         </div>
                     </div>
 
@@ -55,7 +56,8 @@ if (isset($_POST['bthSub'])) {
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="ordinal_number">Số thứ tự</label>
                         <div class="col-md-4">
-                            <input id="ordinal_number" name="ordinal_number" placeholder="Số thứ tự..." class="form-control input-md" required="" type="text">
+                            <input id="ordinal_number" name="ordinal_number" placeholder="Số thứ tự..."
+                                class="form-control input-md" required="" type="text">
                         </div>
                     </div>
 
@@ -74,7 +76,8 @@ if (isset($_POST['bthSub'])) {
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="name">Ngày Thêm</label>
                         <div class="col-md-4">
-                            <input id="created_at" name="created_at" placeholder="Tên NXB..." class="form-control input-md" required="" type="date">
+                            <input id="created_at" name="created_at" placeholder="Tên NXB..."
+                                class="form-control input-md" required="" type="date">
                         </div>
                     </div>
 

@@ -59,4 +59,28 @@ else if ($action == 'login') {
     $adminController->fixuser();
 } else if ($action == 'user-add') {
     $adminController->adduser();
+} else if ($action == 'admin-product') {
+    $adminController->productList();
+} else if ($action == 'admin-add-product') {
+    $adminController->addproduct();
+} else if ($action == 'admin-edit-product') {
+    $adminController->editProduct();
+} else if ($action == 'admin-post') {
+    $adminController->PostList();
+} else if ($action == 'admin-add-post') {
+    $adminController->addPost();
+} else if ($action == 'admin-edit-post') {
+    $adminController->editPost();
+} else if ($action == 'admin-productCategory') {
+    $adminController->productCategoryList();
+} else if ($action == 'admin-add-productCategory') {
+    $adminController->addProductCategory();
+} else if ($action == 'admin-edit-productCategory') {
+    $adminController->editProductCategory();
+} else if ($action == 'admin-postCategory') {
+    $adminController->postCategoryList();
+} else if ($action == 'admin-add-postCategory') {
+    $adminController->addPostCategory();
+} else if ($action == 'admin-edit-postCategory') {
+    $adminController->editPostCategory();
 }
