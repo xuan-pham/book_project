@@ -4,8 +4,8 @@ function getAllProducts()
 {
 
     $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+    mysqli_set_charset($conn,"utf8");
     if (mysqli_connect_errno()) {
-        log("eror");
         echo "Connect error" . mysqli_connect_error();
     }
 
@@ -23,7 +23,6 @@ function getAllProducts()
 }
 
 // Prepare for remove
-
 function getDeleteProduct($id)
 {
 
