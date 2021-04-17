@@ -116,4 +116,10 @@ class HomeController
     {
         echo "order";
     }
+
+    public function deleteCart($id)
+    {
+        unset($_SESSION['cart'][$id]);
+        header("Location: ?action=cart");
+    }
 }

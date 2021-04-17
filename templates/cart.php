@@ -70,7 +70,8 @@ include_once('layouts/header.php');
                                 <td class="total-amount" data-title="Total">
                                     <span><?= $totalPrice ?></span>
                                 </td>
-                                <td class="action" data-title="Remove"><a href=""><i
+                                <td class="action" data-title="Remove"><a
+                                        href="?action=deleteCartId-<?= $item['id'] ?>"><i
                                             class="ti-trash remove-icon"></i></a>
                                 </td>
                             </tr>
@@ -97,7 +98,8 @@ include_once('layouts/header.php');
                                     </ul>
                                     <div class="button5">
                                         <button href="?action=order" class="btn" type="submit">Dat hang</button>
-                                        <a href="?action=products" class="btn">Tiep tuc mua hang</a>
+                                        <a href="?action=products" class="btn">Tiep tuc mua
+                                            hang</a>
                                     </div>
                                 </div>
                             </div>

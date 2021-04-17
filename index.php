@@ -32,6 +32,9 @@ if ($action == 'home') {
     $homeController->cart();
 } else if ($action == 'order') {
     $homeController->order();
+} else if (strstr($action, 'deleteCartId')) {
+    $id = explode('-', strstr($action, 'deleteCartId'));
+    $homeController->deleteCart($id[1]);
 }
 
 // Admin Page
