@@ -15,7 +15,7 @@ include 'models/admin/ProductModel.php';
                         </div>
                         <?php if (isset($_SESSION['failed'])) : ?>
                         <div class="col-md-12">
-                            <div class="alert alert-danger mx-auto">
+                            <div class="alert  text-center alert-danger mx-auto">
                                 <p><?= $_SESSION['failed'] ?></p>
                             </div>
                         </div>
@@ -23,7 +23,7 @@ include 'models/admin/ProductModel.php';
 
                         <?php if (isset($_SESSION['success'])) : ?>
                         <div class="col-md-12">
-                            <div class="alert alert-success mx-auto">
+                            <div class="alert text-center alert-success mx-auto">
                                 <p><?= $_SESSION['success'] ?></p>
                             </div>
                         </div>
@@ -39,9 +39,11 @@ include 'models/admin/ProductModel.php';
                                         <th>Mô Tả</th>
                                         <th>Chi Tiết</th>
                                         <th>Giá</th>
+                                        <th>Chức Năng</th>
                                         <th>Ngày Xuất Bản</th>
                                         <th>Ngày Cập Nhật</th>
                                         <th>Chức Năng</th>
+                                        
                                     </tr>
                                 </thead>
                                 <?php
@@ -51,6 +53,7 @@ include 'models/admin/ProductModel.php';
 
                                 <tbody>
                                     <tr>
+                                 
                                         <td><?= $result['id'] ?></td>
                                         <td><img src="templates/images/products/<?= $result['image'] ?>" width="50px"
                                                 height="50px"></td>
@@ -59,21 +62,27 @@ include 'models/admin/ProductModel.php';
                                         <td><?= $result['decription'] ?></td>
                                         <td><?= $result['detail'] ?></td>
                                         <td><?= $result['price'] ?></td>
+                                        <th scope="row" class="text-center">
+                                        <?php
+                                                if ($result['status'] == 1) {
+                                                    echo '<span class="badge badge-success badge-pill p-2"> Hiện </span>';
+                                                } else {
+                                                    echo '<span class="badge badge-secondary badge-pill p-2"> Ẩn </span>';
+                                                }
+                                                ?>
+
+                                  
                                         <td><?= $result['created_at'] ?></td>
-                                        <td><?= $result['updated_at'] ?></td>
-                                        <td>
-                                            &ensp;
-                                            <a onclick="return confirm('Bạn có muốn xóa?')"
-                                                class="btn btn-outline-danger"
-                                                href="templates/admin/products/delete.php?deleteId=<?= $result['id'] ?>"
-                                                ;>
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
-                                            &ensp;
-                                            <a class="btn btn-outline-danger"
-                                                href="?action=admin-edit-product&editProduct=<?= $result['id'] ?>">
-                                                <i class="fas fa-cog"></i>
-                                        </td>
+                                        <td><?= $result['updated_at'] ?></td>                                    
+                              
+                                    <td class="text-center">
+                                        <a href="?action=admin-edit-product&editProduct=<?= $result['id'] ?>"><i
+                                                class="fa fa-edit" aria-hidden="true"></i></a>
+                                        &ensp;
+                                        <a onclick="return confirm('Bạn có muốn xóa?')"
+                                            href="templates/admin/postCategory/delete.php?deleteId=<?= $result['id'] ?>"><i
+                                                class="fa fa-trash" aria-hidden="true"></i></a>
+                                    </td>
                                     </tr>
                                 </tbody>
                                 <?php endforeach; ?>

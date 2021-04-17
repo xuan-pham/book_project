@@ -9,7 +9,7 @@ include 'models/admin/PostModel.php';
             <div class="col-12 mx-auto p-5">
                 <div class="card">
                     <div class="card-title text-center p-3 mx-auto">
-                        <h3 class="font-weight-bold"> Danh Sách Thành Viên</h3>
+                        <h3 class="font-weight-bold"> Danh Sách Tin Tức</h3>
                     </div>
                     <?php if (isset($_SESSION['failed'])) : ?>
                     <div class="col-md-12">
@@ -34,7 +34,7 @@ include 'models/admin/PostModel.php';
                                     <th>Tiêu Đề</th>
                                     <th>Ảnh</th>
                                     <th>Mô Tả</th>
-                                    <th>Chi Tiết</th>
+                                    <th>Status</th>
                                     <th>Ngày Xuất Bản</th>
                                     <th>Ngày Cập Nhật</th>
                                     <th>Chức Năng</th>
@@ -54,20 +54,22 @@ include 'models/admin/PostModel.php';
                                     <td><img src="templates/images/blogs/<?= $result['image'] ?>" width="50px"
                                             height="50px"></td>
                                     <td><?= $result['description'] ?></td>
-                                    <td><?= $result['content'] ?></td>
                                     <td><?= $result['created_at'] ?></td>
                                     <td><?= $result['updated_at'] ?></td>
-                                    <td>
+                                    <th scope="row" class="text-center">
+                                        <?php
+                                                if ($result['status'] == 1) {
+                                                    echo '<span class="badge badge-success badge-pill p-2"> Hiện </span>';
+                                                } else {
+                                                    echo '<span class="badge badge-secondary badge-pill p-2"> Ẩn </span>';
+                                                }
+                                                ?>
 
-                                        <a onclick="return confirm('Bạn có muốn xóa?')" class="btn btn-outline-danger"
-                                            href="templates/admin/post/deletepost.php?deleteId=<?= $result['id'] ?>" ;>
-                                            <i class="fas fa-trash-alt"></i>Xóa
-                                        </a>
-
-                                        <a class="btn btn-outline-danger"
-                                            href="?action=admin-edit-post&editPost=<?= $result['id'] ?>" ;>
-                                            <i class="fas fa-cog"></i>Sửa
-                                    </td>
+                                    </th>
+                                    <td class="text-center">
+                                            <a href="?action=admin-edit-post&editPost=<?= $result['id'] ?>"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                            <a onclick="return confirm('Bạn có muốn xóa?')" href="templates/admin/post/deletepost.php?deleteId=<?= $result['id'] ?>"><i class="fa fa-trash"  aria-hidden="true"></i></a>
+                                        </td>
                                 </tr>
                             </tbody>
                             <?php endforeach; ?>
