@@ -11,4 +11,9 @@ class ProductView
     {
         require_once("templates/productDetail.php");
     }
+
+    public function cart()
+    {
+        require_once("templates/cart.php");
+    }
 }
