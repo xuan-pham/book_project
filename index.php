@@ -26,11 +26,12 @@ if ($action == 'home') {
 } else if (strstr($action, 'productId')) {
     $id = explode('-', strstr($action, 'productId'));
     $homeController->productId($id[1]);
-}else if ($action == 'addToCart') {
+} else if ($action == 'addToCart') {
     $homeController->addToCart();
-}
-else if ($action == 'cart') {
+} else if ($action == 'cart') {
     $homeController->cart();
+} else if ($action == 'order') {
+    $homeController->order();
 }
 
 // Admin Page
@@ -89,6 +90,6 @@ else if ($action == 'login') {
     $adminController->addPostCategory();
 } else if ($action == 'admin-edit-postCategory') {
     $adminController->editPostCategory();
-}else{
+} else {
     echo "404 ERROR";
 }

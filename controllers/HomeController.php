@@ -78,35 +78,42 @@ class HomeController
 
     public function addToCart()
     {
-        
+
         $productId = $_POST['product_id'];
         $quantity = $_POST['quantity'];
 
         require_once('models/ProductModel.php');
         $productModel = new ProductModel();
         $product = $productModel->getProductByid($productId);
-        
-         if ($product && $quantity > 0) {
-        // Product exists in database, now we can create/update the session variable for the cart
-        if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
-            if (array_key_exists($productId, $_SESSION['cart'])) {
-                // Product exists in cart so just update the quanity
-                $_SESSION['cart'][$productId] += $quantity;
+
+        if ($product && $quantity > 0) {
+            // Product exists in database, now we can create/update the session variable for the cart
+            if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+                if (array_key_exists($productId, $_SESSION['cart'])) {
+                    // Product exists in cart so just update the quanity
+                    // $_SESSION['cart'][$productId] += $quantity;
+                    $_SESSION['cart'][$productId]['quantity'] = $quantity;
+                } else {
+                    // Product is not in cart so add it
+                    $_SESSION['cart'][$productId] = $product;
+                }
             } else {
-                // Product is not in cart so add it
-                $_SESSION['cart'][$productId] = $quantity;
+                // There are no products in cart, this will add the first product to cart
+                $_SESSION['cart'][$productId] = $product;
             }
-        } else {
-            // There are no products in cart, this will add the first product to cart
-            $_SESSION['cart'] = array($productId => $quantity);
         }
-    }
         header("Location: ?action=cart");
     }
 
-    public function cart(){
+    public function cart()
+    {
         require_once('views/ProductView.php');
         $productView = new ProductView();
         $productView->cart();
+    }
+
+    public function order()
+    {
+        echo "order";
     }
 }
