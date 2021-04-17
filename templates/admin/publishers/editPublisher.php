@@ -4,7 +4,7 @@ $id = $_GET['edid'];
 $publisherModel = new PublisherModel();
 $publisherItem = $publisherModel->getPublisherByID($id);
 
-include "../../../models/PublisherModel.php";
+include "models/PublisherModel.php";
 if (isset($_REQUEST['edid'])) {
     $id = $_GET['edid'];
     $publisherModel = new PublisherModel();
@@ -68,3 +68,4 @@ foreach ($publisherItem as $publisher)
         </div>
     </div>
 </div>
+<?php include('templates/admin/layouts/footer.php');?>
