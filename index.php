@@ -95,6 +95,9 @@ else if ($action == 'login') {
     $adminController->editSetting();
 } else if ($action == 'admin-delete-setting') {
     $adminController->deleteSetting();
-}else{
+} else if ($action == 'admin-edit-postCategory') {
+    $adminController->editPostCategory();
+}
+else{
     echo "404 ERROR";
 }
