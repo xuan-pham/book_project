@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 17, 2021 lúc 09:01 AM
--- Phiên bản máy phục vụ: 10.4.13-MariaDB
--- Phiên bản PHP: 7.4.7
+-- Thời gian đã tạo: Th4 17, 2021 lúc 09:13 AM
+-- Phiên bản máy phục vụ: 10.4.17-MariaDB
+-- Phiên bản PHP: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -74,14 +74,11 @@ INSERT INTO `banner` (`id`, `image`, `created_at`, `updated_at`) VALUES
 CREATE TABLE `orders` (
   `id` int(9) NOT NULL,
   `id_Product` int(9) NOT NULL,
-  `quantity` int(9) NOT NULL,
-  `price` decimal(4,2) NOT NULL,
-  `customerName` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `note` text NOT NULL,
-  `status` int(9) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -89,6 +86,24 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
+-- Cấu trúc bảng cho bảng `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `id` int(9) NOT NULL,
+  `product_id` int(9) NOT NULL,
+  `product_order` int(9) NOT NULL,
+  `quantity` int(9) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+=======
+>>>>>>> 568918070590c65b84fd684e7fec9dedd0439fb7
 -- Cấu trúc bảng cho bảng `post`
 --
 
@@ -334,10 +349,18 @@ ALTER TABLE `banner`
 -- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_Product` (`id_Product`);
+  ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
+-- Chỉ mục cho bảng `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD PRIMARY KEY (`id`);
+
+--
+=======
+>>>>>>> 568918070590c65b84fd684e7fec9dedd0439fb7
 -- Chỉ mục cho bảng `post`
 --
 ALTER TABLE `post`
@@ -419,6 +442,15 @@ ALTER TABLE `orders`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
 
 --
+<<<<<<< HEAD
+-- AUTO_INCREMENT cho bảng `order_detail`
+--
+ALTER TABLE `order_detail`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+=======
+>>>>>>> 568918070590c65b84fd684e7fec9dedd0439fb7
 -- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
