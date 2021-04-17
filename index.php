@@ -26,11 +26,15 @@ if ($action == 'home') {
 } else if (strstr($action, 'productId')) {
     $id = explode('-', strstr($action, 'productId'));
     $homeController->productId($id[1]);
-}else if ($action == 'addToCart') {
+} else if ($action == 'addToCart') {
     $homeController->addToCart();
-}
-else if ($action == 'cart') {
+} else if ($action == 'cart') {
     $homeController->cart();
+} else if ($action == 'order') {
+    $homeController->order();
+} else if (strstr($action, 'deleteCartId')) {
+    $id = explode('-', strstr($action, 'deleteCartId'));
+    $homeController->deleteCart($id[1]);
 }
 
 // Admin Page
@@ -87,6 +91,8 @@ else if ($action == 'login') {
     $adminController->postCategoryList();
 } else if ($action == 'admin-add-postCategory') {
     $adminController->addPostCategory();
+} else if ($action == 'admin-edit-postCategory') {
+    $adminController->editPostCategory();
 } else if ($action == 'admin-setting') {
     $adminController->setting();
 } else if ($action == 'admin-add-setting') {
@@ -95,6 +101,6 @@ else if ($action == 'login') {
     $adminController->editSetting();
 } else if ($action == 'admin-delete-setting') {
     $adminController->deleteSetting();
-}else{
+} else {
     echo "404 ERROR";
 }
