@@ -87,8 +87,14 @@ else if ($action == 'login') {
     $adminController->postCategoryList();
 } else if ($action == 'admin-add-postCategory') {
     $adminController->addPostCategory();
-} else if ($action == 'admin-edit-postCategory') {
-    $adminController->editPostCategory();
+} else if ($action == 'admin-setting') {
+    $adminController->setting();
+} else if ($action == 'admin-add-setting') {
+    $adminController->addSetting();
+} else if ($action == 'admin-edit-setting') {
+    $adminController->editSetting();
+} else if ($action == 'admin-delete-setting') {
+    $adminController->deleteSetting();
 }else{
     echo "404 ERROR";
 }

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 11, 2021 at 07:45 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.4.11
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th4 17, 2021 lúc 09:01 AM
+-- Phiên bản máy phục vụ: 10.4.13-MariaDB
+-- Phiên bản PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `qlbansach`
+-- Cơ sở dữ liệu: `qlbansach`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `author`
+-- Cấu trúc bảng cho bảng `author`
 --
 
 CREATE TABLE `author` (
@@ -37,7 +36,7 @@ CREATE TABLE `author` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `author`
+-- Đang đổ dữ liệu cho bảng `author`
 --
 
 INSERT INTO `author` (`id`, `fullname`, `gender`, `created_at`, `updated_at`) VALUES
@@ -47,7 +46,7 @@ INSERT INTO `author` (`id`, `fullname`, `gender`, `created_at`, `updated_at`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `banner`
+-- Cấu trúc bảng cho bảng `banner`
 --
 
 CREATE TABLE `banner` (
@@ -58,7 +57,7 @@ CREATE TABLE `banner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `banner`
+-- Đang đổ dữ liệu cho bảng `banner`
 --
 
 INSERT INTO `banner` (`id`, `image`, `created_at`, `updated_at`) VALUES
@@ -69,7 +68,7 @@ INSERT INTO `banner` (`id`, `image`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Cấu trúc bảng cho bảng `orders`
 --
 
 CREATE TABLE `orders` (
@@ -90,7 +89,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `post`
+-- Cấu trúc bảng cho bảng `post`
 --
 
 CREATE TABLE `post` (
@@ -106,7 +105,7 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `post`
+-- Đang đổ dữ liệu cho bảng `post`
 --
 
 INSERT INTO `post` (`id`, `title`, `image`, `description`, `content`, `status`, `id_PostCategory`, `created_at`, `updated_at`) VALUES
@@ -117,7 +116,7 @@ INSERT INTO `post` (`id`, `title`, `image`, `description`, `content`, `status`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `post_category`
+-- Cấu trúc bảng cho bảng `post_category`
 --
 
 CREATE TABLE `post_category` (
@@ -129,7 +128,7 @@ CREATE TABLE `post_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `post_category`
+-- Đang đổ dữ liệu cho bảng `post_category`
 --
 
 INSERT INTO `post_category` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
@@ -140,7 +139,7 @@ INSERT INTO `post_category` (`id`, `name`, `status`, `created_at`, `updated_at`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
@@ -161,7 +160,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `product`
+-- Đang đổ dữ liệu cho bảng `product`
 --
 
 INSERT INTO `product` (`id`, `name`, `image`, `quantity`, `price`, `decription`, `detail`, `status`, `featured`, `id_productCategory`, `id_Author`, `id_Publisher`, `created_at`, `updated_at`) VALUES
@@ -179,7 +178,7 @@ INSERT INTO `product` (`id`, `name`, `image`, `quantity`, `price`, `decription`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_category`
+-- Cấu trúc bảng cho bảng `product_category`
 --
 
 CREATE TABLE `product_category` (
@@ -192,7 +191,7 @@ CREATE TABLE `product_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `product_category`
+-- Đang đổ dữ liệu cho bảng `product_category`
 --
 
 INSERT INTO `product_category` (`id`, `name`, `status`, `featured`, `created_at`, `updated_at`) VALUES
@@ -211,7 +210,7 @@ INSERT INTO `product_category` (`id`, `name`, `status`, `featured`, `created_at`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `publisher`
+-- Cấu trúc bảng cho bảng `publisher`
 --
 
 CREATE TABLE `publisher` (
@@ -223,17 +222,18 @@ CREATE TABLE `publisher` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `publisher`
+-- Đang đổ dữ liệu cho bảng `publisher`
 --
 
 INSERT INTO `publisher` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Nhà Xuất Bản Tp. Hcm', 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(2, 'Nhà Xuất Bản Kim Đồng', 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00');
+(2, 'Nhà Xuất Bản Kim Đồng', 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(26, 'Nhà xuất bản Trẻ', 1, '2021-04-13 14:40:08', '2021-04-17 08:33:06');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role`
+-- Cấu trúc bảng cho bảng `role`
 --
 
 CREATE TABLE `role` (
@@ -244,7 +244,7 @@ CREATE TABLE `role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `role`
+-- Đang đổ dữ liệu cho bảng `role`
 --
 
 INSERT INTO `role` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -256,14 +256,13 @@ INSERT INTO `role` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `setting`
+-- Cấu trúc bảng cho bảng `setting`
 --
 
 CREATE TABLE `setting` (
   `id` int(9) NOT NULL,
   `name` varchar(255) NOT NULL,
   `logo` varchar(255) NOT NULL,
-  `company` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
@@ -275,7 +274,7 @@ CREATE TABLE `setting` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slide`
+-- Cấu trúc bảng cho bảng `slide`
 --
 
 CREATE TABLE `slide` (
@@ -288,7 +287,7 @@ CREATE TABLE `slide` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
@@ -307,7 +306,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Đang đổ dữ liệu cho bảng `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `avatar`, `firstName`, `lastName`, `gender`, `phone`, `birthday`, `id_role`, `created_at`, `updated_at`) VALUES
@@ -316,43 +315,43 @@ INSERT INTO `user` (`id`, `username`, `password`, `avatar`, `firstName`, `lastNa
 (5, 'post', 'e10adc3949ba59abbe56e057f20f883e', 'pexels-irina-iriser-1379636.jpg', 'nguyen', 'dinh quy', 'nam', '222222222', '2021-04-13', 3, '2021-04-11 00:00:00', '2021-04-11 00:00:00');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `author`
+-- Chỉ mục cho bảng `author`
 --
 ALTER TABLE `author`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `banner`
+-- Chỉ mục cho bảng `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orders`
+-- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_Product` (`id_Product`);
 
 --
--- Indexes for table `post`
+-- Chỉ mục cho bảng `post`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_PostCategory` (`id_PostCategory`);
 
 --
--- Indexes for table `post_category`
+-- Chỉ mục cho bảng `post_category`
 --
 ALTER TABLE `post_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
@@ -361,136 +360,136 @@ ALTER TABLE `product`
   ADD KEY `id_Publisher` (`id_Publisher`);
 
 --
--- Indexes for table `product_category`
+-- Chỉ mục cho bảng `product_category`
 --
 ALTER TABLE `product_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `publisher`
+-- Chỉ mục cho bảng `publisher`
 --
 ALTER TABLE `publisher`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `role`
+-- Chỉ mục cho bảng `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `setting`
+-- Chỉ mục cho bảng `setting`
 --
 ALTER TABLE `setting`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `slide`
+-- Chỉ mục cho bảng `slide`
 --
 ALTER TABLE `slide`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_role` (`id_role`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `author`
+-- AUTO_INCREMENT cho bảng `author`
 --
 ALTER TABLE `author`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `banner`
+-- AUTO_INCREMENT cho bảng `banner`
 --
 ALTER TABLE `banner`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `post`
+-- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `post_category`
+-- AUTO_INCREMENT cho bảng `post_category`
 --
 ALTER TABLE `post_category`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `product_category`
+-- AUTO_INCREMENT cho bảng `product_category`
 --
 ALTER TABLE `product_category`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `publisher`
+-- AUTO_INCREMENT cho bảng `publisher`
 --
 ALTER TABLE `publisher`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `role`
+-- AUTO_INCREMENT cho bảng `role`
 --
 ALTER TABLE `role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `setting`
+-- AUTO_INCREMENT cho bảng `setting`
 --
 ALTER TABLE `setting`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `slide`
+-- AUTO_INCREMENT cho bảng `slide`
 --
 ALTER TABLE `slide`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `orders`
+-- Các ràng buộc cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_Product`) REFERENCES `product` (`id`);
 
 --
--- Constraints for table `post`
+-- Các ràng buộc cho bảng `post`
 --
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`id_PostCategory`) REFERENCES `post_category` (`id`);
 
 --
--- Constraints for table `product`
+-- Các ràng buộc cho bảng `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`id_Author`) REFERENCES `author` (`id`),
@@ -498,7 +497,7 @@ ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_3` FOREIGN KEY (`id_Publisher`) REFERENCES `publisher` (`id`);
 
 --
--- Constraints for table `user`
+-- Các ràng buộc cho bảng `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_role`) REFERENCES `role` (`id`);

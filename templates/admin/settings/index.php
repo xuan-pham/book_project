@@ -1,38 +1,68 @@
-<?php include_once('templates/admin/layouts/header.php'); ?>
+<?php include('templates/admin/layouts/header.php'); ?>
+
+
 <div class="content-page">
     <div class="content">
+        <div class="row">
+            <div class="col-12 mx-auto p-5">
+                <div class="card">
+                    <div class="card-title text-center p-3 mx-auto">
+                        <h3 class="font-weight-bold"> Danh sách cài đặt</h3>
+                    </div>
 
-        <!-- Start Content-->
-        <div class="container-fluid">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Mã cài đặt</th>
-                        <th scope="col">Tên</th>
-                        <th scope="col">Logo</th>
-                        <th scope="col">Tên</th>
-                        <th scope="col">Địa chỉ</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Điện thoại</th>
-                        <th scope="col">Mạng xã hội</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($settingItem as $item) : ?>
-                    <tr>
-                        <th scope="row"><?= $item['id'] ?></th>
-                        <td><?= $item['name'] ?></td>
-                        <td><?= $item['logo'] ?></td>
-                        <td><?= $item['company'] ?></td>
-                        <td><?= $item['address'] ?></td>
-                        <td><?= $item['email'] ?></td>
-                        <td><?= $item['phone'] ?></td>
-                        <td><?= $item['social'] ?></td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    <?php if (isset($_SESSION['failed'])) : ?>
+                        <div class="col-md-12">
+                            <div class="alert alert-danger mx-auto">
+                                <p><?= $_SESSION['failed'] ?></p>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if (isset($_SESSION['success'])) : ?>
+                        <div class="col-md-12">
+                            <div class="alert alert-success mx-auto">
+                                <p><?= $_SESSION['success'] ?></p>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-center">STT</th>
+                                    <th scope="col" class="text-center">Tên cài đặt</th>
+                                    <th scope="col" class="text-center">Trạng thái</th>
+                                    <th scope="col" class="text-center">Chỉnh sửa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $num = 1;
+                                foreach ($settingItem as $item) :
+                                ?>
+                                    <tr>
+                                        <th scope="row" class="text-center"><?= $num++ ?></th>
+                                        <td class="text-center"><?= $item['name'] ?></td>
+                                        <td class="text-center"><?= $item['status'] ?></td>
+                                        <td class="text-center">
+                                            <a href="?action=admin-edit-setting&edid=<?= $item['id'] ?>"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                            <a onclick="return confirm('Bạn có muốn xóa?')" href="templates/admin/settings/deleteSetting.php?pdid=<?= $item['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<?php
+if (isset($_SESSION['failed'])) {
+    unset($_SESSION["failed"]);
+} elseif (isset($_SESSION['success'])) {
+    unset($_SESSION["success"]);
+}
+?>
 <?php include_once('templates/admin/layouts/footer.php'); ?>

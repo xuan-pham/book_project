@@ -198,7 +198,7 @@
                                     </a>
                                     <ul class="nav-second-level" aria-expanded="false">
 
-                                        <li><a href="email-compose.html">Tiêu Đề Website</a></li>
+                                        <li><a href="?action=admin-setting">Tiêu Đề Website</a></li>
 
                                     </ul>
                                 </li>
