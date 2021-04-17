@@ -86,6 +86,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Cấu trúc bảng cho bảng `order_detail`
 --
 
@@ -101,6 +102,8 @@ CREATE TABLE `order_detail` (
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> 568918070590c65b84fd684e7fec9dedd0439fb7
 -- Cấu trúc bảng cho bảng `post`
 --
 
@@ -239,7 +242,8 @@ CREATE TABLE `publisher` (
 
 INSERT INTO `publisher` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Nhà Xuất Bản Tp. Hcm', 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(2, 'Nhà Xuất Bản Kim Đồng', 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00');
+(2, 'Nhà Xuất Bản Kim Đồng', 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(26, 'Nhà xuất bản Trẻ', 1, '2021-04-13 14:40:08', '2021-04-17 08:33:06');
 
 -- --------------------------------------------------------
 
@@ -348,12 +352,15 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
 -- Chỉ mục cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`id`);
 
 --
+=======
+>>>>>>> 568918070590c65b84fd684e7fec9dedd0439fb7
 -- Chỉ mục cho bảng `post`
 --
 ALTER TABLE `post`
@@ -420,7 +427,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `author`
 --
 ALTER TABLE `author`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `banner`
@@ -435,12 +442,15 @@ ALTER TABLE `orders`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
 
 --
+=======
+>>>>>>> 568918070590c65b84fd684e7fec9dedd0439fb7
 -- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
@@ -468,7 +478,7 @@ ALTER TABLE `product_category`
 -- AUTO_INCREMENT cho bảng `publisher`
 --
 ALTER TABLE `publisher`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `role`

@@ -23,7 +23,7 @@ class AdminController
         $loginView = new AdminView();
         $loginView->logout();
     }
-
+    //publisher
     public function publisher()
     {
         require_once('models/PublisherModel.php');
@@ -53,6 +53,7 @@ class AdminController
         $loginView = new AdminView();
         $loginView->editPublisher();
     }
+    //author
     public function author()
     {
         require_once('models/AuthorModel.php');
@@ -81,6 +82,7 @@ class AdminController
         $loginView = new AdminView();
         $loginView->deleteAuthor();
     }
+    //setting
     public function setting()
     {
         require_once('models/SettingModel.php');
@@ -90,6 +92,24 @@ class AdminController
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
         $loginView->setting($settingItem);
+    }
+    public function addSetting()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->addSetting();
+    }
+    public function editSetting()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->editSetting();
+    }
+    public function deleteSetting()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->deleteSetting();
     }
     //user
     public function userlist()

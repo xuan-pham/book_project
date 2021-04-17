@@ -49,9 +49,21 @@ class AdminView
     {
         require_once("templates/admin/author/deleteAuthor.php");
     }
-    public function setting($authorItem)
+    public function setting($settingItem)
     {
-        require_once("templates/admin/setting/index.php");
+        require_once("templates/admin/settings/index.php");
+    }
+    public function addSetting()
+    {
+        require_once("templates/admin/settings/addSetting.php");
+    }
+    public function editSetting()
+    {
+        require_once("templates/admin/settings/editSetting.php");
+    }
+    public function deleteSetting()
+    {
+        require_once("templates/admin/settings/deleteSetting.php");
     }
     public function userlist()
     {
