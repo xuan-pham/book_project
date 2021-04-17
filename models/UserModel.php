@@ -3,6 +3,8 @@
 function checkLogin($user, $pass)
 {
     $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+    mysqli_set_charset($conn,"utf8");
+
     if (mysqli_connect_errno()) {
         echo "Connect error" . mysqli_connect_error();
     }
@@ -56,11 +58,13 @@ function getDelete($id)
             "
     );
     if ($result == true) {
-        header("Location: /book_project/?action=userlist");
+        $_SESSION['success'] = "Xoá thành công";
     } else {
-        echo "Record does not delete try again";
+        session_start();
+        $_SESSION['failed'] = "Xoá thất bại";;
     }
 }
+
 
 
 function getUpdateUser($id, $firstName, $lastName, $username, $pass, $gender, $phone, $brithday, $role, $created, $update, $image)
@@ -78,9 +82,11 @@ function getUpdateUser($id, $firstName, $lastName, $username, $pass, $gender, $p
     );
 
     if ($result == true) {
-        header("Location:?action=userlist");
+        $_SESSION['success'] = "Sửa thành công";
+        header("Location: ?action=userlist");
     } else {
-        echo "Record does not delete try again";
+        session_start();
+        $_SESSION['failed'] = "Sửa thất bại";;
     }
 }
 

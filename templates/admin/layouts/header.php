@@ -145,8 +145,10 @@
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="#">Thêm sản phẩm</a></li>
-                                    <li><a href="#">Thêm Danh Mục Sản Phẩm</a></li>
+                                    <li><a href="?action=admin-product">Danh sách sản phẩm</a></li>
+                                    <li><a href="?action=admin-add-product">Thêm sản phẩm</a></li>
+                                    <li><a href="?action=admin-productCategory">Danh Mục Sản Phẩm</a></li>
+                                    <li><a href="?action=admin-add-productCategory"> Thêm Danh Mục Sản Phẩm</a></li>
                                     <li><a href="#">Đơn Hàng</a></li>
                                 </ul>
                             </li>
@@ -171,9 +173,10 @@
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="maps-gmap.html">Thêm Tin Tức</a></li>
-                                    <li><a href="maps-gmap.html">Danh Sách Tin Tức</a></li>
-                                    <li><a href="maps-gmap.html">Thêm Danh Mục Tin Tức</a></li>
+                                    <li><a href="?action=admin-add-post">Thêm Tin Tức</a></li>
+                                    <li><a href="?action=admin-post">Danh Sách Tin Tức</a></li>
+                                    <li><a href="?action=admin-postCategory">Danh Mục Tin Tức</a></li>
+                                    <li><a href="?action=admin-add-postCategory">Thêm Danh Mục Tin Tức</a></li>
 
 
                                 </ul>
@@ -228,14 +231,15 @@
                             <li>
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-speedometer"></i>
-                                    <span>Sản Phẩm</span>
+                                    <span> Sản Phẩm</span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="#">Thêm Sản Phẩm</a></li>
-                                    <li><a href="#">Thêm Danh Mục Sản Phẩm</a></li>
-                                    <li><a href="#"> Đơn Hàng</a></li>
-                                    <li><a href="#">Danh Sách Sản Phẩm</a></li>
+                                    <li><a href="?action=admin-product">Danh sách sản phẩm</a></li>
+                                    <li><a href="?action=admin-add-product">Thêm sản phẩm</a></li>
+                                    <li><a href="?action=admin-productCategory">Danh Mục Sản Phẩm</a></li>
+                                    <li><a href="?action=admin-add-productCategory"> Thêm Danh Mục Sản Phẩm</a></li>
+                                    <li><a href="#">Đơn Hàng</a></li>
                                 </ul>
                             </li>
 
@@ -247,7 +251,7 @@
                             <li>
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-mail"></i>
-                                    <span> Tác Giả </span>
+                                    <span>Tác Giả</span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -263,7 +267,7 @@
                             <li>
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-mail"></i>
-                                    <span> Nhà Xuất Bản</span>
+                                    <span>Nhà Xuất Bản</span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -283,9 +287,10 @@
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="maps-gmap.html">Thêm Tin Tức</a></li>
-                                    <li><a href="maps-gmap.html">Danh Sách Tin Tức</a></li>
-                                    <li><a href="maps-gmap.html">Thêm Danh Mục Tin Tức</a></li>
+                                    <li><a href="?action=admin-add-post">Thêm Tin Tức</a></li>
+                                    <li><a href="?action=admin-post">Danh Sách Tin Tức</a></li>
+                                    <li><a href="?action=admin-postCategory">Danh Mục Tin Tức</a></li>
+                                    <li><a href="?action=admin-add-postCategory">Thêm Danh Mục Tin Tức</a></li>
 
                                 </ul>
                             </li>

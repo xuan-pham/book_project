@@ -1,269 +1,235 @@
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="view/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
-
-    <title>Document</title>
-</head>
+<?php include('templates/admin/layouts/header.php'); ?>
 <?php
-
-    session_start();
-
-    if (!isset($_SESSION['admin'])) {
-        header('location: ?action=login');
-    } 
-?>
-
-<?php 
-include "../../../models/admin/ProductModel.php";
-
-?>
+session_start();
+include('models/admin/ProductModel.php'); ?>
 
 <?php
-    if (isset($_REQUEST['editProduct'])) {
-        $id = $_GET['editProduct'];
-        $editProduct = getProduct($id);
-
-
+if (isset($_REQUEST['editProduct'])) {
+    $id = $_GET['editProduct'];
+    $editProducts = getProduct($id);
 }
-    ?>
-<?php 
+?>
+<?php
+foreach ($editProducts as $editProduct)
+    if (isset($_POST['btnSub'])) {
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $status = $_POST['status'];
+        $price = $_POST['price'];
+        $quantity = $_POST['quantity'];
 
+        $decription = $_POST['decription'];
+        $detail = $_POST['detail'];
+        $created_at = date('m/d/Y h:i:s', time());
+        $updated_at = date('m/d/Y h:i:s', time());
 
+        $id_Author = $_POST['id_Author'];
+        $id_Publisher = $_POST['id_Publisher'];
+        $id_productCategory = $_POST['id_productCategory'];
 
+        $targetDir = "templates/images/products/";
+        $fileName = basename($_FILES["image"]['name']);
+        $targetFilePath = $targetDir . $fileName;
+        move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath);
 
-if (isset($_POST['btnSub'])) {
-    $name = $_POST['name'];
-    $status = $_POST['status'];
-    $price = $_POST['price'];
-    $quantity = $_POST['quantity'];
-    $decription = $_POST['decription'];
-    $detail = $_POST['detail'];
-    $created_at = $_POST['created_at'];
-    $updated_at = $_POST['updated_at'];
-    $id_user = $_POST['id_user'];          
-    $id_Author = $_POST['id_Author'];
-    $id_Publisher = $_POST['id_Publisher'];
-    $id_productCategory = $_POST['id_productCategory'];
-    
-    $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
-
-    $result = $conn->query(
-        "INSERT INTO product (name, quantity,
-            status, price, decription, detail, id_user,
-            id_productCategory, id_Author, id_Publisher, created_at,
-            updated_at) 
-        values('$name','$quantity', '$status',
-            '$price', '$decription','$detail','$id_user','$id_productCategory',
-           ' $id_Author','$id_Publisher','$created_at','$updated_at')");
-$editProducts = array();
-    if ($editProduct->num_rows > 0) {
-        while ($editProduct = mysqli_fetch_assoc($result)) {
-              $editProducts[]=$result;
-        }
-        header('location:?action=admin-product');
-    }
-}
-$conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
             echo "Connect error" . mysqli_connect_error();
         }
-      
-        $categoryList = $conn->query("SELECT * FROM product_category");
-        $userList = $conn->query("SELECT * FROM user");
-        $publisherList = $conn->query("SELECT * FROM publisher");
-        $authorList = $conn->query("SELECT * FROM author");
-
-    //   $editProduct= UpdateProduct ($id, $name, $quantity, $status,
-    //   $price, $decription, $detail, $id_user, $id_productCategory,
-    //   $id_Author,$id_Publisher, $created_at, $updated_at)
-         ?>
- 
-  <style>
-label.col-md-4.control-label {
-    width: 239px;
+        $result = $conn->query(
+            "UPDATE product 
+        SET name = '$name', quantity = '$quantity', status = '$status', price ='$price'  , decription ='$decription', detail ='$detail',
+        id_productCategory ='$id_productCategory', id_Author = '$id_Author', 
+        id_Publisher = '$id_Publisher', created_at = '$created_at', updated_at = '$updated_at' ,image='$fileName'
+        WHERE id = '$id'
+        "
+        );
+        if ($result == true) {
+            $_SESSION['success'] = "Sửa thành công";
+            header("Location: ?action=admin-product");
+        } else {
+            session_start();
+            $_SESSION['failed'] = "Sửa thất bại";;
+        }
+    }
+$conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+mysqli_set_charset($conn, "utf8");
+if (mysqli_connect_errno()) {
+    echo "Connect error" . mysqli_connect_error();
 }
 
-.conten {
-    margin-left: 27%;
-}
-</style>   
-    <form class="form-horizontal" method="POST" enctype="multipart/form-data" >
+$categoryList = $conn->query("SELECT * FROM product_category");
+$userList = $conn->query("SELECT * FROM user");
+$publisherList = $conn->query("SELECT * FROM publisher");
+$authorList = $conn->query("SELECT * FROM author");
 
-        <fieldset>
-            <!-- Form Name -->
-            <legend>Sửa Sản Phẩm</legend>
+//   $editProduct= UpdateProduct ($id, $name, $quantity, $status,
+//   $price, $decription, $detail, $id_user, $id_productCategory,
+//   $id_Author,$id_Publisher, $created_at, $updated_at)
+?>
 
-            <!-- Tên Sản Phẩm-->
-            <div class="conten">
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="product_name">Tên Sản Phẩm</label>
-                    <div class="col-md-4">
-                        <input id="name" name="name" class="form-control input-md" 
-                            type="text" value="<?Php echo '' . $editProduct['name'] . ''; ?>">
 
+<div class="content-page">
+    <div class="content">
+        <div class="row">
+            <div class="col-12 mx-auto p-5">
+                <div class="card">
+                    <div class="card-title text-center p-3 mx-auto">
+                        <h3 class="font-weight-bold"> Sửa Sản Phẩm</h3>
                     </div>
-                </div>
+                    <form class="form-horizontal" method="POST" style="margin-left: 38%;" enctype="multipart/form-data">
+                        <!-- Tên Sản Phẩm-->
+                        <div class="conten">
+                            <div class="form-group">
 
-                <!-- Miêu tả sản phẩm-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="product_name_fr"> Miêu tả sản phẩm</label>
-                    <div class="col-md-4">
-                        <input id="product_name_fr" name="detail" class="form-control input-md" value="<?Php echo '' . $editProduct['deltail'] . ''; ?>"  type="text">
+                                <div class="col-md-4">
+                                    <input id="product_name_fr" style="width: 130%;" name="id"
+                                        class="form-control input-md"
+                                        value="<?Php echo '' . $editProduct['id'] . ''; ?>" type="hidden">
 
-                    </div>
-                </div>
-
-                <!-- Loại sản phẩm -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="product_categorie"> Loại sản phẩm</label>
-                    <div class="col-md-4">
-                   
-                        <select id="id_productCategory" name="id_productCategory" class="form-control">
-                        <?php foreach($categoryList as $category)
-                        echo '<option value="'.$category['id'].'">'.$category['name'].'</option>
-                       ' ?>
-                        
-                        </select>
-                    </div>
-                </div>
-
-                <!-- User -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="product_categorie">User</label>
-                    <div class="col-md-4">
-                   
-                        <select id="id_productCategory" name="id_user" class="form-control">
-                        <?php foreach($userList as $user)
-                        echo '<option value="'.$user['id'].'">'.$user['lastName'].' '.$user['firstName'].'</option>
-                       ' ?>
-                        
-                        </select>
-                    </div>
-                </div>
-
-             <!-- id_author -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="product_categorie">Tác Giả</label>
-                    <div class="col-md-4">
-                   
-                        <select id="id_Author" name="id_Author" class="form-control">
-                        <?php foreach($authorList as $author)
-                        echo '<option value="'.$author['id'].'">'.$author['lastName'].' '.$author['firstName'].'</option>
-                       ' ?>
-                        
-                        </select>
-                    </div>
-                </div>
-
-                <!-- publisher -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="id_Publisher">Nhà Xuất Bản</label>
-                    <div class="col-md-4">
-                   
-                        <select id="id_Publisher" name="id_Publisher" class="form-control">
-                        <?php foreach($publisherList as $publisher)
-                        echo '<option value="'.$publisher['id'].'">'.$publisher['name'].' </option>
-                       ' ?>
-                        
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Số lượng-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="quantity"> Số lượng</label>
-                    <div class="col-md-4">
-                        <input id="quantity" name="quantity" class="form-control input-md" required=""
-                            type="number">
-
-                    </div>
-                </div>
-
-                <!-- Giá tiền -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="available_quantity"> Giá tiền</label>
-                    <div class="col-md-4">
-                        <input id="price" name="price" class="form-control input-md" required=""
-                            type="number">
-
-                    </div>
-                </div>
-
-                <!-- Textarea -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="decription">Miêu tả chi tiết sản phẩm</label>
-                    <div class="col-md-4">
-                        <textarea class="form-control" id="decription" name="decription"></textarea>
-                    </div>
-                </div>
-
-                <!-- Ngày thêm-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="online_date">Ngày thêm</label>
-                    <div class="col-md-4">
-                        <input id="created_at" name="created_at" class="form-control input-md" required=""
-                            type="date">
-
-                    </div>
-                </div>
-
-                <!-- Status -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="online_date">Status</label>
-                    <div class="col-md-4">
-                        <input id="status" name="status" class="form-control input-md" required=""
-                            type="number">
-
-                    </div>
-                </div>
-
-                <!-- Ngày cập nhật -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="online_date">Ngày cập nhật</label>
-                    <div class="col-md-4">
-                        <input id="updated_at" name="updated_at" class="form-control input-md" required=""
-                            type="date">
-
-                    </div>
-                </div>
-
-                <!-- Hình ảnh -->
-                <div class="form-group">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="filebutton">Hình sản phẩm</label>
-                            <div class="col-md-4">
-                                <input id="image" name="image" class="input-file" type="file">
+                                </div>
                             </div>
-                        </div>
-                          
-                        <!-- Button -->
-                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="product_name">Tên Sản Phẩm</label>
+                                <div class="col-md-4">
+                                    <input id="name" name="name" class="form-control input-md" style="width: 130%;"
+                                        type="text" value="<?Php echo '' . $editProduct['name'] . ''; ?>">
 
-                            <div class="col-md-4">
-                                <input type="submit" id="btnSub" name="btnSu" value="Thay đổi" class="btn btn-primary"
-                                    style="margin-left: 286%;">
+                                </div>
                             </div>
+
+                            <!-- Miêu tả sản phẩm-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="product_name_fr"> Miêu tả sản
+                                    phẩm</label>
+                                <div class="col-md-4">
+                                    <input id="product_name_fr" name="detail" style="width: 130%;"
+                                        class="form-control input-md"
+                                        value="<?Php echo '' . $editProduct['detail'] . ''; ?>" type="text">
+
+                                </div>
+                            </div>
+
+                            <!-- Loại sản phẩm -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="product_categorie"> Loại sản phẩm</label>
+                                <div class="col-md-4">
+
+                                    <select id="id_productCategory" name="id_productCategory" style="width: 130%;"
+                                        class="form-control">
+                                        <?php foreach ($categoryList as $category)
+                                            echo '<option value="' . $category['id'] . '">' . $category['name'] . '</option>
+                       ' ?>
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <!-- id_author -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="product_categorie">Tác Giả</label>
+                                <div class="col-md-4">
+
+                                    <select id="id_Author" name="id_Author" style="width: 130%;" class="form-control">
+                                        <?php foreach ($authorList as $author)
+                                            echo '<option value="' . $author['id'] . '">' . $author['fullname'] . ' </option>
+                       ' ?>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- publisher -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="id_Publisher">Nhà Xuất Bản</label>
+                                <div class="col-md-4">
+
+                                    <select id="id_Publisher" name="id_Publisher" style="width: 130%;"
+                                        class="form-control">
+                                        <?php foreach ($publisherList as $publisher)
+                                            echo '<option value="' . $publisher['id'] . '">' . $publisher['name'] . ' </option>
+                       ' ?>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Số lượng-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="quantity"> Số lượng</label>
+                                <div class="col-md-4">
+                                    <input id="quantity" name="quantity"
+                                        value="<?Php echo '' . $editProduct['quantity'] . ''; ?>"
+                                        class="form-control input-md" style="width: 130%;" required="" type="number">
+
+                                </div>
+                            </div>
+
+                            <!-- Giá tiền -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="available_quantity"> Giá tiền</label>
+                                <div class="col-md-4">
+                                    <input id="price" name="price"
+                                        value="<?Php echo '' . $editProduct['price'] . ''; ?>"
+                                        class="form-control input-md" style="width: 130%;" required="" type="number">
+
+                                </div>
+                            </div>
+
+                            <!-- Textarea -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="decription">Miêu tả chi tiết sản
+                                    phẩm</label>
+                                <div class="col-md-4">
+                                    <textarea class="form-control" style="width: 130%;" id="decription"
+                                        name="decription"><?Php echo '' . $editProduct['decription'] . ''; ?></textarea>
+                                </div>
+                            </div>
+
+
+                            <!-- Status -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="status">Trạng Thái</label>
+                                <div class="col-md-4">
+                                    <select id="status" name="status" style="width: 130%;" class="form-control">
+                                        <?php
+                                        if ($editProduct['status'] == 1) {
+                                            echo '<option value="1" selected>Hoạt động</option>';
+                                            echo '<option value="0">Tạm ngưng</option>';
+                                        } else {
+                                            echo '<option value="1">Hoạt động</option>';
+                                            echo '<option value="0"selected>Tạm ngưng</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Hình ảnh -->
+
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="filebutton">Hình Ảnh</label>
+                                <input type="file" id="image" name="image" style="width: 40%; margin-left: 13px;"
+                                    required="" class="form-control input-md">
+                            </div>
+
+                            <!-- Button -->
+
+                            <div class="form-group">
+                                <input type="submit" id="btnSub" name="btnSub" style="margin-left: 14px;"
+                                    class="btn btn-primary" value="Thêm">
+                            </div>
+
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-
-        </fieldset>
-      
-    </form>
-
-
+        </div>
+    </div>
+</div>
+<?php include('templates/admin/layouts/footer.php'); ?>

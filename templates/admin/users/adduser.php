@@ -1,5 +1,6 @@
 <?php include_once('templates/admin/layouts/header.php');
 ?>
+<?php session_start(); ?>
 
 <?php
 $host = 'localhost';
@@ -31,13 +32,13 @@ if (isset($_POST['bthSub'])) {
          ('$username',md5('$pass'),'$image','$firstName','$lastName','$gender','$phone','$birthday','$role','$created','$update')";
     $result = $DBH->exec($query);
     if ($result == true) {
-        header('location: ?action=userlist');
-        echo '<script type="text/javascript">alert("Thêm Thành Công")</script>';
+        $_SESSION['success'] = "Thêm thành công";
+        header("Location: ?action=userlist");
     } else {
-        echo '<script type="text/javascript">alert("Thêm không Thành Công")</script>';
+        session_start();
+        $_SESSION['failed'] = "Thêm thất bại";;
     }
 }
-
 
 ?>
 <div class="content-page">
@@ -48,42 +49,47 @@ if (isset($_POST['bthSub'])) {
                     <div class="card-title text-center p-3 mx-auto">
                         <h3 class="font-weight-bold"> Thêm Thành Viên</h3>
                     </div>
-                    <form class="content-first" method="POST" style="margin-left: 38%;" enctype="multipart/form-data"
-                        onsubmit="return validateForm()">
+                    <form class="content-first" method="POST" style="margin-left: 38%;" enctype="multipart/form-data">
 
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Họ</label>
-                            <input type="text" style="width: 40%;" name="first_name" id="firstname"
-                                class="form-control">
+                            <input type="text" required="" style="width: 40%;" name="first_name" class="form-control"
+                                placeholder=" Nhập họ">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Tên</label>
-                            <input type="text" style="width: 40%;" name="last_name" id="lastname" class="form-control">
+                            <input type="text" required="" placeholder=" Nhập tên" style="width: 40%;" name="last_name"
+                                class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Tài Khoản</label>
-                            <input type="text" style="width: 40%;" name="username" id="username" class="form-control">
+                            <input type="text" required="" placeholder="Nhập tài Khoản" style="width: 40%;"
+                                name="username" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Mật Khẩu</label>
-                            <input type="password" style="width: 40%;" name="pass" id="password" class="form-control">
+                            <input type="password" required="" placeholder="Nhập mật khẩu" style="width: 40%;"
+                                name="pass" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Giới Tính</label>
-                            <input type="gender" style="width: 40%;" name="gender" id="gender" class="form-control">
+                            <input type="gender" required="" placeholder="Nhập giới tính" style="width: 40%;"
+                                name="gender" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">Số Điện Thoại</label>
-                            <input type="text" style="width: 40%;" name="phone" id="phone" class="form-control">
+                            <lab for="exampleFormControlInput1">Số Điện Thoại</lab el>
+                            <input type="text" required="" placeholder="Nhập số điện thoại" style="width: 40%;"
+                                name="phone" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Ngày Sinh</label>
-                            <input type="date" style="width: 40%;" name="birthday" id="birthday" class="form-control">
+                            <input type="date" required="" style="width: 40%;" placeholder="Chọn ngày sinh"
+                                name="birthday" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Quyền</label>
-                            <select class="form-control" style="width: 40%;" id="role" name="role">
+                            <select class="form-control" required="" style="width: 40%;" name="role">
                                 <option>Chọn Phân Quyền</option>
                                 <option>1 Mastser</option>
                                 <option>2 Product-Management</option>
@@ -96,59 +102,14 @@ if (isset($_POST['bthSub'])) {
                             <label for="exampleFormControlInput1">Hình Ảnh</label>
                             <input type="file" style="width: 40%;" name="image" class="form-control">
                         </div>
-                        <button class="sub" style="color: #fff;background-color: #2f999c;border-color:#2c9092;margin-left: 15%;
-    margin-bottom: 2%;
-    width: 10%;" name="bthSub">Thêm</button>
+                        <div class="form-group">
+                            <input type="submit" id="bthSub" name="bthSub" class="btn btn-primary" value="Thêm">
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-    function validateForm() {
-        var u = document.getElementById("username").value;
-        var p = document.getElementById("password").value;
-        var h = document.getElementById("firstname").value;
-        var t = document.getElementById("lastname").value;
-        var g = document.getElementById("gender").value;
-        var n = document.getElementById("phone").value;
-        var b = document.getElementById("birthday").value;
-        var r = document.getElementById("role").value;
-        if (u == "") {
-            alert("Bạn chưa nhập tài khoản");
-            return false;
-        }
-        if (p == "") {
-            alert("Bạn chưa nhập mật khẩu");
-            return false;
-        }
-        if (h == "") {
-            alert("Bạn chưa nhập họ");
-            return false;
-        }
-        if (t == "") {
-            alert("Bạn chưa nhập tên");
-            return false;
-        }
-        if (g == "") {
-            alert("Bạn chưa nhập giới tính");
-            return false;
-        }
-        if (n == "") {
-            alert("Bạn chưa nhập số điện thoại");
-            return false;
-        }
-        if (b == "") {
-            alert("Bạn chưa nhập ngày sinh ");
-            return false;
-        }
-        if (r == "") {
-            alert("Bạn chưa chọn phân quyền");
-            return false;
-        }
+</div>
 
-
-        return true;
-    }
-    </script>
-    <?php include_once('templates/admin/layouts/footer.php'); ?>
+<?php include_once('templates/admin/layouts/footer.php'); ?>

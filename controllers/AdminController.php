@@ -91,34 +91,17 @@ class AdminController
         $loginView = new AdminView();
         $loginView->setting($settingItem);
     }
+    //user
     public function userlist()
     {
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
         $loginView->userlist();
     }
-    public function productList()
-    {
-        require_once('views/admin/AdminView.php');
-        $loginView = new AdminView();
-        $loginView->productList();
-    }
-
-    public function addproduct()
-    {
-        require_once('views/admin/AdminView.php');
-        $loginView = new AdminView();
-        $loginView->addproducts();
-    }
     public function delete()
     {
         $loginView = new AdminView();
         $loginView->delete();
-    }
-    public function deleteproduct()
-    {
-        $loginView = new AdminView();
-        $loginView->deleteproduct();
     }
     public function fixuser()
     {
@@ -131,5 +114,82 @@ class AdminController
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
         $loginView->adduser();
+    }
+    //end user
+
+    //product
+    public function productList()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->productList();
+    }
+    public function addproduct()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->addproduct();
+    }
+    public function editProduct()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->editProduct();
+    }
+    //end product
+
+    //post
+    public function PostList()
+    {
+        require_once("templates/admin/post/index.php");
+    }
+    public function addPost()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->addPost();
+    }
+    public function editPost()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->editPost();
+    }
+    // category
+    public function productCategoryList()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->productCategoryList();
+    }
+    public function addProductCategory()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->addProductCategory();
+    }
+    public function editProductCategory()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->editProductCategory();
+    }
+    public function postCategoryList()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->postCategoryList();
+    }
+    public function addPostCategory()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->addPostCategory();
+    }
+    public function editPostCategory()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->editPostCategory();
     }
 }

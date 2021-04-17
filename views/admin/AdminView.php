@@ -61,20 +61,7 @@ class AdminView
     {
         require_once("templates/admin/delete.php");
     }
-    public function deleteproduct()
-    {
-        require_once("templates/admin/products/delete.php");
 
-    }
-    public function productList()
-    {
-        require_once("templates/admin/products/index.php");
-    }
-    public function addproduct()
-    {
-        require_once("templates/admin/products/create.php");
-
-    }
     public function fixuser()
     {
         require_once("templates/admin/users/fixuser.php");
@@ -83,9 +70,54 @@ class AdminView
     {
         require_once("templates/admin/users/adduser.php");
     }
+    //product
+    public function productList()
+    {
+        require_once("templates/admin/products/index.php");
+    }
+    public function addproduct()
+    {
+        require_once("templates/admin/products/create.php");
+    }
     public function editProduct()
     {
         require_once("templates/admin/products/edit.php");
     }
-
+    //post
+    public function PostList()
+    {
+        require_once("templates/admin/post/index.php");
+    }
+    public function addPost()
+    {
+        require_once("templates/admin/post/addpost.php");
+    }
+    public function editPost()
+    {
+        require_once("templates/admin/post/editpost.php");
+    }
+    public function productCategoryList()
+    {
+        require_once("templates/admin/productCategory/index.php");
+    }
+    public function addProductCategory()
+    {
+        require_once("templates/admin/productCategory/addProductCategory.php");
+    }
+    public function editProductCategory()
+    {
+        require_once("templates/admin/productCategory/editProductCategory.php");
+    }
+    public function postCategoryList()
+    {
+        require_once("templates/admin/postCategory/index.php");
+    }
+    public function addPostCategory()
+    {
+        require_once("templates/admin/postCategory/addPostCategory.php");
+    }
+    public function editPostCategory()
+    {
+        require_once("templates/admin/postCategory/editPostCategory.php");
+    }
 }
