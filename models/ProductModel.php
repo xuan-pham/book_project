@@ -64,22 +64,32 @@ class ProductModel
         return $product;
     }
 
-     public function orderProductByid($id,$quantity,$price,$firstname,$lastname,$address,$phone,$email,$note)
+     public function orderProductByid($firstname,$lastname,$address,$phone,$email,$note)
     {
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
             echo "Connect error" . mysqli_connect_error();
         }
-        // $query = 
-        //     "SELECT * 
-        //     FROM product
-        //     WHERE id = '$id'
-        //     "
-        // ;
-        // $result = $conn->query($query);
-        $sql  ="INSERT INTO orders(id_Product,quantity,price,firstname,lastname,address,phone,email,note,created_at,updated_at) VALUES('$id','$quantity','$price','$firstname','$lastname','$address','$phone','$email','$note',now(),now())";
+
+        $sql = "INSERT INTO `order` (firstname,lastname,address,phone,email,note,created_at,updated_at)  VALUES('$firstname','$lastname','$address','$phone','$email','$note',now(),now())";
+  
+      
         if(mysqli_query($conn, $sql)){
+            $last_id = mysqli_insert_id($conn);
+            
+            foreach ($_SESSION['cart'] as $item) {
+                $productId = $item['id'];
+                $quantity = $item['quantity'];
+                $price = $item['price'];
+                $query = "INSERT INTO `order_detail` (order_id,product_id,quantity,price,created_at,updated_at) VALUES('$last_id','$productId','$quantity','$price',now(),now())";
+                
+                if(mysqli_query($conn, $query)){
+                    echo "ok";
+                } else{
+                    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+                }
+            }
             session_start();
             $_SESSION['success'] = "Thêm thành công";
             unset($_SESSION['cart']);
@@ -88,31 +98,7 @@ class ProductModel
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
         }
  
-        // if($result){
-        //     while($result2 = $result->fetch_assoc()){
-        //         print_r($result);die();
-        //         $id = $result['id_Product'];
-        //         $quantity = $result['quantity'];
-        //         $price = $result['price'];
-        //         $firstname = $result['firstname'];
-        //         $lastname = $result['lastname'];
-        //         $address = $result['address'];
-        //         $phone = $result['phone'];
-        //         $email = $result['email'];
-        //         $note = $result['note'];
-        //         $query_order = $conn->query(
-        //             "INSERT INTO order(id_Product,quantity,price,firstname,lastname,address,phone,email,note) VALUES('$id','$quantity','$price','$firstname','$lastname','$address','$phone','$email','$note')
-        //             "
-        //         );
-        //         print_r($query_order);die();
-        //        if(mysqli_query($conn,$query_order)){
-        //            echo "ok";
-        //        }else{
-        //            echo "failed";
-        //        }
-        //     }
-        // }
-        // return $product;
+ 
     }
 
     public function search($key){
