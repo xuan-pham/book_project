@@ -69,7 +69,7 @@ $authorList = $conn->query("SELECT * FROM author");
                         <div class="col-8 mx-auto">
                             <form class="content-first" method="POST" enctype="multipart/form-data">
                                 <!-- Tên Sản Phẩm-->
-                                <div class="conten">
+                         
                                     <div class="form-group">
                                         <label class=" control-label" for="product_name">Tên Sản Phẩm</label>
                                         <div class="">
@@ -190,7 +190,7 @@ $authorList = $conn->query("SELECT * FROM author");
                                             value="Sửa">
                                     </div>
 
-                                </div>
+                             
                             </form>
                         </div>
                     </div>

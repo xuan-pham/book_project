@@ -1,5 +1,6 @@
 <?php include('templates/admin/layouts/header.php'); ?>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <script src="templates/admin/products/ckeditor/ckeditor.js" type="text/javascript"></script>
 <?php
 session_start();
 include_once('models/admin/PostModel.php'); ?>
@@ -58,26 +59,28 @@ $userList = $conn->query("SELECT * FROM user");
         <div class="row">
             <div class="col-12 mx-auto p-5">
                 <div class="card">
-                    <div class="card-title text-center p-3 mx-auto">
+                    <div class="card-title text-center p-3">
                         <h3 class="font-weight-bold"> Sửa Bài Viết</h3>
                     </div>
-                    <form class="form-horizontal" style="margin-left: 38%;" method="POST" enctype="multipart/form-data">
+                    <div class="card-body">
+                    <div class="col-8 mx-auto">
+                    <form class="form-horizontal"  method="POST" enctype="multipart/form-data">
                         <!-- Tên Sản Phẩm-->
-                        <input type="hidden" name="id" style="width: 130%;"
+                        <input type="hidden" name="id" 
                             value="<?Php echo '' . $editPost['id'] . ''; ?>">
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="product_name">Tiêu Đề</label>
-                            <div class="col-md-4">
-                                <input id="name" name="title" style="width: 130%;"
+                            <label class="control-label" for="product_name">Tiêu Đề</label>
+                            <div class="">
+                                <input id="name" name="title" 
                                     value="<?Php echo '' . $editPost['title'] . ''; ?>" class="form-control input-md"
                                     type="text">
                             </div>
                         </div>
                         <!-- Miêu tả sản phẩm-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="product_name_fr">Mô Tả</label>
-                            <div class="col-md-4">
-                                <input id="product_name_fr" style="width: 130%;" name="content"
+                            <label class=" control-label" for="product_name_fr">Mô Tả</label>
+                            <div class="">
+                                <input id="product_name_fr" name="content"
                                     class="form-control input-md" value="<?Php echo '' . $editPost['content'] . ''; ?>"
                                     type="text">
 
@@ -86,10 +89,10 @@ $userList = $conn->query("SELECT * FROM user");
 
                         <!-- Loại sản phẩm -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="post_categorie">Loại Bài Viết</label>
-                            <div class="col-md-4">
+                            <label class=" control-label" for="post_categorie">Loại Bài Viết</label>
+                            <div class="">
 
-                                <select id="id_postCategory" name="id_PostCategory" style="width: 130%;"
+                                <select id="id_postCategory" name="id_PostCategory" 
                                     class="form-control">
                                     <?php foreach ($categoryList as $category)
                                         echo '<option value="' . $category['id'] . '">' . $category['name'] . '</option>
@@ -101,9 +104,9 @@ $userList = $conn->query("SELECT * FROM user");
                         <!---->
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="post_categorie">Trạng Thái Bài viết</label>
-                            <div class="col-md-4">
-                                <select name="status" style="width: 130%;" class="form-control">
+                            <label class="control-label" for="post_categorie">Trạng Thái Bài viết</label>
+                            <div class="">
+                                <select name="status" class="form-control">
                                     <option>Chọn trạng thái</option>
                                     <option>1 hoạt động</option>
                                     <option>2 dừng hoạt động</option>
@@ -113,26 +116,28 @@ $userList = $conn->query("SELECT * FROM user");
 
                         <!-- Textarea -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="description">Chi Tiết</label>
-                            <div class="col-md-4">
-                                <textarea class="form-control" style="width: 130%;" id="description"
-                                    name="description"><?Php echo '' . $editPost['description'] . ''; ?></textarea>
+                                <label class=" control-label" for="detail">Chi tiết sản phẩm</label>
+                                <div class="">
+                         
+                                 <textarea  name="description" class="form-control" id="description"><?Php echo '' . $editPost['description'] . ''; ?></textarea>
+                                 <script>CKEDITOR.replace('description');</script>
+                                </div>
                             </div>
-                        </div>
 
                         <!-- Hình ảnh -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="filebutton">Hình Ảnh</label>
-                            <input type="file" id="image" class="form-control input-md" name="image" style="width: 40%;
-    margin-left: 14px;">
+                            <label class="control-label" for="filebutton">Hình Ảnh</label>
+                            <input type="file" id="image" class="form-control input-md" name="image">
                         </div>
                         <!-- Button -->
 
                         <div class="form-group">
-                            <input type="submit" id="btnSub" name="btnSub" style="margin-left: 14px;"
+                            <input type="submit" id="btnSub" name="btnSub" 
                                 class="btn btn-primary" value="Thêm">
                         </div>
                     </form>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
