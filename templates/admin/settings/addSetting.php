@@ -1,5 +1,4 @@
-<?php include('templates/admin/layouts/header.php'); ?>
-<?php
+<?php include('templates/admin/layouts/header.php');
 $host = 'localhost';
 $dbname = 'qlbansach';
 $user = 'root';
@@ -9,15 +8,15 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if (isset($_POST['bthSub'])) {
     $name = $_POST['name'];
-    $logo = $_POST['name'];
-    $address = $_POST['name'];
-    $email = $_POST['name'];
-    $phone = $_POST['name'];
-    $social = $_POST['name'];
+    $logo = $_POST['logo'];
+    $address = $_POST['address'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $social = $_POST['social'];
     $date = date('Y-m-d H:i:s');
 
     $DBH = new PDO('mysql:host=localhost;dbname=qlbansach', 'root', '');
-    $query = "INSERT INTO setting(name, logo, address, email, phone, social created_at, updated_at) 
+    $query = "INSERT INTO setting(name, logo, address, email, phone, social, created_at, updated_at) 
             VALUES
             ('$name','$logo','$address','$email','$phone','$social',now(), now())";
     $result = $DBH->exec($query);
@@ -29,8 +28,6 @@ if (isset($_POST['bthSub'])) {
         $_SESSION['failed'] = "Thêm thất bại";;
     }
 }
-
-
 ?>
 <div class="content-page">
     <div class="content">

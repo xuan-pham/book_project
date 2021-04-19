@@ -33,7 +33,7 @@
                                     <th scope="col" class="text-center">STT</th>
                                     <th scope="col" class="text-center">Tên tác giả</th>
                                     <th scope="col" class="text-center">Giới tính</th>
-                                    <th scope="col" class="text-center">Chỉnh sửa</th>
+                                    <th scope="col" class="text-center">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>

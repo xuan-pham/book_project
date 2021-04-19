@@ -32,7 +32,7 @@
                                     <th scope="col" class="text-center">STT</th>
                                     <th scope="col" class="text-center">Tên NXB</th>
                                     <th scope="col" class="text-center">Trạng thái</th>
-                                    <th scope="col" class="text-center">Chỉnh sửa</th>
+                                    <th scope="col" class="text-center">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>

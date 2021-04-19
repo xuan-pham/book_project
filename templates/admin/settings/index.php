@@ -36,14 +36,13 @@
                                     <th scope="col" class="text-center">Email</th>
                                     <th scope="col" class="text-center">Điện thoại</th>
                                     <th scope="col" class="text-center">Mạng xã hội</th>
-                                    <th scope="col" class="text-center">Chỉnh sửa</th>
+                                    <th scope="col" class="text-center">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $num = 1;
-                                foreach ($settingItem as $item) :
-                                ?>
+                                foreach ($settingItem as $item) :?>
                                     <tr>
                                         <th scope="row" class="text-center"><?= $num++ ?></th>
                                         <td class="text-center"><?= $item['name'] ?></td>
@@ -54,7 +53,7 @@
                                         <td class="text-center"><?= $item['social'] ?></td>
                                         <td class="text-center">
                                             <a href="?action=admin-edit-setting&edid=<?= $item['id'] ?>"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                            <a onclick="return confirm('Bạn có muốn xóa?')" href="templates/admin/settings/deleteSetting.php?pdid=<?= $item['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                            <a onclick="return confirm('Bạn có muốn xóa?')" href="templates/admin/settings/deleteSetting.php?sdid=<?= $item['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
