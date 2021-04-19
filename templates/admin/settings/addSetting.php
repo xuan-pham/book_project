@@ -13,7 +13,6 @@ if (isset($_POST['bthSub'])) {
     $phone = $_POST['phone'];
     $social = $_POST['social'];
     $date = date('Y-m-d H:i:s');
-    //fix cai nay ne
     $image = $_FILES['image']['name'];
     $duong_dan_anh = 'templates/admin/images/logo/' . $image;
     move_uploaded_file($_FILES['image']['tmp_name'], $duong_dan_anh);
@@ -43,7 +42,7 @@ if (isset($_POST['bthSub'])) {
                     </div>
                     <div class="card-body">
                         <div class="col-4 mx-auto">
-                            <form action="" method="POST" target="_self">
+                            <form action="" method="POST" target="_self" enctype="multipart/form-data">
                                 <!-- Text input-->
                                 <div class="form-group">
                                     <label for="name">Tên cài đặt</label>

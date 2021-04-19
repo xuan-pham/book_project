@@ -174,7 +174,7 @@
                                     <div class="navbar-collapse">
                                         <div class="nav-inner">
                                             <ul class="nav main-menu menu navbar-nav">
-                                                <li class="active"><a href="#">Trang chủ</a></li>
+                                                <li class="active"><a href="?action=home">Trang chủ</a></li>
                                                 <li><a href="?action=products">Sản phẩm</a></li>
                                                 <li><a href="?action=blogs">Tin tức<i class="ti-angle-down"></i></a>
                                                     <ul class="dropdown">

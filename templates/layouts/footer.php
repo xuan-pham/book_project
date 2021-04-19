@@ -4,31 +4,28 @@
     <div class="footer-top section">
         <div class="container">
             <div class="row">
+            <?php foreach ($settingItem as $item) : ?>
                 <div class="col-lg-5 col-md-6 col-12">
                     <!-- Single Widget -->
                     <div class="single-footer about">
                         <div class="logo">
-                            <a href="index.html"><img src="templates\images\logo2.png" alt="#"></a>
+                            <a href="?action=home"><img src="templates/admin/images/logo/<?= $item['logo'] ?>" alt="#"></a>
                         </div>
-                        <p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,
-                            magna
-                            eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor,
-                            facilisis luctus, metus.</p>
-                        <p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456
-                                    789</a></span></p>
+                        <p class="text"><?= $item['name'] ?></p>
+                        <p class="call">Hãy gọi chúng tôi<span><a href="tel:<?= $item['phone'] ?>"><?= $item['phone'] ?></a></span></p>
                     </div>
                     <!-- End Single Widget -->
                 </div>
                 <div class="col-lg-2 col-md-6 col-12">
                     <!-- Single Widget -->
                     <div class="single-footer links">
-                        <h4>Information</h4>
+                        <h4>Thông tin</h4>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Về Chúng Tôi</a></li>
+                            <li><a href="#">Các câu hỏi thường gặp</a></li>
+                            <li><a href="#">Điều khoản dịch vụ</a></li>
+                            <li><a href="#">Liên hệ với chúng tôi</a></li>
+                            <li><a href="#">Hướng dẫn</a></li>
                         </ul>
                     </div>
                     <!-- End Single Widget -->
@@ -36,13 +33,13 @@
                 <div class="col-lg-2 col-md-6 col-12">
                     <!-- Single Widget -->
                     <div class="single-footer links">
-                        <h4>Customer Service</h4>
+                        <h4>Dịch vụ khách hàng</h4>
                         <ul>
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Money-back</a></li>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="#">Shipping</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Phương thức thanh toán</a></li>
+                            <li><a href="#">Hoàn trả</a></li>
+                            <li><a href="#">Đổi trả</a></li>
+                            <li><a href="#">Giao hàng</a></li>
+                            <li><a href="#">Chính sách quyền riêng tư</a></li>
                         </ul>
                     </div>
                     <!-- End Single Widget -->
@@ -50,26 +47,23 @@
                 <div class="col-lg-3 col-md-6 col-12">
                     <!-- Single Widget -->
                     <div class="single-footer social">
-                        <h4>Get In Tuch</h4>
+                        <h4>Liên lạc</h4>
                         <!-- Single Widget -->
                         <div class="contact">
                             <ul>
-                                <li>NO. 342 - London Oxford Street.</li>
-                                <li>012 United Kingdom.</li>
-                                <li>info@eshop.com</li>
-                                <li>+032 3456 7890</li>
+                                <li><?= $item['address'] ?></li>
+                                <li><?= $item['email'] ?></li>
+                                <li><?= $item['phone'] ?></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
                         <ul>
-                            <li><a href="#"><i class="ti-facebook"></i></a></li>
-                            <li><a href="#"><i class="ti-twitter"></i></a></li>
-                            <li><a href="#"><i class="ti-flickr"></i></a></li>
-                            <li><a href="#"><i class="ti-instagram"></i></a></li>
+                            <li><a href="<?= $item['social'] ?>"><i class="ti-facebook"></i></a></li>
                         </ul>
                     </div>
                     <!-- End Single Widget -->
                 </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

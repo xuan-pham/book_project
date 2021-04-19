@@ -319,4 +319,4 @@
 </div>
 <!-- Modal end -->
 
-<?php include_once('layouts/footer.php'); ?>
+<?php include('layouts/footer.php'); ?>
