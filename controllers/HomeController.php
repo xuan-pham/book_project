@@ -12,7 +12,7 @@ class HomeController
 
         // Get data of categories sidebar
         $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
-
+        
         // Get data of banners
         require_once('models/BannerModel.php');
         $bannerModel = new BannerModel();
@@ -27,7 +27,6 @@ class HomeController
         require_once('models/ProductModel.php');
         $productModel = new ProductModel();
         $productItem = $productModel->getFeaturedProduct();
-
 
         // Call view to return data 
         require_once('views/HomeView.php');
@@ -71,9 +70,14 @@ class HomeController
 
     public function contact()
     {
+        // Get data of settings
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
+
         require_once('views/ContactView.php');
         $blogView = new ContactView();
-        $blogView->index();
+        $blogView->index($settingItem);
     }
 
     public function addToCart()

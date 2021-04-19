@@ -197,7 +197,7 @@
 
                                     </a>
                                     <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="?action=admin-add-setting">Thêm Cài đặt</a></li>
+                                        <!-- <li><a href="?action=admin-add-setting">Thêm Cài đặt</a></li> -->
                                         <li><a href="?action=admin-setting">Cài đặt Website</a></li>
 
                                     </ul>
