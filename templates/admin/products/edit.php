@@ -103,12 +103,9 @@ $authorList = $conn->query("SELECT * FROM author");
 
                             <!-- Miêu tả sản phẩm-->
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="product_name_fr"> Miêu tả sản
-                                    phẩm</label>
+                                <label class="col-md-4 control-label" for="product_name_fr"> Miêu tả sản phẩm</label>
                                 <div class="col-md-4">
-                                    <input id="product_name_fr" name="decription" style="width: 130%;"
-                                        class="form-control input-md"
-                                        value="<?Php echo '' . $editProduct['decription'] . ''; ?>" type="text">
+                                <textarea name="decription" cols="54" id="decription"><?Php echo '' . $editProduct['decription'] . ''; ?></textarea>
 
                                 </div>
                             </div>
@@ -231,7 +228,7 @@ $authorList = $conn->query("SELECT * FROM author");
 
                             <div class="form-group">
                                 <input type="submit" id="btnSub" name="btnSub" style="margin-left: 14px;"
-                                    class="btn btn-primary" value="Thêm">
+                                    class="btn btn-primary" value="Sửa">
                             </div>
 
                         </div>
