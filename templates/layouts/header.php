@@ -68,9 +68,9 @@
                             <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
                             <!-- Search Form -->
                             <div class="search-top">
-                                <form class="search-form">
+                                <form action="?action=search" method="GET">
                                     <input type="text" placeholder="Search here..." name="search">
-                                    <button value="search" type="submit"><i class="ti-search"></i></button>
+                                    <button type="submit"><i class="ti-search"></i></button>
                                 </form>
                             </div>
                             <!--/ End Search Form -->
@@ -81,9 +81,9 @@
                     <div class="col-lg-8 col-md-7 col-12">
                         <div class="search-bar-top">
                             <div class="search-bar">
-                                <form>
+                                <form action="?action=search" method="GET">
                                     <input name="search" placeholder="Tìm kiếm sản phẩm....." type="search">
-                                    <button class="btnn"><i class="ti-search"></i></button>
+                                    <button class="btnn" type="submit"><i class="ti-search"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -96,10 +96,20 @@
                                         aria-hidden="true"></i></a>
                             </div>
                             <div class="sinlge-bar shopping">
-                                <a href="#" class="single-icon"><i class="ti-bag"></i> <span
-                                        class="total-count">2</span></a>
+                                <a href="?action=cart" class="single-icon"><i class="ti-bag"></i>
+                                    <span class="total-count">
+                                        <?php                              
+                                            if(isset($_SESSION['cart'])){
+                                                $number = $_SESSION['cart'];
+                                                echo count($number);
+                                            }else{
+                                                echo 0;
+                                            }
+                                        ?>
+                                    </span>
+                                </a>
                                 <!-- Shopping Item -->
-                                <div class="shopping-item">
+                                <!-- <div class="shopping-item">
                                     <div class="dropdown-cart-header">
                                         <span>2 Items</span>
                                         <a href="#">View Cart</a>
@@ -129,7 +139,7 @@
                                         </div>
                                         <a href="checkout.html" class="btn animate">Checkout</a>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!--/ End Shopping Item -->
                             </div>
                         </div>

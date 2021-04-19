@@ -3,6 +3,7 @@
 $url = $_SERVER['REQUEST_URI'];
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 
+
 if ($url == "/book_project/") {
     header('Location: /book_project/?action=home');
 }
@@ -32,10 +33,17 @@ if ($action == 'home') {
     $homeController->cart();
 } else if ($action == 'order') {
     $homeController->order();
+}else if ($action == 'payment') {
+    $homeController->payment();
 } else if (strstr($action, 'deleteCartId')) {
     $id = explode('-', strstr($action, 'deleteCartId'));
     $homeController->deleteCart($id[1]);
+}else if ($action == 'success') {
+    $homeController->success();
+}else if($_GET['search']){
+    $homeController->search();
 }
+
 
 // Admin Page
 
