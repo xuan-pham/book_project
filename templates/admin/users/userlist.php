@@ -24,26 +24,25 @@
                         </div>
                     </div>
                     <?php endif; ?>
-                    <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Tài Khoản</th>
-                                    <th>Mật khẩu</th>
-                                    <th>Họ </th>
-                                    <th>Tên</th>
-                                    <th>Số Điện Thoại</th>
-                                    <th>Ngày Sinh</th>
-                                    <th>Giới Tính</th>
-                                    <th>Quyền</th>
-                                    <th>Ngày Thêm</th>
-                                    <th>Ngày Cập nhật</th>
-                                    <th>Chức Năng</th>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tài Khoản</th>
 
-                                </tr>
-                            </thead>
-                            <?php
+                                <th>Họ </th>
+                                <th>Tên</th>
+                                <th>Số Điện Thoại</th>
+                                <th>Ngày Sinh</th>
+                                <th>Giới Tính</th>
+                                <th>Quyền</th>
+                                <th>Ngày Thêm</th>
+                                <th>Ngày Cập nhật</th>
+                                <th>Chức Năng</th>
+
+                            </tr>
+                        </thead>
+                        <?php
                         $host = 'localhost';
                         $dbname = 'qlbansach';
                         $user = 'root';
@@ -53,33 +52,43 @@
                         $query = "SELECT * FROM user";
                         $result = $conn->query($query);
                         ?>
-                            <?php foreach ($result as $users) : ?>
-                            <tbody>
-                                <tr>
-                                    <th><?= $users['id'] ?></th>
-                                    <th><?= $users['username'] ?></th>
-                                    <th><?= $users['password'] ?></th>
-                                    <th><?= $users['firstName'] ?></th>
-                                    <th><?= $users['lastName'] ?></th>
-                                    <th><?= $users['phone'] ?></th>
-                                    <th><?= $users['birthday'] ?></th>
-                                    <th><?= $users['gender'] ?></th>
-                                    <th><?= $users['id_role'] ?></th>
-                                    <th><?= $users['created_at'] ?></th>
-                                    <th><?= $users['updated_at'] ?></th>
-                                    <th class="text-center">
-                                        <a onclick="return confirm('Bạn có muốn xóa?')"
-                                            href="templates/admin/users/delete.php?deleteId=<?= $users['id'] ?>">
-                                            <i style="margin-right: 10px;" class="fa fa-trash"
-                                                aria-hidden="true"></i></a>
-                                        <a href="?action=fixuserId=<?= $users['id'] ?> "><i style="margin-left: 20px;"
-                                                class="fa fa-edit" aria-hidden="true"></i></a>
-                                    </th>
-                                </tr>
-                            </tbody>
-                            <?php endforeach; ?>
-                        </table>
-                    </div>
+                        <?php foreach ($result as $users) : ?>
+                        <tbody>
+                            <tr>
+                                <th><?= $users['id'] ?></th>
+                                <th><?= $users['username'] ?></th>
+
+                                <th><?= $users['firstName'] ?></th>
+                                <th><?= $users['lastName'] ?></th>
+                                <th><?= $users['phone'] ?></th>
+                                <th><?= $users['birthday'] ?></th>
+                                <th><?= $users['gender'] ?></th>
+                                <th> <?php
+                                            if ($users['id_role'] == 1) {
+                                                echo 'Master';
+                                            } else if ($users['id_role'] == 2) {
+                                                echo 'Product Management';
+                                            } else if ($users['id_role'] == 3) {
+                                                echo 'Post Management';
+                                            } else {
+                                                echo 'user';
+                                            }
+
+                                            ?></th>
+                                <th><?= $users['created_at'] ?></th>
+                                <th><?= $users['updated_at'] ?></th>
+                                <th>
+                                    <a href="?action=fixuserId=<?= $users['id'] ?> "><i style="margin-left: 20px;"
+                                            class="fa fa-edit" aria-hidden="true"></i></a>
+                                    <a onclick="return confirm('Bạn có muốn xóa?')"
+                                        href="templates/admin/users/delete.php?deleteId=<?= $users['id'] ?>">
+                                        <i style="margin-left: 10px;" class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                </th>
+                            </tr>
+                        </tbody>
+                        <?php endforeach; ?>
+                    </table>
                 </div>
             </div>
         </div>
