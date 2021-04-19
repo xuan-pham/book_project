@@ -86,7 +86,6 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
 -- Cấu trúc bảng cho bảng `order_detail`
 --
 
@@ -102,8 +101,6 @@ CREATE TABLE `order_detail` (
 -- --------------------------------------------------------
 
 --
-=======
->>>>>>> 568918070590c65b84fd684e7fec9dedd0439fb7
 -- Cấu trúc bảng cho bảng `post`
 --
 
@@ -352,15 +349,12 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
-<<<<<<< HEAD
 -- Chỉ mục cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`id`);
 
 --
-=======
->>>>>>> 568918070590c65b84fd684e7fec9dedd0439fb7
 -- Chỉ mục cho bảng `post`
 --
 ALTER TABLE `post`
@@ -442,15 +436,12 @@ ALTER TABLE `orders`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
 
 --
-<<<<<<< HEAD
 -- AUTO_INCREMENT cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
 
 --
-=======
->>>>>>> 568918070590c65b84fd684e7fec9dedd0439fb7
 -- AUTO_INCREMENT cho bảng `post`
 --
 ALTER TABLE `post`
