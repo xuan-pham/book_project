@@ -1,4 +1,6 @@
 <?php include('templates/admin/layouts/header.php'); ?>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <script src="templates/admin/products/ckeditor/ckeditor.js" type="text/javascript"></script>
 <?php
 session_start();
 include('models/admin/ProductModel.php'); ?>
@@ -104,13 +106,20 @@ $authorList = $conn->query("SELECT * FROM author");
                                 <label class="col-md-4 control-label" for="product_name_fr"> Miêu tả sản
                                     phẩm</label>
                                 <div class="col-md-4">
-                                    <input id="product_name_fr" name="detail" style="width: 130%;"
+                                    <input id="product_name_fr" name="decription" style="width: 130%;"
                                         class="form-control input-md"
-                                        value="<?Php echo '' . $editProduct['detail'] . ''; ?>" type="text">
+                                        value="<?Php echo '' . $editProduct['decription'] . ''; ?>" type="text">
 
                                 </div>
                             </div>
-
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="detail">Chi tiết sản phẩm</label>
+                                <div class="col-md-4">
+                         
+                                 <textarea style="width:130%"  name="detail" id="detail"><?Php echo '' . $editProduct['detail'] . ''; ?></textarea>
+                                 <script>CKEDITOR.replace('detail');</script>
+                                </div>
+                            </div>
                             <!-- Loại sản phẩm -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="product_categorie"> Loại sản phẩm</label>

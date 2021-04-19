@@ -3,6 +3,11 @@
 <?php
 include 'models/admin/ProductModel.php';
 ?>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+   <script src="ckeditor/ckeditor.js"></script>
+</head>
 <div class="content-page">
     <div class="content">
         <div class="row">
@@ -29,7 +34,7 @@ include 'models/admin/ProductModel.php';
                         </div>
                         <?php endif; ?>
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered text-center">
                                 <thead>
                                     <tr>
                                         <th>STT</th>
@@ -37,7 +42,6 @@ include 'models/admin/ProductModel.php';
                                         <th>Tên</th>
                                         <th>Số Lượng</th>
                                         <th>Mô Tả</th>
-                                        <th>Chi Tiết</th>
                                         <th>Giá</th>
                                         <th>Chức Năng</th>
                                         <th>Ngày Xuất Bản</th>
@@ -60,7 +64,6 @@ include 'models/admin/ProductModel.php';
                                         <td><?= $result['name'] ?></td>
                                         <td><?= $result['quantity'] ?></td>
                                         <td><?= $result['decription'] ?></td>
-                                        <td><?= $result['detail'] ?></td>
                                         <td><?= $result['price'] ?></td>
                                         <th scope="row" class="text-center">
                                         <?php
@@ -80,7 +83,7 @@ include 'models/admin/ProductModel.php';
                                                 class="fa fa-edit" aria-hidden="true"></i></a>
                                         &ensp;
                                         <a onclick="return confirm('Bạn có muốn xóa?')"
-                                            href="templates/admin/postCategory/delete.php?deleteId=<?= $result['id'] ?>"><i
+                                            href="templates/admin/products/delete.php?deleteId=<?= $result['id'] ?>"><i
                                                 class="fa fa-trash" aria-hidden="true"></i></a>
                                     </td>
                                     </tr>

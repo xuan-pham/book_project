@@ -1,6 +1,10 @@
 <?php include('templates/admin/layouts/header.php'); ?>
 
 
+
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <script src="templates/admin/products/ckeditor/ckeditor.js" type="text/javascript"></script>
+
 <?php
 if (isset($_POST['btnSubmit'])) {
     $name = $_POST['name'];
@@ -77,12 +81,19 @@ $authorList = $conn->query("SELECT * FROM author");
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="product_name_fr"> Miêu tả sản phẩm</label>
                                 <div class="col-md-4">
-                                    <input id="product_name_fr" required="" style="width: 130%;" name="detail"
-                                        class="form-control input-md" type="text">
+                                <textarea name="decription" cols="54" id="decription"></textarea>
 
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="detail">Chi tiết sản phẩm</label>
+                                <div class="col-md-4">
+                         
+                                 <textarea name="detail" id="detail"></textarea>
+                                 <script>CKEDITOR.replace('detail');</script>
+                                </div>
+                            </div>
                             <!-- Loại sản phẩm -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="product_categorie"> Loại sản phẩm</label>
@@ -129,14 +140,14 @@ $authorList = $conn->query("SELECT * FROM author");
                             </div>
 
                             <!-- Số lượng-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="quantity"> Số lượng</label>
-                                <div class="col-md-4">
+                         
+                          
+                             
                                     <input id="quantity" name="quantity" style="width: 130%;"
-                                        class="form-control input-md" required="" type="number">
+                                        class="form-control input-md" value="1" required="" type="hidden">
 
-                                </div>
-                            </div>
+                         
+                          
 
                             <!-- Giá tiền -->
                             <div class="form-group">
@@ -147,16 +158,6 @@ $authorList = $conn->query("SELECT * FROM author");
 
                                 </div>
                             </div>
-
-                            <!-- Textarea -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="decription">Miêu tả chi tiết sản phẩm</label>
-                                <div class="col-md-4">
-                                    <textarea class="form-control" style="width: 130%;" id="decription"
-                                        name="decription"></textarea>
-                                </div>
-                            </div>
-
                             <!-- Status -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="status">Trạng Thái</label>
@@ -182,7 +183,7 @@ $authorList = $conn->query("SELECT * FROM author");
 
                             <div class="form-group">
                                 <input type="submit" id="btnSubmit" style="margin-left: 14px;" name="btnSubmit"
-                                    class="btn btn-primary" value="Thêm">
+                                    class="btn btn-primary" value="Sửa">
                             </div>
 
                         </div>
