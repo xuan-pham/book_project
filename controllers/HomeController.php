@@ -137,7 +137,7 @@ class HomeController
         $note = $_POST['note'];
         require_once('models/ProductModel.php');
         $productModel = new ProductModel();
-        $product = $productModel->orderProductByid($productId, $quantity, $price, $firstname, $lastname,$address, $phone, $email, $note);
+        $product = $productModel->orderProductByid($firstname, $lastname,$address, $phone, $email, $note);
 
 
         // print_r($productId);die();

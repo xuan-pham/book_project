@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 17, 2021 lúc 09:13 AM
--- Phiên bản máy phục vụ: 10.4.17-MariaDB
--- Phiên bản PHP: 8.0.0
+-- Host: 127.0.0.1
+-- Generation Time: Apr 19, 2021 at 08:14 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `qlbansach`
+-- Database: `qlbansach`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `author`
+-- Table structure for table `author`
 --
 
 CREATE TABLE `author` (
@@ -36,7 +37,7 @@ CREATE TABLE `author` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `author`
+-- Dumping data for table `author`
 --
 
 INSERT INTO `author` (`id`, `fullname`, `gender`, `created_at`, `updated_at`) VALUES
@@ -46,7 +47,7 @@ INSERT INTO `author` (`id`, `fullname`, `gender`, `created_at`, `updated_at`) VA
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `banner`
+-- Table structure for table `banner`
 --
 
 CREATE TABLE `banner` (
@@ -57,7 +58,7 @@ CREATE TABLE `banner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `banner`
+-- Dumping data for table `banner`
 --
 
 INSERT INTO `banner` (`id`, `image`, `created_at`, `updated_at`) VALUES
@@ -68,13 +69,13 @@ INSERT INTO `banner` (`id`, `image`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders`
+-- Table structure for table `order`
 --
 
-CREATE TABLE `orders` (
+CREATE TABLE `order` (
   `id` int(9) NOT NULL,
-  `id_Product` int(9) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -83,33 +84,50 @@ CREATE TABLE `orders` (
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `firstname`, `lastname`, `address`, `phone`, `email`, `note`, `created_at`, `updated_at`) VALUES
+(11, 'Phùng', 'Phan Công', '56b/73 Lạc Long Quân, Phường 3, Quận 11', '0924159113', 'phungphancong1590@gmail.com', 'giao hàng giờ hành chính', '2021-04-20 01:13:25', '2021-04-20 01:13:25');
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `order_detail`
+-- Table structure for table `order_detail`
 --
 
 CREATE TABLE `order_detail` (
   `id` int(9) NOT NULL,
+  `order_id` int(9) NOT NULL,
   `product_id` int(9) NOT NULL,
-  `product_order` int(9) NOT NULL,
-  `quantity` int(9) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` double NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
+(3, 11, 3, 1, 240000, '2021-04-20 01:13:25', '2021-04-20 01:13:25'),
+(4, 11, 2, 3, 200000, '2021-04-20 01:13:26', '2021-04-20 01:13:26'),
+(5, 11, 8, 1, 230000, '2021-04-20 01:13:26', '2021-04-20 01:13:26');
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `post`
+-- Table structure for table `post`
 --
 
 CREATE TABLE `post` (
   `id` int(9) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `content` text NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` int(1) NOT NULL,
   `id_PostCategory` int(9) NOT NULL,
   `created_at` datetime NOT NULL,
@@ -117,41 +135,63 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `post`
+-- Dumping data for table `post`
 --
 
 INSERT INTO `post` (`id`, `title`, `image`, `description`, `content`, `status`, `id_PostCategory`, `created_at`, `updated_at`) VALUES
-(1, 'Đi Trốn – Nỗi buồn chiến tranh', 'blog1.jpg', 'Tác phẩm thứ hai của Bình Ca, vẫn là một cuốn sách viết về “lứa chúng tôi”, về những đứa trẻ con nhà cán bộ kháng chiến, sinh vào đầu thập niên 1950 ở vùng tự do… Thế nhưng, nếu “Quân khu Nam Đồng” là tập hồi ký của một tập thể, thì “Đi trốn” là chuyến ph', 'Đọc thêm:\r\n\r\nQuân Khu Nam Đồng – Tuổi thơ của những ông “tướng” con.\r\nBến không chồng – “Hòn vọng phu” thời hiện đại.\r\nNgười Tị Nạn – Tiếng vọng nơi góc biển.\r\nĐơn Tuyến – Tiểu thuyết chân dung Nguyễn Đình Ngọc.\r\nCũng bởi thần hồn nát thần tính.\r\nTrên nền lịch sử đất nước vào khoảng những năm 1965 – 1966, sau khi Hiệp định Geneva được ký kết chính thức chấm dứt chế độ thực dân Pháp tại Đông Dương, miền Bắc đang trong giai đoạn xây dựng và chống chiến tranh phá hoại của quân đội Mỹ. Dưới mưa bom lửa đạn, những đứa trẻ thời chiến thuộc vùng tự do không còn được sống êm ấm mà phải đi sơ tán về nông thôn và rừng núi.\r\n\r\n“Đi trốn” chia làm 3 phần với 26 chương, là một cuộc đi trốn đúng nghĩa đen của những cậu nhóc con cán bộ kháng chiến vốn mang gốc gác thị thành đang tập trung ở trại sơ tán Khe Khao. Sở dĩ phải tính đến nước đi trốn là vì mấy ông lính con trót nghịch dại lấy trộm vũ khí ở kho đạn dược của bộ đội, rồi cũng bởi thần hồn nát thần tính mà lo sợ bị bỏ tù. Cả nhóm Tự Thắng, Việt Bắc, Linh, Hoài Nam (về sau Thảo thay Nam) dưới sự dẫn đường của Sơn – cậu bé người địa phương, đã lên kế hoạch bỏ vào rừng đi trốn một thời gian.\r\n\r\nMọi chuyện sẽ chỉ là một chuyến đi trốn vui vui của con trẻ, cho đến khi Mỹ đánh bom làm sập mất lối vào hang động, khiến cả bọn vừa bị thương vừa phải mau chóng tìm cách thoát ra, đẩy tất cả vào cuộc phiêu lưu thực sự để tìm đường sống trong hiểm nguy.\r\n\r\nVẫn là giọng văn rất Bình Ca, thiệt thà đến là lạ, hóm hỉnh đến là duyên. Từ những mẫu chuyện sinh hoạt đời thường ở trại Khe Khao, hay chuyến đi vượt suối băng rừng, đến những câu chuyện quá khứ về gia đình của từng cô cậu nhóc, nhà văn dùng thứ ngôn từ mộc mạc đậm chất lính để viết nên “một câu chuyện sinh động và cảm cộng” – chữ của nhà văn Bảo Ninh.', 0, 2, '2021-03-30 00:00:00', '2021-03-30 00:00:00'),
-(2, 'Cảm ơn người lớn – Cuốn bí kíp về lòng bao dung giữa hai thế hệ', 'blog2.jpg', '“Nếu biết con cái là một lũ sinh vật lúc nào cũng hào hứng làm những chuyện ngốc nghếch sau lưng đấng sinh thành, chắc các bậc làm cha làm mẹ phải họp hành căng thẳng để bàn tính xem có nên đẻ ra bọn tôi hay không. […] Ờ, có lẽ điều đáng kể nhất mà người ', '“Cảm ơn người lớn” chỉ vỏn vẹn gồm 264 trang, chia làm 19 chương, là sự kế thừa và tiếp nối thành công cảm xúc của mạch truyện “Cho tôi xin một vé đi tuổi thơ” – một hiện tượng văn học của Nguyễn Nhật Ánh phát hành 10 năm trước.\r\n\r\nVẫn là những cu Mùi, cái Tủn, Tí Sún và Hải cò, vẫn là những câu chuyện nho nhỏ, những trò nghịch ngợm đáng yêu, vẫn duyên, vẫn điên điên như giọng văn Nguyễn Nhật Ánh vốn thế. Thế nhưng cuốn sách này có một khung sườn chắc chắn hơn, được xây đắp bởi những chiêm nghiệm, những trăn trở khi trẻ con đã không còn là trẻ con nữa, mà phải bước qua nấc thang thời gian để trở thành người lớn.\r\n\r\nTác giả thông qua nhân vật cu Mùi để so sánh hai thế giới tưởng chừng cách biệt lại luôn giao hoà ấy, rồi tài tình vẫy thêm vết màu loang ngẫu hứng gợi những suy tư về tình yêu, hôn nhân, tiền bạc, sức khỏe, thời gian, cái chết… Những nỗi ám ảnh muôn thuở của con người.', 0, 2, '2021-03-30 00:00:00', '2021-03-30 00:00:00'),
-(3, 'Lấy Nhau Vì Tình – Yêu là để hạnh phúc!', 'blog3.jpg', 'Mỗi tình tiết trong “Lấy nhau vì tình” là lịch sử giao thời, là văn hóa giao thoa, là phong kiến bó buộc, là Âu hóa bung ra, là trung dung nửa vời. Đây là cuốn tiểu thuyết tâm lý xã hội, có tả chân xã hội một cách sinh động và trung thành, có phân tích tâ', 'Việt Nam những năm 30 của thế kỷ XX là giai đoạn xã hội lai căng nửa mùa, thanh niên nam nữ chạy theo lối sống tân thời, muốn thoát ly tục lệ phong kiến, muốn chống lại truyền thống “cha mẹ đặt đâu con ngồi đấy”, đại đa số người trẻ đó cho rằng lấy nhau vì tình mới là hợp lý và mới có được hạnh phúc vợ chồng.\r\n\r\n[Vũ Trọng Phụng] Giông Tố: “Breaking bad” phiên bản Việt Nam thời Pháp Thuộc\r\nSố Đỏ – Đứa Con Đáng Tự Hào Của “Ông Vua Phóng Sự Đất Bắc” Vũ Trọng Phụng\r\nHôn nhân phong kiến trong buổi giao thời đã sinh ra không ít bi kịch, các tác giả của Tự lực văn đoàn đã lên án nó và góp phần đào thải nó. Tuy nhiên, tôn chỉ của trường phái văn học Tự lực văn đoàn vốn là bài phong kiến, bài Nho giáo, hô hào cải cách xã hội và ủng hộ Âu hóa, nên những tác phẩm của họ đắm chìm trong lãng mạn, say sưa trong diễm tình, như ru con người chứ không hề làm thức tỉnh con người.\r\n\r\nChỉ có Vũ Trọng Phụng với kim chỉ nam “tả chân” trong sự nghiệp cầm bút, là đủ khách quan, đủ bình tĩnh, và đủ sáng suốt để đặt ra câu hỏi: Hôn nhân vì tình yêu có phải bao giờ cũng tốt đẹp, cũng đem đến hạnh phúc hay không? Làm thế nào để dùng tình yêu mưu cầu hạnh phúc?\r\n\r\n“Lấy nhau vì tình” ra đời năm 1937 đã trả lời cho những câu hỏi này.\r\n\r\n', 0, 2, '2021-03-30 00:00:00', '2021-03-30 00:00:00');
+(1, 'NHỮNG HỖN LOẠN CHẤT CHỒNG BÊN TRONG NGƯỜI TRẺ', 'nxbtre_full_14152021_091502.jpg', '<p><em>Bầy r&ugrave;a chồng chất</em>&nbsp;l&agrave; c&acirc;u chuyện của Aza Holmes, một c&ocirc; g&aacute;i 16 tuổi lu&ocirc;n loay hoay với căn bệnh t&acirc;m l&yacute; của m&igrave;nh v&agrave; bị mắc kẹt trong những suy nghĩ hỗn loạn của bản th&acirc', 'Thông qua nhân vật Aza, \"Bầy rùa chồng chất\" tái hiện bức tranh tâm lý những người trẻ đang sống trong thế giới phẳng.', 0, 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, '60 GIÂY VÒNG QUANH THẾ GIỚI CÙNG NAS DAILY', 'nxbtre_full_16022021_090241.jpg', '<p>Năm 2016, Nas Daily, ch&agrave;ng trai người Israel gốc Palestine, với tấm bằng cử nh&acirc;n của Đại học Harvard, Mỹ, tr&ecirc;n tay, đ&atilde; từ bỏ c&ocirc;ng việc của m&igrave;nh tại một c&ocirc;ng ty nổi tiếng để đi v&ograve;ng quanh thế giới.</p>', 'Một chàng trai đã bỏ việc để đi khắp 64 quốc gia trên thế giới trong vòng 1.000 ngày. Mỗi ngày, anh đăng tải một video dài 60 giây về đất nước mình đến.', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 'NGÀY SÁCH VN LẦN 8 - NGÀY SÁCH VÀ BẢN QUYỀN THẾ GIỚI- BẠN CÓ THỂ THAM GIA!', 'nxbtre_full_16372021_093739.jpg', '<p>Tại H&agrave; Nội:</p>\r\n\r\n<p>1. Chương tr&igrave;nh triển l&atilde;m giới thiệu s&aacute;ch - Tại thư viện Quốc gia Việt Nam.</p>\r\n\r\n<p>Thời gian: 17-24/4/2021</p>\r\n\r\n<p>Địa điểm: 31 Tr&agrave;ng Thi, Ho&agrave;n Kiếm, H&agrave; Nội.</p>\r\n\r\n<p>2.&nbsp;', 'Trong khuôn khổ hoạt động chào mừng Ngày sách VN lần thứ 8 (21/4), Ngày Sách và Bản quyền Thế giới (23/4), NXB Trẻ mời bạn đọc cùng tham dự các hoạt động và sự kiện của NXB như sau:', 0, 9, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 'ROBOT CÓ THAY THẾ ĐƯỢC NGƯỜI THẦY?', 'nxbtre_full_20372020_123727.jpg', '<p>Cuốn s&aacute;ch&nbsp;<em>Dạy học trong C&aacute;ch mạng c&ocirc;ng nghiệp lần thứ tư</em>&nbsp;do Nh&agrave; xuất bản Trẻ ấn h&agrave;nh (tựa gốc:&nbsp;<em>Teching in the Fourth Industrial Revolution,</em>&nbsp;tập hợp c&aacute;c b&agrave;i viết của s', 'Cuộc Cách mạng công nghiệp lần thứ tư với sự can dự ngày càng sâu của trí tuệ nhân tạo (AI) vào giáo dục, nảy sinh những băn khoăn: liệu nghề giáo truyền thống sẽ bị “giải tán”; liệu robot có thể thay thế người thầy?', 0, 10, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(9, 'TIỂU THUYẾT VỀ 18 NĂM LÀM QUAN CỦA NGUYỄN DU', 'nxbtre_full_29002020_100012.jpg', '<p><em>Truyện Kiều</em>&nbsp;l&agrave; t&aacute;c phẩm xuất sắc của nền văn học Việt Nam. Cảm thương cho số phận của n&agrave;ng Kiều, người đọc ở nhiều thế hệ c&agrave;ng mến phục t&agrave;i năng của Nguyễn Du.</p>\r\n\r\n<p>Sinh trưởng trong thời kỳ m&agrav', 'Tác phẩm viết về đề tài lịch sử không chỉ đề cập các sự kiện diễn ra trong quá khứ. Bằng sự nhạy cảm của mình, nhà văn tái hiện bi kịch của nhân tài thời loạn.', 0, 11, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(10, 'CUỐN SÁCH BÁN CHẠY 6 TRIỆU BẢN TRÊN THẾ GIỚI ĐƯỢC PHÁT HÀNH TIẾNG VIỆT', 'nxbtre_full_19362020_103640.jpg', '<p>Nhưng khi một vụ &aacute;n mạng xảy ra, tất cả đổ dồn v&agrave;o c&ocirc; b&eacute; hoang d&atilde; v&agrave; đơn độc ấy. Lấy vụ &aacute;n l&agrave;m trung t&acirc;m cuốn s&aacute;ch, t&aacute;c giả Delia Owens dẫn dắt người đọc kh&aacute;m ph&aacute; ', 'Cuốn sách \"Xa ngoài kia nơi loài tôm hát\" của Delia Owens là một tiểu thuyết lãng mạn đầy ắp hơi thở thiên nhiên đẹp đẽ và đau đớn. Cuốn sách Xa ngoài kia nơi loài tôm hát (Tên gốc: Where the Crawdads Sing) lấy bối cảnh những năm 1950 về cô gái trẻ Kya Clark ở Bắc Caroline, nước Mỹ. Kya được biết với cái tên \"Cô gái đầm lầy\" bởi cô sống một mình giữa thiên nhiên, chỉ kết nối với một vài người.', 0, 9, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(11, 'NGUYỄN NHẬT ÁNH, CON CHIM XANH TÌNH NGHĨA VÀ CÁ TÍNH SÀI GÒN', 'nxbtre_full_11232020_022301.jpg', '<p>Trong buổi ra mắt s&aacute;ch h&ocirc;m 10-11, t&aacute;c giả Nguyễn Nhật &Aacute;nh b&agrave;y tỏ sự h&agrave;o hứng khi đ&atilde; hơn chục năm &ocirc;ng mới lại lấy bối cảnh S&agrave;i G&ograve;n - TP.HCM cho một truyện d&agrave;i.</p>\r\n\r\n<p>&quot;S&', 'Con chim xanh biếc bay về - truyện dài mới của Nguyễn Nhật Ánh chính thức phát hành hôm nay 11-11, đưa người đọc trở lại bối cảnh Sài Gòn hiện tại với những mảng đời tình - nghĩa đan nhau.', 0, 11, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(14, ' TỪ MIẾNG NGON ĐẾN MIỀN NHỚ', 'nxbtre_full_16032020_100332.jpg', '<p>Tuy nhi&ecirc;n chỉ cần bắt đầu bằng c&aacute;ch lật ngẫu nhi&ecirc;n một tản văn bất kỳ trong&nbsp;<em>Ăn để nhớ</em>, người đọc dễ bị cuốn h&uacute;t bởi lời văn nữ t&iacute;nh của t&aacute;c giả Kim Em.</p>\r\n\r\n<p>C&aacute;c m&oacute;n ăn d&acirc;n d', 'Với \"Ăn để nhớ\", người đọc được “nếm” miếng ngon đậm vị miền Trung qua lời văn tinh tế. Nếu chỉ đọc tựa và mục lục, người ta dễ nhầm lẫn Ăn để nhớ là tập tản văn kể về những trải nghiệm ẩm thực riêng tư của tác giả.', 0, 11, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(15, 'DU HÀNH VÀO VŨ TRỤ - HIỂU BẢN CHẤT CUỘC SỐNG', 'nxbtre_full_27502020_095019.jpg', '<p>Một đ&ecirc;m</p>\r\n\r\n<p>&ldquo;Trong vũ trụ, kh&ocirc;ng c&oacute; g&igrave; l&agrave; bất động, mọi thứ lu&ocirc;n thay đổi, mọi thứ đều chuyển động, mọi thứ đều tiến h&oacute;a, mọi thứ đều phi thường. Sở dĩ ch&uacute;ng ta kh&ocirc;ng cảm nhận được ', 'NXBTRE - Cái học về vũ trụ không phải là cái học xa rời thực tế. Hiểu về vũ trụ cũng có nghĩa là hiểu về bản chất cuộc sống của chúng ta. Những tựa hay trong tủ sách Khoa học - Khám phá dưới đây đều là những tác phẩm khoa học nổi tiếng trong nước và trên thế giới, giới thiệu đến bạn đọc những kiến thức mới và những nỗ lực không ngừng của bao thế hệ trong hành trình nghiên cứu khoa học.', 0, 10, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(16, 'NHỮNG CUỐN SÁCH HAY CỦA STEPHEN HAWKING AI CŨNG NÊN ĐỌC', 'nxbtre_full_08092020_090953.jpg', '<p>Stephen William Hawking l&agrave; một nh&agrave; vật l&yacute; l&yacute; thuyết, vũ trụ học, t&aacute;c giả viết s&aacute;ch khoa học thường thức người Anh, nguy&ecirc;n Gi&aacute;m đốc Nghi&ecirc;n cứu tại Trung t&acirc;m Vũ trụ học l&yacute; thuyết t', 'Stephen Hawking nổi tiếng với việc viết những cuốn sách phổ biến khoa học trong đó ông thảo luận lý thuyết của ông cũng như vũ trụ học nói chung.', 0, 10, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(17, 'KIMI RAIKKONEN - TAY ĐUA VÔ ĐỊCH F1', 'nxbtre_full_02492020_084945.jpg', '<p>Kh&ocirc;ng một m&eacute;t n&agrave;o</p>\r\n\r\n<p>Năm 2017, Grand Prix Malaysia.</p>\r\n\r\n<p>Xe giật mạnh về ph&iacute;a trước. Ngay sau khi họ ra khỏi đoạn đường nối kh&aacute;ch sạn v&agrave;o xa lộ, Kimi tăng tốc l&ecirc;n hơn 100km/h. Tay tr&aacute;i a', 'NXBTRE- Kimi Raikkonen là nhà vô địch môn đua xe F1 người Phần Lan. Anh bắt đầu sự nghiệp đua xe F1 ở Sauber và đầu quân cho các đội McLaren, Ferrari, Lotus. Quyển sách Kimi Raikkonen - Tay đua vô địch F1 là ký sự nhân vật, theo chân Kimi trên đường đua và cả trong đời thường để cho người đọc thấy được những điều phía sau ánh hào quang của một tay đua chuyên nghiệp.', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(18, 'NHÀ VĂN LÊ VĂN NGHĨA: TÔI GHI LẠI NHỮNG ĐIỀU TÔI BIẾT VỀ MỘT SÀI GÒN. ', 'nxbtre_full_06212020_102128.jpg', '<p><strong>Nh&agrave; văn L&ecirc; văn Nghĩa:&nbsp;</strong>C&acirc;u hỏi nầy c&oacute; hai phần. Xin được trả lời từng phần a) Thực ra, t&ocirc;i cũng đ&acirc;u biết nhiều về S&agrave;ig&ograve;n đ&acirc;u v&igrave; S&agrave;i g&ograve;n rất lớn lại mu&o', 'Sài Gòn – Chuyện xưa mà chưa cũ – tập tạp bút mới nhất của nhà văn Lê Văn Nghĩa vừa được NXB Trẻ phát hành trong Tháng ba sách Trẻ 2020 - cùng với chùm sách về Sài Gòn của ông, giúp bạn đọc trẻ tuổi hiểu về sài Gòn ở một góc độ rất khác, và người đã lớn, thì bâng khuâng nhớ về một sài Gòn xưa. Nhà văn Lê Văn Nghĩa không tham vọng tái hiện hết không gian văn hóa Sài Gòn xưa. Ông cũng tự nhận, Sài Gòn với ông, chỉ là Chợ Lớn, là con đường nhỏ Phạm Văn Chí, là trường Tiểu học Bình Tây, là bến Bình Đông với những cái \"chành\" (kho) chứa gạo thương hồ đẫm mồ hôi những người làm nghề vác gạo, là những căn nhà Hoa nhưng có kiến trúc theo kiểu Pháp.', 0, 11, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(19, 'VƯƠNG HỒNG SỂN VẪN QUYẾN RŨ VỀ CHUYỆN ĐỊA DANH VÀ LỊCH SỬ NAM KỲ', 'nxbtre_full_12172020_011753.jpg', '<p>Cụ&nbsp;<a href=\"https://tuoitre.vn/vuong-hong-sen.html\" target=\"_blank\">Vương Hồng Sển</a>&nbsp;viết quyển n&agrave;y từ năm 1986, đến nay đ&atilde; ng&oacute;t 34 năm s&aacute;ch mới xuất bản, đ&acirc;y cũng l&agrave; một c&acirc;u chuyện.</p>\r\n\r\n<p>', 'Tháng 3 năm nay, tên tuổi Vương Hồng Sển trở lại với bạn đọc qua quyển di cảo Chuyện cũ ở Sốc Trăng.Lại bắt gặp giọng kể chuyện nhẩn nha dây cà ra dây muống mà vẫn rất duyên của ông già gốc lục tỉnh. Qua từng trang sách, người đọc cảm như mình đang đối diện với một ông già vừa \"lợi hại\" vừa xuề xòa, thế nên sẵn sàng lót dép ngồi hóng chuyện. Mà toàn chuyện hay, chuyện có ích cho sự học.', 0, 11, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(20, 'ĐỒNG HỒ XƯƠNG : VỪA THỰC VỪA ẢO PHẢN ÁNH HƠI THỞ THỜI ĐẠI CỦA CHÚNG TA VỚI NHIỀU ĐIỀU ĐÁNG SUY NGẪM...', 'nxbtre_full_16282020_012837.jpg', '<p>V&agrave;o năm 1984 khi bạn n&oacute;i với ai đ&oacute; rằng con người c&oacute; thể tạo ra một thiết bị gi&uacute;p gọi v&agrave; nh&igrave;n thấy nhau ở bất kỳ nơi đ&acirc;u, bất kỳ l&uacute;c n&agrave;o họ muốn. Chắc chắn nhiều người nghĩ đ&oacute; ', 'Khi khép lại trang cuối cùng của đồng hồ xương mình nhận ra rằng thật khó để ai đó vạch ra một kế hoạch chi tiết cho cuộc đời. Vì chúng ta không thể biết được điều gì sẽ xảy đến vào ngày mai. Điều duy nhất chắc chắn xảy ra là quỹ thời gian của mỗi người chúng ta sẽ cạn dần và rồi chiếc đồng hồ của mỗi người cũng sẽ điểm giây cuối cùng. Nhưng đừng sợ hãi, hãy can đảm sống trọn vẹn theo cách của mình. Bởi mỗi ngày trôi qua đều có ý nghĩa riêng của nó cho dù đó là ngày tồi tệ như thế nào đi nữa. Ai rồi cũng chết cho nên nếu sự sống là một phước lành thì cái chết cũng nên được xem là một ân huệ. Bất tử đâu hẳn là hạnh phúc.', 0, 7, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(21, 'GÁY NGƯỜI THÌ LẠNH', 'nxbtre_full_20592019_015921.jpg', '<p>&nbsp;</p>\r\n\r\n<p>Hồi m&igrave;nh c&ograve;n học cấp Ba, c&ocirc; gi&aacute;o m&igrave;nh đ&atilde; từng giới thiệu cho m&igrave;nh về s&aacute;ch của c&ocirc; Tư. Nhờ lời giới thiệu ấy, m&igrave;nh đ&atilde; bắt đầu t&igrave;m đọc c&aacute;c tựa s&aacu', 'Khi cầm trên tay cuốn sách, bất giác mình có cảm giác như bản thân đang lạc vào một cánh đồng... màu xanh, cánh đồng ấy hoang sơ, trống trải, và “lạnh”. Cách trang trí bìa của Trẻ khiến mình cảm giác rằng, rồi khi mình lật tấm bìa này ra, mỗi trang viết sẽ là một nỗi xúc động.', 0, 11, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(22, 'XUẤT BẢN XUẤT BẢN  Cuốn tiểu thuyết dã sử về tài nữ Đoàn Thị Điểm', 'sach_nstgb.jpg', '<p><a href=\"https://zingnews.vn/xuat-ban.html\">XUẤT BẢN</a>&nbsp;<a href=\"https://zingnews.vn/tin-tuc-xuat-ban.html\">XUẤT BẢN</a></p>\r\n\r\n<h1>Cuốn tiểu thuyết d&atilde; sử về t&agrave;i nữ Đo&agrave;n Thị Điểm</h1>\r\n\r\n<ul>\r\n	<li><a href=\"https://zingnews.v', 'Những câu chuyện xoay quanh đề tài người nữ sĩ trong sử Việt được chia sẻ trong buổi giao lưu ra mắt sách “Nữ sĩ thời gió bụi” diễn ra tại Thư viện Quốc gia chiều ngày 16/4.', 0, 11, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(23, 'Tuần lễ sách đầu tiên tại thành phố Thủ Đức', 'Ngay_Sach_TP.HCM_Zing_1_2.jpg', '<p>Tuần lễ s&aacute;ch hưởng ứng Ng&agrave;y s&aacute;ch Việt Nam lần t&aacute;m tại TP.HCM do Sở Th&ocirc;ng tin v&agrave; Truyền th&ocirc;ng TP.HCM phối hợp UBND th&agrave;nh phố Thủ Đức, Cục Văn thư v&agrave; Lưu trữ Nh&agrave; nước (Bộ Nội vụ), Th&agr', 'Hoạt động trưng bày, triển lãm sách, ảnh lần đầu tiên được tổ chức tại thành phố Thủ Đức (TP.HCM), kể từ khi thành phố này thành lập.', 0, 9, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(24, '7 cuốn sách hay có khả năng thay đổi cuộc đời lại đang sale cực rẻ, bạn hãy tranh thủ mua ngay', 'Dac-nhan-tam.jpg', '<p>S&aacute;ch vẫn lu&ocirc;n l&agrave; kho t&agrave;ng qu&yacute; b&aacute;u gi&uacute;p ch&uacute;ng ta t&iacute;ch lũy kiến thức, thay đổi tư duy, th&aacute;i độ sống&hellip; Nhiều cuốn s&aacute;ch được xếp v&agrave;o diện kh&ocirc;ng thể kh&ocirc;ng đ', 'Đây là 7 cuốn sách thay đổi tư duy bán rất chạy mà bạn không thể bỏ qua.', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(25, 'Sách là thứ tốn tiền và tốn thời gian, nếu không biết cách đọc đúng này, bạn đừng mua sách nữa!', 'cuon-sach-danh-cho-con-gai-4.jpg', '<p>C&oacute; khi n&agrave;o bạn chỉ nh&igrave;n tr&aacute;i chanh v&agrave; rồi biết c&aacute;ch l&agrave;m nước chanh kh&ocirc;ng?</p>\r\n\r\n<p><strong><em>Thường l&agrave;, kh&ocirc;ng!</em></strong></p>\r\n\r\n<p>Vậy điều g&igrave; đ&atilde; khiến bạn nghĩ rằ', 'Tôi không khuyến khích bạn chia sách dựa trên chương hay là chủ đề, bởi vì độ dài của các chương không giống nhau, có chương dài hơn và ngược lại.', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `post_category`
+-- Table structure for table `post_category`
 --
 
 CREATE TABLE `post_category` (
   `id` int(9) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` tinyint(1) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `post_category`
+-- Dumping data for table `post_category`
 --
 
 INSERT INTO `post_category` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Review', 1, '2021-03-30 00:00:00', '2021-03-30 00:00:00'),
-(2, 'Văn học Việt Nam', 1, '2021-03-30 00:00:00', '2021-03-30 00:00:00'),
-(3, 'Văn học nước ngoài', 1, '2021-03-30 00:00:00', '2021-03-30 00:00:00');
+(4, 'Khám Phá', 1, '2021-04-19 21:29:24', '2021-04-19 16:30:54'),
+(5, 'Du Lịch', 1, '2021-04-19 21:31:21', '2021-04-19 16:32:16'),
+(6, 'Tâm Lý', 1, '2021-04-19 21:32:36', '2021-04-19 16:32:48'),
+(7, 'Tình Cảm', 1, '2021-04-19 21:48:39', '2021-04-19 16:48:56'),
+(8, 'Hài Hước', 1, '2021-04-19 21:49:22', '2021-04-19 16:49:32'),
+(9, 'Thông Báo', 1, '2021-04-19 22:04:41', '2021-04-19 17:05:07'),
+(10, 'Khoa Học', 1, '2021-04-19 22:09:33', '2021-04-19 17:09:41'),
+(11, 'Văn Học Việt Nam', 1, '2021-04-19 22:17:15', '2021-04-19 17:17:24'),
+(14, 'Ngôn Tình', 1, '2021-04-19 22:54:23', '2021-04-19 17:58:53');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -172,25 +212,25 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `name`, `image`, `quantity`, `price`, `decription`, `detail`, `status`, `featured`, `id_productCategory`, `id_Author`, `id_Publisher`, `created_at`, `updated_at`) VALUES
-(1, 'sách 01', '01.jpg', 50, 150000, 'mo ta ne', 'chi tiet ne', 1, 1, 1, 1, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(2, 'sách 02', '02.jpg', 50, 200000, 'mo ta ne', 'chi tiet ne', 1, 1, 8, 1, 2, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(3, 'sách 03', '03.jpg', 50, 240000, 'mo ta ne', 'chi tiet ne', 1, 1, 7, 1, 2, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(4, 'sách 04', '04.png', 250, 390000, 'mo ta ne', 'chi tiet ne', 1, 1, 5, 1, 2, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(5, 'sách 05', '05.jpg', 20, 1440000, 'mo ta ne', 'chi tiet ne', 1, 1, 2, 1, 2, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(6, 'sách 06', '06.jpg', 250000, 240000, 'mo ta ne', 'chi tiet ne', 1, 1, 5, 1, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(7, 'sách 07', '07.jpg', 40, 90000, 'mo ta ne', 'chi tiet ne', 1, 1, 5, 1, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(8, 'sách 08', '08.jpg', 23, 230000, 'mo ta ne', 'chi tiet ne', 1, 1, 5, 1, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(9, 'sách 09', '09.jpg', 90, 250000, 'mo ta ne', 'chi tiet ne', 1, 1, 8, 1, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(10, 'sách 10', '10.jpg', 10, 235000, 'mo ta ne', 'chi tiet ne', 1, 1, 7, 2, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00');
+(1, 'sách 01', '01.jpg', 1, 150000, 'mo ta ne', 'chi tiet ne', 1, 1, 1, 1, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(2, 'sách 02', '02.jpg', 1, 200000, 'mo ta ne', 'chi tiet ne', 1, 1, 8, 1, 2, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(3, 'sách 03', '03.jpg', 1, 240000, 'mo ta ne', 'chi tiet ne', 1, 1, 7, 1, 2, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(4, 'sách 04', '04.png', 1, 390000, 'mo ta ne', 'chi tiet ne', 1, 1, 5, 1, 2, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(5, 'sách 05', '05.jpg', 1, 1440000, 'mo ta ne', 'chi tiet ne', 1, 1, 2, 1, 2, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(6, 'sách 06', '06.jpg', 1, 240000, 'mo ta ne', 'chi tiet ne', 1, 1, 5, 1, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(7, 'sách 07', '07.jpg', 1, 90000, 'mo ta ne', 'chi tiet ne', 1, 1, 5, 1, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(8, 'sách 08', '08.jpg', 1, 230000, 'mo ta ne', 'chi tiet ne', 1, 1, 5, 1, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(9, 'sách 09', '09.jpg', 1, 250000, 'mo ta ne', 'chi tiet ne', 1, 1, 8, 1, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
+(10, 'sách 10', '10.jpg', 1, 235000, 'mo ta ne', 'chi tiet ne', 1, 1, 7, 2, 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_category`
+-- Table structure for table `product_category`
 --
 
 CREATE TABLE `product_category` (
@@ -203,7 +243,7 @@ CREATE TABLE `product_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `product_category`
+-- Dumping data for table `product_category`
 --
 
 INSERT INTO `product_category` (`id`, `name`, `status`, `featured`, `created_at`, `updated_at`) VALUES
@@ -216,13 +256,12 @@ INSERT INTO `product_category` (`id`, `name`, `status`, `featured`, `created_at`
 (7, 'Khoa Học - Kỹ Thuật', 1, 1, '2021-03-30 00:00:00', '2021-03-30 00:00:00'),
 (8, 'Học Ngoại Ngữ', 1, 1, '2021-03-30 00:00:00', '2021-03-30 00:00:00'),
 (9, 'Trinh Thám - Hình Sự', 1, 1, '2021-03-30 00:00:00', '2021-03-30 00:00:00'),
-(10, 'Thể Thao - Nghệ Thuật', 1, 1, '2021-03-30 00:00:00', '2021-03-30 00:00:00'),
-(11, 'Tử Vi - Phong Thủy', 1, 1, '2021-03-30 00:00:00', '2021-03-30 00:00:00');
+(10, 'Thể Thao - Nghệ Thuật', 1, 1, '2021-03-30 00:00:00', '2021-03-30 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `publisher`
+-- Table structure for table `publisher`
 --
 
 CREATE TABLE `publisher` (
@@ -234,18 +273,17 @@ CREATE TABLE `publisher` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `publisher`
+-- Dumping data for table `publisher`
 --
 
 INSERT INTO `publisher` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Nhà Xuất Bản Tp. Hcm', 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(2, 'Nhà Xuất Bản Kim Đồng', 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00'),
-(26, 'Nhà xuất bản Trẻ', 1, '2021-04-13 14:40:08', '2021-04-17 08:33:06');
+(2, 'Nhà Xuất Bản Kim Đồng', 1, '2021-04-06 00:00:00', '2021-04-06 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `role`
+-- Table structure for table `role`
 --
 
 CREATE TABLE `role` (
@@ -256,7 +294,7 @@ CREATE TABLE `role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `role`
+-- Dumping data for table `role`
 --
 
 INSERT INTO `role` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -268,13 +306,14 @@ INSERT INTO `role` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `setting`
+-- Table structure for table `setting`
 --
 
 CREATE TABLE `setting` (
   `id` int(9) NOT NULL,
   `name` varchar(255) NOT NULL,
   `logo` varchar(255) NOT NULL,
+  `company` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
@@ -283,10 +322,17 @@ CREATE TABLE `setting` (
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `setting`
+--
+
+INSERT INTO `setting` (`id`, `name`, `logo`, `company`, `address`, `email`, `phone`, `social`, `created_at`, `updated_at`) VALUES
+(1, 'Web sex', 'aa', '', '56', 'asd@gmail.com', '1234', 'fb', '2021-04-19 20:13:25', '2021-04-19 20:13:25');
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `slide`
+-- Table structure for table `slide`
 --
 
 CREATE TABLE `slide` (
@@ -299,7 +345,7 @@ CREATE TABLE `slide` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -318,7 +364,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `avatar`, `firstName`, `lastName`, `gender`, `phone`, `birthday`, `id_role`, `created_at`, `updated_at`) VALUES
@@ -327,48 +373,48 @@ INSERT INTO `user` (`id`, `username`, `password`, `avatar`, `firstName`, `lastNa
 (5, 'post', 'e10adc3949ba59abbe56e057f20f883e', 'pexels-irina-iriser-1379636.jpg', 'nguyen', 'dinh quy', 'nam', '222222222', '2021-04-13', 3, '2021-04-11 00:00:00', '2021-04-11 00:00:00');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `author`
+-- Indexes for table `author`
 --
 ALTER TABLE `author`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `banner`
+-- Indexes for table `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `orders`
+-- Indexes for table `order`
 --
-ALTER TABLE `orders`
+ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `order_detail`
+-- Indexes for table `order_detail`
 --
 ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `post`
+-- Indexes for table `post`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_PostCategory` (`id_PostCategory`);
 
 --
--- Chỉ mục cho bảng `post_category`
+-- Indexes for table `post_category`
 --
 ALTER TABLE `post_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
@@ -377,142 +423,136 @@ ALTER TABLE `product`
   ADD KEY `id_Publisher` (`id_Publisher`);
 
 --
--- Chỉ mục cho bảng `product_category`
+-- Indexes for table `product_category`
 --
 ALTER TABLE `product_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `publisher`
+-- Indexes for table `publisher`
 --
 ALTER TABLE `publisher`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `role`
+-- Indexes for table `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `setting`
+-- Indexes for table `setting`
 --
 ALTER TABLE `setting`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `slide`
+-- Indexes for table `slide`
 --
 ALTER TABLE `slide`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_role` (`id_role`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `author`
+-- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `banner`
+-- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `orders`
+-- AUTO_INCREMENT for table `order`
 --
-ALTER TABLE `orders`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `order`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT cho bảng `order_detail`
+-- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `post`
+-- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT cho bảng `post_category`
+-- AUTO_INCREMENT for table `post_category`
 --
 ALTER TABLE `post_category`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT cho bảng `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT cho bảng `product_category`
+-- AUTO_INCREMENT for table `product_category`
 --
 ALTER TABLE `product_category`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT cho bảng `publisher`
+-- AUTO_INCREMENT for table `publisher`
 --
 ALTER TABLE `publisher`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT cho bảng `role`
+-- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `setting`
+-- AUTO_INCREMENT for table `setting`
 --
 ALTER TABLE `setting`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `slide`
+-- AUTO_INCREMENT for table `slide`
 --
 ALTER TABLE `slide`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_Product`) REFERENCES `product` (`id`);
-
---
--- Các ràng buộc cho bảng `post`
+-- Constraints for table `post`
 --
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`id_PostCategory`) REFERENCES `post_category` (`id`);
 
 --
--- Các ràng buộc cho bảng `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`id_Author`) REFERENCES `author` (`id`),
@@ -520,7 +560,7 @@ ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_3` FOREIGN KEY (`id_Publisher`) REFERENCES `publisher` (`id`);
 
 --
--- Các ràng buộc cho bảng `user`
+-- Constraints for table `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_role`) REFERENCES `role` (`id`);
