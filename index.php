@@ -2,6 +2,7 @@
 
 $url = $_SERVER['REQUEST_URI'];
 $action = isset($_GET['action']) ? $_GET['action'] : "";
+$search = isset($_GET['search']) ? $_GET['search'] : "";
 
 
 if ($url == "/book_project/") {
@@ -40,7 +41,7 @@ if ($action == 'home') {
     $homeController->deleteCart($id[1]);
 }else if ($action == 'success') {
     $homeController->success();
-}else if($_GET['search']){
+}else if(isset($_GET['search'])){
     $homeController->search();
 }
 

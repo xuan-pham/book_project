@@ -21,7 +21,7 @@
 <section class="product-area shop-sidebar shop section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-12">
+            <div class="col-lg-3 col-md-4 col-12 mt-3">
                 <div class="shop-sidebar">
                     <!-- Single Widget -->
                     <div class="single-widget category">
