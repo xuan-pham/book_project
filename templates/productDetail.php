@@ -18,7 +18,7 @@
 <!-- End Breadcrumbs -->
 
 <!-- Product Style -->
-<section class="product-area shop-sidebar shop pt-5">
+<section class="product-area shop-sidebar shop pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-md-4 col-12">
@@ -45,6 +45,14 @@
                         <div class="clearfix"></div>
                         <button class="btn border-0 mt-3 mb-3" type="submit">Thêm vào giỏ hàng</button>
                     </form>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-primary borer-0 mt-5 mb-5">
+                    Chi tiết sản phẩm
+                </button>
+                <div class="">
+                <?= $product['detail'] ?>
                 </div>
             </div>
         </div>

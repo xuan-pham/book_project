@@ -11,8 +11,8 @@ include_once('layouts/header.php');
             <div class="col-12">
                 <div class="bread-inner">
                     <ul class="bread-list">
-                        <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-                        <li class="active"><a href="blog-single.html">Cart</a></li>
+                        <li><a href="index1.html">Trang chủ<i class="ti-arrow-right"></i></a></li>
+                        <li class="active"><a href="?action=cart">Giỏ hàng</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,7 +68,7 @@ include_once('layouts/header.php');
                                     <!--/ End Input Order -->
                                 </td>
                                 <td class="total-amount" data-title="Total">
-                                    <span><?= $totalPrice ?></span>
+                                    <span><?= $totalPrice.' vnđ' ?></span>
                                 </td>
                                 <td class="action" data-title="Remove"><a
                                         href="?action=deleteCartId-<?= $item['id'] ?>"><i
@@ -94,12 +94,23 @@ include_once('layouts/header.php');
                             <div class="col-lg-4 col-md-7 col-12">
                                 <div class="right">
                                     <ul>
-                                        <li>Tong<span><?= $totalCounter ?></span></li>
+                                        <li>Tổng
+                                            <span>
+                                                <?php 
+                                                if(isset($totalCounter)){
+                                                    $_SESSION['totalCounter'] = $totalCounter;
+                                                
+                                                    echo $totalCounter.' vnđ';
+                                                }else{
+                                                    echo "";
+                                                }
+                                                ?>
+                                            </span>
+                                        </li>
                                     </ul>
                                     <div class="button5">
-                                        <button href="?action=order" class="btn" type="submit">Dat hang</button>
-                                        <a href="?action=products" class="btn">Tiep tuc mua
-                                            hang</a>
+                                        <button href="?action=order" class="btn" type="submit">Đặt hàng</button>
+                                        <a href="?action=products" class="btn">Tiếp tục mua hàng</a>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +123,9 @@ include_once('layouts/header.php');
     </div>
 </div>
 <!--/ End Shopping Cart -->
-
+<script>
+localStorage.setItem("totalCounter", <?= $_SESSION['totalCounter'] ?>);
+</script>
 <?php
 include_once('layouts/footer.php');
 ?>

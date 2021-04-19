@@ -5927,7 +5927,26 @@ body {
     text-decoration: underline;
 }
 
-
+.success {
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #f7941d;
+    width: 50%;
+    color: #fff;
+    margin: 50px auto;
+    display: grid;
+    border-radius: 25px;
+}
+.success a {
+    position: relative;
+    top: 15px;
+    padding: 10px 10px;
+    background: #333333;
+    border-radius: 4px;
+    width: 30%;
+    margin: 0 auto;
+}
 /*=============================
 	End Footer CSS
 ===============================*/

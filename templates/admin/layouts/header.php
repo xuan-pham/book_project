@@ -26,7 +26,8 @@
         <link href="templates/admin/assets\libs\sweetalert2\sweetalert2.min.css" rel="stylesheet" type="text/css">
 
         <!-- App css -->
-        <link href="templates/admin/assets\css\bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
+        <link href="templates/admin/assets\css\bootstrap.min.css" rel="stylesheet" type="text/css"
+            id="bootstrap-stylesheet">
         <link href="templates/admin/assets\css\icons.min.css" rel="stylesheet" type="text/css">
         <link href="templates/admin/assets\css\app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">
 
@@ -48,10 +49,12 @@
 
 
                     <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="templates/admin/images/Users/<?= $_SESSION['admin'][0]['avatar'] ?>" alt="user-image" class="rounded-circle">
+                        <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="false" aria-expanded="false">
+
                             <span class="pro-user-name ml-1">
-                                <?= $_SESSION['admin'][0]['firstName'] . " " . $_SESSION['admin'][0]['lastName'] ?> <i class="mdi mdi-chevron-down"></i>
+                                <?= $_SESSION['admin'][0]['firstName'] . " " . $_SESSION['admin'][0]['lastName'] ?> <i
+                                    class="mdi mdi-chevron-down"></i>
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
@@ -71,24 +74,24 @@
                 <!-- LOGO -->
                 <div class="logo-box">
                     <a href="?action=dashboard" class="logo text-center logo-dark">
-                        <span class="logo-lg">
-                            <img src="templates/admin/assets\images\logo-dark.png" alt="" height="18">
+                        <span class="logo-lg text-white text-uppercase">
+                            Quản lý sách
                             <!-- <span class="logo-lg-text-dark">Velonic</span> -->
                         </span>
-                        <span class="logo-sm">
+                        <span class="logo-sm text-white text-uppercase">
                             <!-- <span class="logo-lg-text-dark">V</span> -->
-                            <img src="templates/admin/assets\images\logo-sm.png" alt="" height="22">
+                           Quản lý sách
                         </span>
                     </a>
 
                     <a href="?action=dashboard" class="logo text-center logo-light">
-                        <span class="logo-lg">
-                            <img src="templates/admin/assets\images\logo-light.png" alt="" height="18">
+                        <span class="logo-lg text-white text-uppercase">
+                           Quản lý sách
                             <!-- <span class="logo-lg-text-dark">Velonic</span> -->
                         </span>
-                        <span class="logo-sm">
+                        <span class="logo-sm text-white text-uppercase">
                             <!-- <span class="logo-lg-text-dark">V</span> -->
-                            <img src="templates/admin/assets\images\logo-sm.png" alt="" height="22">
+                            Quản lý sách
                         </span>
                     </a>
                 </div>
@@ -132,89 +135,89 @@
                             <li class="menu-title">Điều Hướng</li>
                             <?php
                             if ($_SESSION['admin'][0]['id_role'] == 1) : ?>
-                                <!--sản phẩm -->
-                                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="ion-md-speedometer"></i>
-                                        <span> Sản Phẩm</span>
+                            <!--sản phẩm -->
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ion-md-speedometer"></i>
+                                    <span> Sản Phẩm</span>
 
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="?action=admin-product">Danh sách sản phẩm</a></li>
-                                        <li><a href="?action=admin-add-product">Thêm sản phẩm</a></li>
-                                        <li><a href="?action=admin-productCategory">Danh Mục Sản Phẩm</a></li>
-                                        <li><a href="?action=admin-add-productCategory"> Thêm Danh Mục Sản Phẩm</a></li>
-                                        <li><a href="#">Đơn Hàng</a></li>
-                                    </ul>
-                                </li>
-                                <!--tác giả-->
-                                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="ion-md-mail"></i>
-                                        <span>Tác Giả</span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="?action=admin-product">Danh sách sản phẩm</a></li>
+                                    <li><a href="?action=admin-add-product">Thêm sản phẩm</a></li>
+                                    <li><a href="?action=admin-productCategory">Danh Mục Sản Phẩm</a></li>
+                                    <li><a href="?action=admin-add-productCategory"> Thêm Danh Mục Sản Phẩm</a></li>
+                                    <li><a href="#">Đơn Hàng</a></li>
+                                </ul>
+                            </li>
+                            <!--tác giả-->
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ion-md-mail"></i>
+                                    <span>Tác Giả</span>
 
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="?action=admin-add-author">Thêm Tác Giả</a></li>
-                                        <li><a href="?action=admin-author">Danh Sách Tác Giả</a></li>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="?action=admin-add-author">Thêm Tác Giả</a></li>
+                                    <li><a href="?action=admin-author">Danh Sách Tác Giả</a></li>
 
-                                    </ul>
-                                </li>
-                                <!--blog-->
-                                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="ion-md-map"></i>
-                                        <span> Tin Tức</span>
-                                        <span class="menu-arrow"></span>
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="?action=admin-add-post">Thêm Tin Tức</a></li>
-                                        <li><a href="?action=admin-post">Danh Sách Tin Tức</a></li>
-                                        <li><a href="?action=admin-postCategory">Danh Mục Tin Tức</a></li>
-                                        <li><a href="?action=admin-add-postCategory">Thêm Danh Mục Tin Tức</a></li>
+                                </ul>
+                            </li>
+                            <!--blog-->
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ion-md-map"></i>
+                                    <span> Tin Tức</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="?action=admin-add-post">Thêm Tin Tức</a></li>
+                                    <li><a href="?action=admin-post">Danh Sách Tin Tức</a></li>
+                                    <li><a href="?action=admin-postCategory">Danh Mục Tin Tức</a></li>
+                                    <li><a href="?action=admin-add-postCategory">Thêm Danh Mục Tin Tức</a></li>
 
 
-                                    </ul>
-                                </li>
-                                <!--NXB-->
-                                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="ion-md-mail"></i>
-                                        <span>Nhà Xuất Bản</span>
+                                </ul>
+                            </li>
+                            <!--NXB-->
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ion-md-mail"></i>
+                                    <span>Nhà Xuất Bản</span>
 
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="?action=admin-add-publisher">Thêm Nhà Xuất Bản</a></li>
-                                        <li><a href="?action=admin-publisher">Danh Sách NXB</a></li>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="?action=admin-add-publisher">Thêm Nhà Xuất Bản</a></li>
+                                    <li><a href="?action=admin-publisher">Danh Sách NXB</a></li>
 
-                                    </ul>
-                                </li>
-                                <!--hệ thống-->
-                                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="ion-md-mail"></i>
-                                        <span> Hệ Thống</span>
+                                </ul>
+                            </li>
+                            <!--hệ thống-->
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ion-md-mail"></i>
+                                    <span> Hệ Thống</span>
 
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="?action=admin-add-setting">Thêm Cài đặt</a></li>
-                                        <li><a href="?action=admin-setting">Cài đặt Website</a></li>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="?action=admin-add-setting">Thêm Cài đặt</a></li>
+                                    <li><a href="?action=admin-setting">Cài đặt Website</a></li>
 
-                                    </ul>
-                                </li>
-                                <!--quản lý thành viên-->
-                                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="ion-md-mail"></i>
-                                        <span>Quản Lý Thành Viên</span>
+                                </ul>
+                            </li>
+                            <!--quản lý thành viên-->
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ion-md-mail"></i>
+                                    <span>Quản Lý Thành Viên</span>
 
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
 
-                                        <li><a href="?action=user-add">Thêm Thành Viên</a></li>
-                                        <li><a href="?action=userlist">Danh Sách Thành Viên</a></li>
-                                    </ul>
-                                </li>
+                                    <li><a href="?action=user-add">Thêm Thành Viên</a></li>
+                                    <li><a href="?action=userlist">Danh Sách Thành Viên</a></li>
+                                </ul>
+                            </li>
 
 
                             <?php endif; ?>
@@ -223,72 +226,72 @@
                             <?php
                             if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
 
-                                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="ion-md-speedometer"></i>
-                                        <span> Sản Phẩm</span>
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ion-md-speedometer"></i>
+                                    <span> Sản Phẩm</span>
 
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="?action=admin-product">Danh sách sản phẩm</a></li>
-                                        <li><a href="?action=admin-add-product">Thêm sản phẩm</a></li>
-                                        <li><a href="?action=admin-productCategory">Danh Mục Sản Phẩm</a></li>
-                                        <li><a href="?action=admin-add-productCategory"> Thêm Danh Mục Sản Phẩm</a></li>
-                                        <li><a href="#">Đơn Hàng</a></li>
-                                    </ul>
-                                </li>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="?action=admin-product">Danh sách sản phẩm</a></li>
+                                    <li><a href="?action=admin-add-product">Thêm sản phẩm</a></li>
+                                    <li><a href="?action=admin-productCategory">Danh Mục Sản Phẩm</a></li>
+                                    <li><a href="?action=admin-add-productCategory"> Thêm Danh Mục Sản Phẩm</a></li>
+                                    <li><a href="#">Đơn Hàng</a></li>
+                                </ul>
+                            </li>
 
                             <?php endif; ?>
 
 
                             <?php
                             if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
-                                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="ion-md-mail"></i>
-                                        <span>Tác Giả</span>
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ion-md-mail"></i>
+                                    <span>Tác Giả</span>
 
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="?action=admin-add-author">Thêm Tác Giả</a></li>
-                                        <li><a href="?action=admin-author">Danh Sách Tác Giả</a></li>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="?action=admin-add-author">Thêm Tác Giả</a></li>
+                                    <li><a href="?action=admin-author">Danh Sách Tác Giả</a></li>
 
-                                    </ul>
-                                </li>
+                                </ul>
+                            </li>
                             <?php endif; ?>
 
                             <?php
                             if ($_SESSION['admin'][0]['id_role'] == 2) : ?>
-                                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="ion-md-mail"></i>
-                                        <span>Nhà Xuất Bản</span>
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ion-md-mail"></i>
+                                    <span>Nhà Xuất Bản</span>
 
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="?action=admin-add-publisher">Thêm Nhà Xuất Bản</a></li>
-                                        <li><a href="?action=admin-publisher">Danh Sách NXB</a></li>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="?action=admin-add-publisher">Thêm Nhà Xuất Bản</a></li>
+                                    <li><a href="?action=admin-publisher">Danh Sách NXB</a></li>
 
-                                    </ul>
-                                </li>
+                                </ul>
+                            </li>
                             <?php endif; ?>
 
                             <?php
                             if ($_SESSION['admin'][0]['id_role'] == 3) : ?>
-                                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="ion-md-map"></i>
-                                        <span> Tin Tức</span>
-                                        <span class="menu-arrow"></span>
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="?action=admin-add-post">Thêm Tin Tức</a></li>
-                                        <li><a href="?action=admin-post">Danh Sách Tin Tức</a></li>
-                                        <li><a href="?action=admin-postCategory">Danh Mục Tin Tức</a></li>
-                                        <li><a href="?action=admin-add-postCategory">Thêm Danh Mục Tin Tức</a></li>
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ion-md-map"></i>
+                                    <span> Tin Tức</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="?action=admin-add-post">Thêm Tin Tức</a></li>
+                                    <li><a href="?action=admin-post">Danh Sách Tin Tức</a></li>
+                                    <li><a href="?action=admin-postCategory">Danh Mục Tin Tức</a></li>
+                                    <li><a href="?action=admin-add-postCategory">Thêm Danh Mục Tin Tức</a></li>
 
-                                    </ul>
-                                </li>
+                                </ul>
+                            </li>
                             <?php endif; ?>
 
 
