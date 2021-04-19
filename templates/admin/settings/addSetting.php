@@ -8,17 +8,21 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if (isset($_POST['bthSub'])) {
     $name = $_POST['name'];
-    $logo = $_POST['logo'];
     $address = $_POST['address'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $social = $_POST['social'];
     $date = date('Y-m-d H:i:s');
+    //fix cai nay ne
+    $image = $_FILES['image']['name'];
+    $duong_dan_anh = 'templates/admin/images/logo/' . $image;
+    move_uploaded_file($_FILES['image']['tmp_name'], $duong_dan_anh);
+
 
     $DBH = new PDO('mysql:host=localhost;dbname=qlbansach', 'root', '');
     $query = "INSERT INTO setting(name, logo, address, email, phone, social, created_at, updated_at) 
             VALUES
-            ('$name','$logo','$address','$email','$phone','$social',now(), now())";
+            ('$name','$image','$address','$email','$phone','$social',now(), now())";
     $result = $DBH->exec($query);
     if ($result == true) {
         $_SESSION['success'] = "Thêm thành công";
@@ -48,9 +52,8 @@ if (isset($_POST['bthSub'])) {
                                 </div>
                                 <!-- Text input-->
                                 <div class="form-group">
-                                    <label for="logo">Biểu tượng</label>
-
-                                    <input id="logo" name="logo" placeholder="Biểu tượng..." class="form-control input-md" required="" type="text">
+                                    <label for="exampleFormControlInput1">Biểu tượng</label>
+                                    <input type="file" name="image" class="form-control">
                                 </div>
                                 <!-- Text input-->
                                 <div class="form-group">
