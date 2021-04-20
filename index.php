@@ -26,6 +26,7 @@ else if (strstr($action, 'postId')) {
     $id = explode('-', strstr($action, 'postId'));
     $homeController->blogDetail($id[1]);
 }
+
  else if ($action == 'products') {
     $homeController->products();
 } else if ($action == 'contact') {

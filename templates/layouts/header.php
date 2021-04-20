@@ -179,18 +179,6 @@
                                             <ul class="nav main-menu menu navbar-nav">
                                                 <li class="active"><a href="?action=home">Trang chủ</a></li>
                                                 <li><a href="?action=products">Sản phẩm</a></li>
-<<<<<<< HEAD
-                                                <li><a href="#">Tin tức<i class="ti-angle-down"></i></a>
-                                              
-                                                    <ul class="dropdown">
-                                                    <?php foreach ($posts as $item){
-                                                        echo  '<li><a href="?action=blogs"><?='. $item['name'].' ?></a></li>';  ?>   
-                                 <?php
-                                            }
-                                            ?>
-                                              </ul>
-                                        
-=======
                                                 <li><a href="?action=blogs">Tin tức<i class="ti-angle-down"></i></a>
 
                                                     <?php
@@ -204,7 +192,6 @@
                                                         <?php endforeach; ?>
                                                     </ul>
 
->>>>>>> a3e24ec2e15a812dfa0a9ee1e1c60fb3496bee98
                                                 </li>
                                                 <li><a href="?action=contact">Liên hệ</a></li>
                                             </ul>

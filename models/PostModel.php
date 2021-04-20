@@ -64,4 +64,20 @@ class PostModel
         $post = mysqli_fetch_assoc($result);
         return $post;
     }
+    public function getCategoryPostByid($id_PostCategory)
+    {
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+        $result = $conn->query(
+            "SELECT * 
+            FROM post
+            WHERE id_PostCategory = '$id_PostCategory'
+            "
+        );
+        $post = mysqli_fetch_assoc($result);
+        return $post;
+    }
 }
