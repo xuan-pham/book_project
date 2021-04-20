@@ -116,6 +116,12 @@ else if ($action == 'login') {
     $adminController->editSetting();
 } else if ($action == 'admin-delete-setting') {
     $adminController->deleteSetting();
+} else if ($action == 'admin-order') {
+    $adminController->order();
+} else if ($action == 'admin-edit-order') {
+    $adminController->editOrder();
+} else if ($action == 'admin-order-detail') {
+    $adminController->orderDetail();
 } else if ($action == 'admin-edit-postCategory') {
     $adminController->editPostCategory();
 }

@@ -41,7 +41,7 @@ class SettingModel
         }
         return $settings;
     }
-    public function editSetting($id, $name, $logo, $address, $phone, $email, $social, $update)
+    public function editSetting($id, $name, $image, $address, $phone, $email, $social, $update)
     {
         // Connect database 
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
@@ -50,7 +50,7 @@ class SettingModel
             echo "Connect error" . mysqli_connect_error();
         }
         $result = $conn->query("UPDATE `setting` 
-                    SET `name` = '$name', `logo` = '$logo', `address` = '$address', `phone` = '$phone', `email` = '$email', `social` = '$social', `updated_at` = '$update'
+                    SET `name` = '$name', `logo` = '$image', `address` = '$address', `phone` = '$phone', `email` = '$email', `social` = '$social', `updated_at` = '$update'
                     WHERE `id` = '$id'
                     ");
         if ($result == true) {

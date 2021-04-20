@@ -212,4 +212,28 @@ class AdminController
         $loginView = new AdminView();
         $loginView->editPostCategory();
     }
+    public function order(){
+        require_once('models/admin/OrderModel.php');
+        $orderModel = new OrderModel();
+        $orderItem = $orderModel->getAllOrder();
+
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->order($orderItem);
+    }
+    public function editOrder(){
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->editOrder();
+    }
+    public function orderDetail(){
+        require_once('models/admin/OrderModel.php');
+        $id = $_GET['odid'];
+        $orderModel = new OrderModel();
+        $orderItem = $orderModel->getOrderByID($id);
+
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->orderDetail($orderItem);
+    }
 }

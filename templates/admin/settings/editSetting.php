@@ -14,8 +14,11 @@ foreach ($settingItem as $setting)
         $phone = $_POST['phone'];
         $social = $_POST['social'];
         $update = date('Y-m-d H:i:s');
+        $image = $_FILES['image']['name'];
+        $duong_dan_anh = 'templates/admin/images/logo/' . $image;
+        move_uploaded_file($_FILES['image']['tmp_name'], $duong_dan_anh);
         $settingModel = new SettingModel();
-        $settingModel->editSetting($id, $name, $logo, $address, $phone, $email, $social, $update);
+        $settingModel->editSetting($id, $name, $image, $address, $phone, $email, $social, $update);
     }
 ?>
 <div class="content-page">
@@ -29,7 +32,7 @@ foreach ($settingItem as $setting)
                     <div class="card-body">
                         <div class="col-4 mx-auto">
                             <form action="" method="POST">
-                            <input id="id" name="id" placeholder="Mã cai dat..." class="form-control input-md" required="" type="hidden" value="<?Php echo '' . $setting['id'] . ''; ?>">
+                                <input id="id" name="id" placeholder="Mã cai dat..." class="form-control input-md" required="" type="hidden" value="<?Php echo '' . $setting['id'] . ''; ?>">
 
                                 <!-- Text input-->
                                 <div class="form-group">
@@ -41,7 +44,7 @@ foreach ($settingItem as $setting)
                                 <div class="form-group">
                                     <label for="logo">Biểu tượng</label>
 
-                                    <input id="logo" name="logo" placeholder="Biểu tượng..." class="form-control input-md" required="" type="text" value="<?Php echo '' . $setting['logo'] . ''; ?>">
+                                    <input type="file" name="image" class="form-control"  value="<?Php echo '' . $setting['logo'] . ''; ?>">
                                 </div>
                                 <!-- Text input-->
                                 <div class="form-group">
