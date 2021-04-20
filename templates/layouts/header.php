@@ -51,6 +51,9 @@
 </head>
 
 <body class="js">
+    <?php
+    include_once('models/admin/PostCategoryModel.php');
+    ?>
     <!-- Header -->
     <header class="header shop">
         <!-- End Topbar -->
@@ -98,13 +101,13 @@
                             <div class="sinlge-bar shopping">
                                 <a href="?action=cart" class="single-icon"><i class="ti-bag"></i>
                                     <span class="total-count">
-                                        <?php                              
-                                            if(isset($_SESSION['cart'])){
-                                                $number = $_SESSION['cart'];
-                                                echo count($number);
-                                            }else{
-                                                echo 0;
-                                            }
+                                        <?php
+                                        if (isset($_SESSION['cart'])) {
+                                            $number = $_SESSION['cart'];
+                                            echo count($number);
+                                        } else {
+                                            echo 0;
+                                        }
                                         ?>
                                     </span>
                                 </a>
@@ -177,10 +180,18 @@
                                                 <li class="active"><a href="?action=home">Trang chủ</a></li>
                                                 <li><a href="?action=products">Sản phẩm</a></li>
                                                 <li><a href="?action=blogs">Tin tức<i class="ti-angle-down"></i></a>
+
+                                                    <?php
+                                                    $categoriesProduct = getAllPostCategory();
+                                                    ?>
                                                     <ul class="dropdown">
-                                                        <li><a href="#">Blog Single Sidebar</a>
+                                                        <?php foreach ($categoriesProduct as $item) : ?>
+                                                        <li>
+                                                            <a href="?action=blogs"><?= $item['name'] ?></a>
                                                         </li>
+                                                        <?php endforeach; ?>
                                                     </ul>
+
                                                 </li>
                                                 <li><a href="?action=contact">Liên hệ</a></li>
                                             </ul>

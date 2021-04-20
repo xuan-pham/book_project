@@ -12,7 +12,7 @@ class HomeController
 
         // Get data of categories sidebar
         $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
-        
+
         // Get data of banners
         require_once('models/BannerModel.php');
         $bannerModel = new BannerModel();
@@ -37,10 +37,29 @@ class HomeController
     public function blogs()
     {
         require_once('views/BlogView.php');
-        $blogView = new BlogView();
-        $blogView->index();
-    }
 
+
+        require_once('models/PostModel.php');
+        $postModel = new PostModel();
+        $posts = $postModel->getAllPosts();
+
+        require_once('models/CategoryPost.php');
+        $categoriesPostModel = new CategoryPostModel();
+        $categoriesPosts = $categoriesPostModel->getCategoriesPosts();
+
+        $postView = new BlogView();
+        $postView->index($posts, $categoriesPosts);
+    }
+    public function blogDetail($id)
+    {
+        require_once('views/BlogView.php');
+        require_once('models/PostModel.php');
+        $postModel = new PostModel();
+        $post = $postModel->getPostByid($id);
+
+        $postView = new BlogView();
+        $postView->detail($post);
+    }
     public function products()
     {
         require_once('views/ProductView.php');
@@ -137,7 +156,7 @@ class HomeController
         $note = $_POST['note'];
         require_once('models/ProductModel.php');
         $productModel = new ProductModel();
-        $product = $productModel->orderProductByid($firstname, $lastname,$address, $phone, $email, $note);
+        $product = $productModel->orderProductByid($firstname, $lastname, $address, $phone, $email, $note);
 
 
         // print_r($productId);die();
@@ -156,9 +175,10 @@ class HomeController
         $productView->success();
     }
 
-    public function search(){
-        
-        if($_GET['search'] && !empty($_GET['search'])){
+    public function search()
+    {
+
+        if ($_GET['search'] && !empty($_GET['search'])) {
             $key = $_GET['search'];
             require_once('models/ProductModel.php');
             $productModel = new ProductModel();
@@ -168,7 +188,7 @@ class HomeController
             $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
             require_once('views/ProductView.php');
             $productView = new ProductView();
-            $productView->search($products,$categoriesSidebar);
+            $productView->search($products, $categoriesSidebar);
         }
     }
 }
