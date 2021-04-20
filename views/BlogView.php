@@ -2,8 +2,12 @@
 
 class BlogView
 {
-    public function index()
+    public function index($posts, $categoriesPosts)
     {
-        require_once("templates/blog-single-sidebar.php");
+        require_once("templates/blog.php");
+    }
+    public function detail($post)
+    {
+        require_once("templates/blogDetail.php");
     }
 }

@@ -176,11 +176,16 @@
                                             <ul class="nav main-menu menu navbar-nav">
                                                 <li class="active"><a href="?action=home">Trang chủ</a></li>
                                                 <li><a href="?action=products">Sản phẩm</a></li>
-                                                <li><a href="?action=blogs">Tin tức<i class="ti-angle-down"></i></a>
+                                                <li><a href="#">Tin tức<i class="ti-angle-down"></i></a>
+                                              
                                                     <ul class="dropdown">
-                                                        <li><a href="#">Blog Single Sidebar</a>
-                                                        </li>
-                                                    </ul>
+                                                    <?php foreach ($posts as $item){
+                                                        echo  '<li><a href="?action=blogs"><?='. $item['name'].' ?></a></li>';  ?>   
+                                 <?php
+                                            }
+                                            ?>
+                                              </ul>
+                                        
                                                 </li>
                                                 <li><a href="?action=contact">Liên hệ</a></li>
                                             </ul>

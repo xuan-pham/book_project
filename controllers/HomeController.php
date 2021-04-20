@@ -37,10 +37,29 @@ class HomeController
     public function blogs()
     {
         require_once('views/BlogView.php');
-        $blogView = new BlogView();
-        $blogView->index();
-    }
 
+
+        require_once('models/PostModel.php');
+        $postModel = new PostModel();
+        $posts = $postModel->getAllPosts();
+
+        require_once('models/CategoryPost.php');
+        $categoriesPostModel = new CategoryPostModel();
+        $categoriesPosts = $categoriesPostModel->getCategoriesPosts();
+
+        $postView = new BlogView();
+        $postView->index($posts, $categoriesPosts);
+    }
+    public function blogDetail($id)
+    {
+        require_once('views/BlogView.php');
+        require_once('models/PostModel.php');
+        $postModel = new PostModel();
+        $post = $postModel->getPostByid($id);
+
+        $postView = new BlogView();
+        $postView->detail($post);
+    }
     public function products()
     {
         require_once('views/ProductView.php');

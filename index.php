@@ -20,8 +20,13 @@ $adminController = new AdminController;
 if ($action == 'home') {
     $homeController->index();
 } else if ($action == 'blogs') {
-    $homeController->blogs();
-} else if ($action == 'products') {
+    $homeController->blogs();   
+}
+else if (strstr($action, 'postId')) {
+    $id = explode('-', strstr($action, 'postId'));
+    $homeController->blogDetail($id[1]);
+}
+ else if ($action == 'products') {
     $homeController->products();
 } else if ($action == 'contact') {
     $homeController->contact();
