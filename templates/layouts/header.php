@@ -51,6 +51,9 @@
 </head>
 
 <body class="js">
+    <?php
+    include_once('models/admin/PostCategoryModel.php');
+    ?>
     <!-- Header -->
     <header class="header shop">
         <!-- End Topbar -->
@@ -98,13 +101,13 @@
                             <div class="sinlge-bar shopping">
                                 <a href="?action=cart" class="single-icon"><i class="ti-bag"></i>
                                     <span class="total-count">
-                                        <?php                              
-                                            if(isset($_SESSION['cart'])){
-                                                $number = $_SESSION['cart'];
-                                                echo count($number);
-                                            }else{
-                                                echo 0;
-                                            }
+                                        <?php
+                                        if (isset($_SESSION['cart'])) {
+                                            $number = $_SESSION['cart'];
+                                            echo count($number);
+                                        } else {
+                                            echo 0;
+                                        }
                                         ?>
                                     </span>
                                 </a>
@@ -176,6 +179,7 @@
                                             <ul class="nav main-menu menu navbar-nav">
                                                 <li class="active"><a href="?action=home">Trang chủ</a></li>
                                                 <li><a href="?action=products">Sản phẩm</a></li>
+<<<<<<< HEAD
                                                 <li><a href="#">Tin tức<i class="ti-angle-down"></i></a>
                                               
                                                     <ul class="dropdown">
@@ -186,6 +190,21 @@
                                             ?>
                                               </ul>
                                         
+=======
+                                                <li><a href="?action=blogs">Tin tức<i class="ti-angle-down"></i></a>
+
+                                                    <?php
+                                                    $categoriesProduct = getAllPostCategory();
+                                                    ?>
+                                                    <ul class="dropdown">
+                                                        <?php foreach ($categoriesProduct as $item) : ?>
+                                                        <li>
+                                                            <a href="?action=blogs"><?= $item['name'] ?></a>
+                                                        </li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+
+>>>>>>> a3e24ec2e15a812dfa0a9ee1e1c60fb3496bee98
                                                 </li>
                                                 <li><a href="?action=contact">Liên hệ</a></li>
                                             </ul>

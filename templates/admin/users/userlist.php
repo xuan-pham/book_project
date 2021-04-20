@@ -27,9 +27,8 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>STT</th>
                                 <th>Tài Khoản</th>
-
                                 <th>Họ </th>
                                 <th>Tên</th>
                                 <th>Số Điện Thoại</th>
@@ -52,10 +51,13 @@
                         $query = "SELECT * FROM user";
                         $result = $conn->query($query);
                         ?>
+                        <?php
+                        $num = 1;
+                        ?>
                         <?php foreach ($result as $users) : ?>
                         <tbody>
                             <tr>
-                                <th><?= $users['id'] ?></th>
+                                <th scope="row" class="text-center"><?= $num++ ?></th>
                                 <th><?= $users['username'] ?></th>
 
                                 <th><?= $users['firstName'] ?></th>

@@ -3,8 +3,6 @@ class CategoryPostModel
 {
     public function getCategoriesPosts()
     {
-
-         // Connect database
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
@@ -27,4 +25,3 @@ class CategoryPostModel
         return $categories;
     }
 }
-?>

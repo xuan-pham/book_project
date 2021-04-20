@@ -64,5 +64,4 @@ class PostModel
         $post = mysqli_fetch_assoc($result);
         return $post;
     }
-
 }
