@@ -2081,6 +2081,7 @@ body {
     padding: 15px;
     border-radius: 4px;
     margin: 15px 0px;
+    height: 340px;
 }
 
 .single-product .product-img {
@@ -2096,6 +2097,7 @@ body {
 
 .single-product .product-img a img {
     width: 100%;
+    height: 200px;
 }
 
 .single-product .product-img a img.hover-img {
@@ -2366,6 +2368,8 @@ body {
 
 .single-product .product-content h3 {
     line-height: 22px;
+    height: 52px;
+    overflow: hidden;
 }
 
 .single-product .product-content h3 a {
@@ -4858,8 +4862,10 @@ body {
 }
 
 .shop-blog .shop-single-blog img {
-    height: 100%;
-    width: 100%;
+    /* height: 100%;
+    width: 100%; */
+    width: 360px;
+    height: 240px;
 }
 
 .shop-blog .shop-single-blog .content {
@@ -4870,6 +4876,8 @@ body {
     font-size: 17px;
     font-weight: 600;
     color: #333;
+    height: 50px;
+    overflow: hidden;
 }
 
 .shop-blog .shop-single-blog .content .title:hover {
@@ -5938,6 +5946,7 @@ body {
     display: grid;
     border-radius: 25px;
 }
+
 .success a {
     position: relative;
     top: 15px;
@@ -5947,6 +5956,8 @@ body {
     width: 30%;
     margin: 0 auto;
 }
+
+
 /*=============================
 	End Footer CSS
 ===============================*/

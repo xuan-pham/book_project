@@ -67,7 +67,7 @@
                             </div>
                             <div class="form-group d-md-flex">
                                 <div class="w-100 text-md-right">
-                                    <a href="#">Quên mật khẩu</a>
+                                    <a href="?action=user-password">Quên mật khẩu</a>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -76,11 +76,6 @@
                                     Nhập</button>
                             </div>
                         </form>
-
-                        <div class="w-100 text-center mt-4 text">
-                            <p class="mb-0">Không có tài khoản</p>
-                            <a href="#">Tạo tài khoản</a>
-                        </div>
                     </div>
                 </div>
             </div>

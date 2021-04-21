@@ -4,15 +4,16 @@
     <div class="footer-top section">
         <div class="container">
             <div class="row">
-            <?php foreach ($settingItem as $item) : ?>
+                <?php foreach ($settingItem as $item) : ?>
                 <div class="col-lg-5 col-md-6 col-12">
                     <!-- Single Widget -->
                     <div class="single-footer about">
                         <div class="logo">
-                            <a href="?action=home"><img src="templates/admin/images/logo/<?= $item['logo'] ?>" alt="#"></a>
+                            <a href="?action=home"><img src="templates\images\logo.png" alt="logo"></a>
                         </div>
                         <p class="text"><?= $item['name'] ?></p>
-                        <p class="call">Hãy gọi chúng tôi<span><a href="tel:<?= $item['phone'] ?>"><?= $item['phone'] ?></a></span></p>
+                        <p class="call">Hãy gọi chúng tôi<span><a
+                                    href="tel:<?= $item['phone'] ?>"><?= $item['phone'] ?></a></span></p>
                     </div>
                     <!-- End Single Widget -->
                 </div>
@@ -47,19 +48,16 @@
                 <div class="col-lg-3 col-md-6 col-12">
                     <!-- Single Widget -->
                     <div class="single-footer social">
-                        <h4>Liên lạc</h4>
+                        <h4>Liên Lạc</h4>
                         <!-- Single Widget -->
                         <div class="contact">
                             <ul>
-                                <li><?= $item['address'] ?></li>
-                                <li><?= $item['email'] ?></li>
-                                <li><?= $item['phone'] ?></li>
+                                <li>Địa chỉ: <?= $item['address'] ?></li>
+                                <li>Email: <?= $item['email'] ?></li>
+                                <li>Điện thoại: <?= $item['phone'] ?></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
-                        <ul>
-                            <li><a href="<?= $item['social'] ?>"><i class="ti-facebook"></i></a></li>
-                        </ul>
                     </div>
                     <!-- End Single Widget -->
                 </div>

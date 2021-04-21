@@ -135,6 +135,7 @@ class AdminController
         $loginView = new AdminView();
         $loginView->adduser();
     }
+
     //end user
 
     //product

@@ -20,14 +20,11 @@ $adminController = new AdminController;
 if ($action == 'home') {
     $homeController->index();
 } else if ($action == 'blogs') {
-    $homeController->blogs();   
-}
-else if (strstr($action, 'postId')) {
+    $homeController->blogs();
+} else if (strstr($action, 'postId')) {
     $id = explode('-', strstr($action, 'postId'));
     $homeController->blogDetail($id[1]);
-}
-
- else if ($action == 'products') {
+} else if ($action == 'products') {
     $homeController->products();
 } else if ($action == 'contact') {
     $homeController->contact();
@@ -40,14 +37,14 @@ else if (strstr($action, 'postId')) {
     $homeController->cart();
 } else if ($action == 'order') {
     $homeController->order();
-}else if ($action == 'payment') {
+} else if ($action == 'payment') {
     $homeController->payment();
 } else if (strstr($action, 'deleteCartId')) {
     $id = explode('-', strstr($action, 'deleteCartId'));
     $homeController->deleteCart($id[1]);
-}else if ($action == 'success') {
+} else if ($action == 'success') {
     $homeController->success();
-}else if(isset($_GET['search'])){
+} else if (isset($_GET['search'])) {
     $homeController->search();
 }
 
@@ -118,7 +115,6 @@ else if ($action == 'login') {
     $adminController->deleteSetting();
 } else if ($action == 'admin-edit-postCategory') {
     $adminController->editPostCategory();
-}
-else{
+} else {
     echo "404 ERROR";
 }

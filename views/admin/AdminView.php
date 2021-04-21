@@ -82,6 +82,7 @@ class AdminView
     {
         require_once("templates/admin/users/adduser.php");
     }
+
     //product
     public function productList()
     {

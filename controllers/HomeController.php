@@ -28,10 +28,15 @@ class HomeController
         $productModel = new ProductModel();
         $productItem = $productModel->getFeaturedProduct();
 
+        // Get data of settings
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
+
         // Call view to return data 
         require_once('views/HomeView.php');
         $homeView = new HomeView();
-        $homeView->index($categoryProduct, $categoriesSidebar, $bannerItem, $blogItem, $productItem);
+        $homeView->index($categoryProduct, $categoriesSidebar, $bannerItem, $blogItem, $productItem, $settingItem);
     }
 
     public function blogs()

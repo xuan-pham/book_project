@@ -68,7 +68,7 @@ include_once('layouts/header.php');
                                     <!--/ End Input Order -->
                                 </td>
                                 <td class="total-amount" data-title="Total">
-                                    <span><?= $totalPrice.' vnđ' ?></span>
+                                    <span><?= $totalPrice . ' vnđ' ?></span>
                                 </td>
                                 <td class="action" data-title="Remove"><a
                                         href="?action=deleteCartId-<?= $item['id'] ?>"><i
@@ -96,12 +96,12 @@ include_once('layouts/header.php');
                                     <ul>
                                         <li>Tổng
                                             <span>
-                                                <?php 
-                                                if(isset($totalCounter)){
+                                                <?php
+                                                if (isset($totalCounter)) {
                                                     $_SESSION['totalCounter'] = $totalCounter;
-                                                
-                                                    echo $totalCounter.' vnđ';
-                                                }else{
+
+                                                    echo $totalCounter . ' vnđ';
+                                                } else {
                                                     echo "";
                                                 }
                                                 ?>
@@ -126,6 +126,4 @@ include_once('layouts/header.php');
 <script>
 localStorage.setItem("totalCounter", <?= $_SESSION['totalCounter'] ?>);
 </script>
-<?php
-include_once('layouts/footer.php');
-?>
+<?php include('layouts/footer.php'); ?>
