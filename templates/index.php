@@ -87,19 +87,9 @@
                                                         src="templates\images\products\<?= $item['image'] ?>" alt="#">
 
                                                 </a>
-                                                <div class="button-head">
-                                                    <div class="product-action">
-                                                        <a data-toggle="modal" data-target="#exampleModal"
-                                                            title="Quick View" href="#"><i
-                                                                class=" ti-eye"></i><span>Quick Shop</span></a>
-                                                    </div>
-                                                    <div class="product-action-2">
-                                                        <a title="Add to cart" href="#">Add to cart</a>
-                                                    </div>
-                                                </div>
                                             </div>
                                             <div class="product-content">
-                                                <h3><a href="product-details.html"><?= $item['name'] ?></a></h3>
+                                                <h3><a href="?action=productId-<?= $item['id'] ?>"><?= $item['name'] ?></a></h3>
                                                 <div class="product-price">
                                                     <span><?= $item['price'] ?></span>
                                                 </div>
@@ -140,8 +130,8 @@
                     <div class="content">
                         <p class="date"><?= date_format(new DateTime($item['created_at']), 'l jS F Y') ?>
                         </p>
-                        <a href="#" class="title"><?= $item['title'] ?></a>
-                        <a href="#" class="more-btn">Đọc tiếp</a>
+                        <a href="?action=postId-<?= $item['id'] ?>" class="title"><?= $item['title'] ?></a>
+                        <a href="?action=postId-<?= $item['id'] ?>" class="more-btn">Đọc tiếp</a>
                     </div>
                 </div>
                 <!-- End Single Blog  -->

@@ -102,9 +102,10 @@ class HomeController
         $settingModel = new SettingModel();
         $settingItem = $settingModel->getAllSetting();
         $product = $productModel->getProductByid($id);
+        $productFeatured = $productModel->getFeaturedProductDetail();
 
         $productView = new ProductView();
-        $productView->detail($product,$settingItem);
+        $productView->detail($product,$settingItem,$productFeatured);
     }
 
     public function contact()
@@ -224,5 +225,23 @@ class HomeController
             $productView = new ProductView();
             $productView->search($products, $categoriesSidebar,$settingItem);
         }
+    }
+
+    public function productByCategoryId($id){
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
+
+        require_once('models/ProductModel.php');
+        $productModel = new ProductModel();
+        $productItem = $productModel->getProductByCategoryId($id);
+
+        require_once('models/CategoryProductModel.php');
+        $categoriesProductModel = new CategoryProductModel();
+        $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
+
+        require_once('views/ProductView.php');
+        $productView = new ProductView();
+        $productView->productByCategoryId($productItem, $categoriesSidebar, $settingItem);
     }
 }

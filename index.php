@@ -24,7 +24,10 @@ if ($action == 'home') {
 } else if (strstr($action, 'postId')) {
     $id = explode('-', strstr($action, 'postId'));
     $homeController->blogDetail($id[1]);
-} else if ($action == 'products') {
+} else if (strstr($action, 'productCategoryId')) {
+    $id = explode('-', strstr($action, 'productCategoryId'));
+    $homeController->productByCategoryId($id[1]);
+}else if ($action == 'products') {
     $homeController->products();
 } else if ($action == 'contact') {
     $homeController->contact();

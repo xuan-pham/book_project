@@ -30,6 +30,7 @@
             id="bootstrap-stylesheet">
         <link href="templates/admin/assets\css\icons.min.css" rel="stylesheet" type="text/css">
         <link href="templates/admin/assets\css\app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">
+        <link href="templates/admin/assets\css\custom.css" rel="stylesheet" type="text/css" id="app-stylesheet">
 
     </head>
 

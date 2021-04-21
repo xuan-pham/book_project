@@ -5956,8 +5956,17 @@ body {
     width: 30%;
     margin: 0 auto;
 }
-
-
+.addToCart input {
+    width: 50px;
+    margin-right: 20px;
+    text-align: center;
+}
+.addToCart {
+    display: flex;
+}
+td.product-des {
+    width: 420px;
+}
 /*=============================
 	End Footer CSS
 ===============================*/

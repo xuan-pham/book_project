@@ -2,7 +2,7 @@
 
 class AdminView
 {
-    public function index()
+    public function index($numberOfProduct, $numberOfOrder, $numberOfPost)
     {
         require_once("templates/admin/dashboard.php");
     }

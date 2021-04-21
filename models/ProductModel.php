@@ -25,6 +25,30 @@ class ProductModel
         return $products;
     }
 
+    public function getFeaturedProductDetail()
+    {
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+        $result = $conn->query(
+            "SELECT * 
+            FROM product
+            WHERE featured = 1
+            LIMIT 4
+            "
+        );
+        $products = array();
+
+        if ($result->num_rows > 0) {
+            while ($product = mysqli_fetch_assoc($result)) {
+                $products[] = $product;
+            };
+        }
+        return $products;
+    }
+
     public function getAllProducts()
     {
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
@@ -111,6 +135,80 @@ class ProductModel
             "SELECT * 
             FROM product
             WHERE name LIKE '%$key%'
+            ");
+        $products = array();
+        if ($result->num_rows > 0) {
+            while ($product = mysqli_fetch_assoc($result)) {
+                $products[] = $product;
+            };
+        }
+        return $products;
+    }
+
+    public function getProductByCategoryId($id){
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+         $result = $conn->query(
+            "SELECT * 
+            FROM product
+            WHERE id_productCategory = '$id'
+            ");
+        $products = array();
+        if ($result->num_rows > 0) {
+            while ($product = mysqli_fetch_assoc($result)) {
+                $products[] = $product;
+            };
+        }
+        return $products;
+    }
+
+     public function countProduct(){
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+         $result = $conn->query(
+            "SELECT id 
+            FROM product
+            ");
+        $products = array();
+        if ($result->num_rows > 0) {
+            while ($product = mysqli_fetch_assoc($result)) {
+                $products[] = $product;
+            };
+        }
+        return $products;
+    }
+
+    public function countOrder(){
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+         $result = $conn->query("SELECT id FROM `order`");
+        $products = array();
+        if ($result->num_rows > 0) {
+            while ($product = mysqli_fetch_assoc($result)) {
+                $products[] = $product;
+            };
+        }
+        return $products;
+    }
+
+    public function countPost(){
+        $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_connect_errno()) {
+            echo "Connect error" . mysqli_connect_error();
+        }
+         $result = $conn->query(
+            "SELECT id 
+            FROM post
             ");
         $products = array();
         if ($result->num_rows > 0) {

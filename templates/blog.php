@@ -22,27 +22,27 @@
 <section class="blog-single section">
     <div class="container">
         <div class="row">
-             <div class="col-8 col-lg-8 mx-auto">
-                    
-                      <?php foreach ($posts as $item) : ?>
-                      <input type="hidden" value="<?= $item['id'] ?>">
-                    <a href="?action=postId-<?= $item['id'] ?>">
-                            <div class="image">
-                                <img src="templates\images\blogs\<?= $item['image'] ?>" alt="#">
-                            </div>
-                            <div class="blog-detail">
-                                <h2 class="blog-title"><?= $item['title'] ?></h2>
-                                <div class="blog-meta">
-                                </a>
-                                    <span class="author"><a href="#"><i class="fa fa-user"></i>By Admin</a><a
-                                            href="#"><i class="fa fa-calendar"></i>Dec 24, 2018</a>
-                                </div>
-                            </div>
-                           
-                            <?php endforeach; ?>
-                    </div>            
-             </div>                     
+            <div class="col-8 col-lg-8 mx-auto">
+
+                <?php foreach ($posts as $item) : ?>
+                <input type="hidden" value="<?= $item['id'] ?>">
+                <a href="?action=postId-<?= $item['id'] ?>">
+                    <div class="image">
+                        <img src="templates\images\blogs\<?= $item['image'] ?>" alt="#">
+                    </div>
+                    <div class="blog-detail">
+                        <h2 class="blog-title"><?= $item['title'] ?></h2>
+                        <div class="blog-meta">
+                </a>
+                <span class="author"><a href="#"><i class="fa fa-user"></i>By Admin</a><a href="#"><i
+                            class="fa fa-calendar"></i>Dec 24, 2018</a>
+            </div>
         </div>
+
+        <?php endforeach; ?>
+    </div>
+    </div>
+    </div>
 </section>
 <!--/ End Blog Single -->
 

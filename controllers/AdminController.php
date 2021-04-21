@@ -5,9 +5,15 @@ class AdminController
 
     public function index()
     {
+        require_once('models/ProductModel.php');
+        $productModel = new ProductModel();
+        $numberOfProduct = $productModel->countProduct();
+        $numberOfOrder = $productModel->countOrder();
+        $numberOfPost = $productModel->countPost();
+        
         require_once('views/admin/AdminView.php');
         $loginView =  new AdminView();
-        $loginView->index();
+        $loginView->index($numberOfProduct, $numberOfOrder, $numberOfPost);
     }
 
     public function login()
@@ -237,4 +243,5 @@ class AdminController
         $loginView = new AdminView();
         $loginView->orderDetail($orderItem);
     }
+
 }

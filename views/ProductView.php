@@ -7,7 +7,7 @@ class ProductView
         require_once("templates/product.php");
     }
 
-    public function detail($product,$settingItem)
+    public function detail($product,$settingItem, $productFeatured)
     {
         require_once("templates/productDetail.php");
     }
@@ -27,9 +27,12 @@ class ProductView
         require_once("templates/success.php");
     }
 
-     public function search($products, $categoriesSidebar,$settingItem)
+     public function search($products, $categoriesSidebar, $settingItem)
     {
-        // print_r($products);
         require_once("templates/search.php");
+    }
+
+    public function productByCategoryId($products, $categoriesSidebar, $settingItem){
+        require_once("templates/productByCategory.php");
     }
 }
