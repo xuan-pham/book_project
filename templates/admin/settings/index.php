@@ -53,7 +53,7 @@
                                         <td class="text-center"><?= $item['social'] ?></td>
                                         <td class="text-center">
                                             <a href="?action=admin-edit-setting&edid=<?= $item['id'] ?>"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                            <a onclick="return confirm('Bạn có muốn xóa?')" href="templates/admin/settings/deleteSetting.php?sdid=<?= $item['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                            <!-- <a onclick="return confirm('Bạn có muốn xóa?')" href="templates/admin/settings/deleteSetting.php?sdid=<?= $item['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

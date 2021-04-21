@@ -147,7 +147,7 @@
                                     <li><a href="?action=admin-add-product">Thêm sản phẩm</a></li>
                                     <li><a href="?action=admin-productCategory">Danh Mục Sản Phẩm</a></li>
                                     <li><a href="?action=admin-add-productCategory"> Thêm Danh Mục Sản Phẩm</a></li>
-                                    <li><a href="#">Đơn Hàng</a></li>
+                                    <li><a href="?action=admin-order">Đơn Hàng</a></li>
                                 </ul>
                             </li>
                             <!--tác giả-->
