@@ -178,7 +178,7 @@
                                     <div class="navbar-collapse">
                                         <div class="nav-inner">
                                             <ul class="nav main-menu menu navbar-nav">
-                                                <li class="active"><a href="?action=home">Trang chủ</a></li>
+                                                <li><a href="?action=home">Trang chủ</a></li>
                                                 <li><a href="?action=products">Sản phẩm<i class="ti-angle-down"></i></a>
                                                     <?php if (isset($categoriesProduct)) : ?>
                                                     <ul class="dropdown">
