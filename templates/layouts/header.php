@@ -162,7 +162,8 @@
                                 <?php if (isset($categoriesProduct)) : ?>
                                 <ul class="main-category">
                                     <?php foreach ($categoriesProduct as $item) : ?>
-                                    <li><a><?= $item['name'] ?></a></li>
+                                    <li><a href="?action=productCategoryId-<?= $item['id'] ?>"><?= $item['name'] ?></a>
+                                    </li>
                                     <?php endforeach; ?>
                                 </ul>
                                 <?php else : ?>
@@ -177,8 +178,19 @@
                                     <div class="navbar-collapse">
                                         <div class="nav-inner">
                                             <ul class="nav main-menu menu navbar-nav">
-                                                <li class="active"><a href="?action=home">Trang chủ</a></li>
-                                                <li><a href="?action=products">Sản phẩm</a></li>
+                                                <li><a href="?action=home">Trang chủ</a></li>
+                                                <li><a href="?action=products">Sản phẩm<i class="ti-angle-down"></i></a>
+                                                    <?php if (isset($categoriesProduct)) : ?>
+                                                    <ul class="dropdown">
+                                                        <?php foreach ($categoriesProduct as $item) : ?>
+                                                        <li><a
+                                                                href="?action=productCategoryId-<?= $item['id'] ?>"><?= $item['name'] ?></a>
+                                                        </li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                    <?php else : ?>
+                                                    <?php endif; ?>
+                                                </li>
                                                 <li><a href="?action=blogs">Tin tức<i class="ti-angle-down"></i></a>
 
                                                     <?php

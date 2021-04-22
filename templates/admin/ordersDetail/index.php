@@ -36,7 +36,7 @@ foreach ($orderItem as $item)
                                     <tr>
                                         <th scope="row" class="text-center"><?= $num++ ?></th>
                                         <td class="text-center"><?= $item['id'] ?></td>
-                                        <td class="text-center"><?= $item['lastname'] ?></td>
+                                        <td class="text-center"><?= $item['firstname'] ?></td>
                                         <td class="text-center"><?= $item['name'] ?></td>
                                         <td class="text-center"><?= $item['quantity'] ?></td>
                                         <td class="text-center"><?= $item['price'] ?></td>

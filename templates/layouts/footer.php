@@ -9,9 +9,9 @@
                     <!-- Single Widget -->
                     <div class="single-footer about">
                         <div class="logo">
-                            <a href="?action=home"><img src="templates\images\logo.png" alt="logo"></a>
+                            <a href="?action=home"><img src="templates\images\<?= $item['logo'] ?>" alt="logo"></a>
                         </div>
-                        <p class="text"><?= $item['name'] ?></p>
+                        <h3 style="color: #fff;"><?= $item['name'] ?></h3>
                         <p class="call">Hãy gọi chúng tôi<span><a
                                     href="tel:<?= $item['phone'] ?>"><?= $item['phone'] ?></a></span></p>
                     </div>

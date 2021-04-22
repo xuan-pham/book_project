@@ -8,8 +8,8 @@
             <div class="col-12">
                 <div class="bread-inner">
                     <ul class="bread-list">
-                        <li><a href="?action=home">Home<i class="ti-arrow-right"></i></a></li>
-                        <li class="active"><a href="?action=contact">Contact</a></li>
+                        <li><a href="?action=home">Trang chủ<i class="ti-arrow-right"></i></a></li>
+                        <li class="active"><a href="?action=contact">Liên hệ</a></li>
                     </ul>
                 </div>
             </div>

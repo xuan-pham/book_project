@@ -8,7 +8,6 @@ foreach ($settingItem as $setting)
     if (isset($_POST['bthSub'])) {
         $id = $_POST['id'];
         $name = $_POST['name'];
-        $logo = $_POST['logo'];
         $email = $_POST['email'];
         $address = $_POST['address'];
         $phone = $_POST['phone'];
@@ -31,7 +30,7 @@ foreach ($settingItem as $setting)
                     </div>
                     <div class="card-body">
                         <div class="col-4 mx-auto">
-                            <form action="" method="POST">
+                            <form action="" method="POST" enctype="multipart/form-data">
                                 <input id="id" name="id" placeholder="Mã cai dat..." class="form-control input-md" required="" type="hidden" value="<?Php echo '' . $setting['id'] . ''; ?>">
 
                                 <!-- Text input-->
@@ -44,7 +43,7 @@ foreach ($settingItem as $setting)
                                 <div class="form-group">
                                     <label for="logo">Biểu tượng</label>
 
-                                    <input type="file" name="image" class="form-control"  value="<?Php echo '' . $setting['logo'] . ''; ?>">
+                                    <input type="file" name="image" class="form-control" id="image">
                                 </div>
                                 <!-- Text input-->
                                 <div class="form-group">

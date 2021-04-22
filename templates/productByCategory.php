@@ -28,7 +28,7 @@
                         <h3 class="title">DANH MỤC</h3>
                         <ul class="categor-list">
                             <?php foreach ($categoriesSidebar as $item) : ?>
-                            <li><a href="#"><?= $item['name'] ?></a></li>
+                            <li><a href="?action=productCategoryId-<?= $item['id'] ?>"><?= $item['name'] ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -183,4 +183,4 @@
 </div>
 <!-- Modal end -->
 
-<?php include_once('layouts/footer.php'); ?>
+<?php include_once('layouts/footer.php'); ?>    

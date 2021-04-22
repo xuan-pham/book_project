@@ -10,21 +10,6 @@
                         <h3 class="font-weight-bold"> Danh sách cài đặt</h3>
                     </div>
 
-                    <?php if (isset($_SESSION['failed'])) : ?>
-                        <div class="col-md-12">
-                            <div class="alert alert-danger mx-auto">
-                                <p><?= $_SESSION['failed'] ?></p>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-
-                    <?php if (isset($_SESSION['success'])) : ?>
-                        <div class="col-md-12">
-                            <div class="alert alert-success mx-auto">
-                                <p><?= $_SESSION['success'] ?></p>
-                            </div>
-                        </div>
-                    <?php endif; ?>
                     <div class="card-body">
                         <table class="table table-bordered">
                             <thead>
@@ -65,11 +50,4 @@
         </div>
     </div>
 </div>
-<?php
-if (isset($_SESSION['failed'])) {
-    unset($_SESSION["failed"]);
-} elseif (isset($_SESSION['success'])) {
-    unset($_SESSION["success"]);
-}
-?>
 <?php include_once('templates/admin/layouts/footer.php'); ?>

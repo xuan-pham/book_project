@@ -1,0 +1,19 @@
+.products {
+    padding: 30px 200px;
+    background: #1a2942;
+    color: #fff;
+    border-radius: 24px;
+    text-align: center;
+}
+.products div:nth-child(1){
+    font-size: 24px;
+}
+.card-post{
+    height: 100vh;
+}
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px;
+}

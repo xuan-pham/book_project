@@ -42,8 +42,6 @@ class HomeController
     public function blogs()
     {
         require_once('views/BlogView.php');
-
-
         require_once('models/PostModel.php');
         $postModel = new PostModel();
         $posts = $postModel->getAllPosts();
@@ -51,9 +49,13 @@ class HomeController
         require_once('models/CategoryPost.php');
         $categoriesPostModel = new CategoryPostModel();
         $categoriesPosts = $categoriesPostModel->getCategoriesPosts();
+        // Get data of settings
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
 
         $postView = new BlogView();
-        $postView->index($posts, $categoriesPosts);
+        $postView->index($posts, $categoriesPosts,$settingItem);
     }
     public function blogDetail($id)
     {
@@ -62,8 +64,13 @@ class HomeController
         $postModel = new PostModel();
         $post = $postModel->getPostByid($id);
 
+        // Get data of settings
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
+        
         $postView = new BlogView();
-        $postView->detail($post);
+        $postView->detail($post,$settingItem);
     }
     public function products()
     {
@@ -77,8 +84,12 @@ class HomeController
         $productModel = new ProductModel();
         $products = $productModel->getAllProducts();
 
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
+
         $productView = new ProductView();
-        $productView->index($products, $categoriesSidebar);
+        $productView->index($products, $categoriesSidebar,$settingItem);
     }
 
     public function productId($id)
@@ -86,10 +97,15 @@ class HomeController
         require_once('views/ProductView.php');
         require_once('models/ProductModel.php');
         $productModel = new ProductModel();
+
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
         $product = $productModel->getProductByid($id);
+        $productFeatured = $productModel->getFeaturedProductDetail();
 
         $productView = new ProductView();
-        $productView->detail($product);
+        $productView->detail($product,$settingItem,$productFeatured);
     }
 
     public function contact()
@@ -136,16 +152,23 @@ class HomeController
 
     public function cart()
     {
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
         require_once('views/ProductView.php');
         $productView = new ProductView();
-        $productView->cart();
+        $productView->cart($settingItem);
     }
 
     public function order()
     {
+         // Get data of settings
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
         require_once('views/ProductView.php');
         $productView = new ProductView();
-        $productView->order();
+        $productView->order($settingItem);
     }
 
     public function payment()
@@ -175,13 +198,20 @@ class HomeController
 
     public function success()
     {
+         // Get data of settings
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
         require_once('views/ProductView.php');
         $productView = new ProductView();
-        $productView->success();
+        $productView->success($settingItem);
     }
 
     public function search()
-    {
+    { // Get data of settings
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
 
         if ($_GET['search'] && !empty($_GET['search'])) {
             $key = $_GET['search'];
@@ -193,7 +223,25 @@ class HomeController
             $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
             require_once('views/ProductView.php');
             $productView = new ProductView();
-            $productView->search($products, $categoriesSidebar);
+            $productView->search($products, $categoriesSidebar,$settingItem);
         }
+    }
+
+    public function productByCategoryId($id){
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
+
+        require_once('models/ProductModel.php');
+        $productModel = new ProductModel();
+        $productItem = $productModel->getProductByCategoryId($id);
+
+        require_once('models/CategoryProductModel.php');
+        $categoriesProductModel = new CategoryProductModel();
+        $categoriesSidebar = $categoriesProductModel->getCategoriresSideBar();
+
+        require_once('views/ProductView.php');
+        $productView = new ProductView();
+        $productView->productByCategoryId($productItem, $categoriesSidebar, $settingItem);
     }
 }

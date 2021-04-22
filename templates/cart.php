@@ -56,8 +56,8 @@ include_once('layouts/header.php');
                                     <p class="product-name"><a href="#"><?= $item['name'] ?></a></p>
                                     <p class="product-des"><?= $item['decription'] ?></p>
                                 </td>
-                                <td class="price" data-title="Price"><span><?= $item['price'] ?></span></td>
-                                <td class="qty text-center" data-title="Qty">
+                                <td class="price" data-title="Price"><span><?= $item['price'] ?> vnđ</span></td>
+                                <td class="qty text-center" data-title="Qty" style="width:50px">
                                     <!-- Input Order -->
                                     <div class="input-group">
 
