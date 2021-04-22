@@ -41,12 +41,9 @@ include 'models/admin/ProductModel.php';
                                         <th>STT</th>
                                         <th>Ảnh</th>
                                         <th>Tên</th>
-                                        <th>Số Lượng</th>
-                                        <th>Mô Tả</th>
+                                        <th width="500px">Mô Tả</th>
                                         <th>Giá</th>
-                                        <th>Chức Năng</th>
-                                        <th>Ngày Xuất Bản</th>
-                                        <th>Ngày Cập Nhật</th>
+                                        <th>Trạng thái</th>
                                         <th>Chức Năng</th>
 
                                     </tr>
@@ -64,7 +61,6 @@ include 'models/admin/ProductModel.php';
                                         <td><img src="templates/images/products/<?= $result['image'] ?>" width="50px"
                                                 height="50px"></td>
                                         <td><?= $result['name'] ?></td>
-                                        <td><?= $result['quantity'] ?></td>
                                         <td><?= $result['decription'] ?></td>
                                         <td><?= $result['price'] ?></td>
                                         <th scope="row" class="text-center">
@@ -75,10 +71,6 @@ include 'models/admin/ProductModel.php';
                                                     echo '<span class="badge badge-secondary badge-pill p-2"> Ẩn </span>';
                                                 }
                                                 ?>
-
-
-                                        <td><?= $result['created_at'] ?></td>
-                                        <td><?= $result['updated_at'] ?></td>
 
                                         <td class="text-center">
                                             <a href="?action=admin-edit-product&editProduct=<?= $result['id'] ?>"><i

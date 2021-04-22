@@ -73,8 +73,7 @@ $authorList = $conn->query("SELECT * FROM author");
                                 <div class="form-group">
                                     <label class=" control-label" for="product_name">Tên Sản Phẩm</label>
                                     <div class="">
-                                        <input id="name" name="name" required="" class="form-control input-md"
-                                            type="text">
+                                        <input id="name" name="name" required="" class="form-control input-md" type="text">
 
                                     </div>
                                 </div>
@@ -83,8 +82,7 @@ $authorList = $conn->query("SELECT * FROM author");
                                 <div class="form-group">
                                     <label class=" control-label" for="product_name_fr"> Miêu tả sản phẩm</label>
                                     <div class="">
-                                        <textarea name="decription" cols="54" id="decription"
-                                            class="form-control"></textarea>
+                                        <textarea name="decription" cols="54" id="decription" class="form-control"></textarea>
 
                                     </div>
                                 </div>
@@ -95,7 +93,7 @@ $authorList = $conn->query("SELECT * FROM author");
 
                                         <textarea name="detail" id="detail"></textarea>
                                         <script>
-                                        CKEDITOR.replace('detail');
+                                            CKEDITOR.replace('detail');
                                         </script>
                                     </div>
                                 </div>
@@ -104,8 +102,7 @@ $authorList = $conn->query("SELECT * FROM author");
                                     <label class=" control-label" for="product_categorie"> Loại sản phẩm</label>
                                     <div class="">
 
-                                        <select id="id_productCategory" name="id_productCategory" required=""
-                                            class="form-control">
+                                        <select id="id_productCategory" name="id_productCategory" required="" class="form-control">
                                             <?php foreach ($categoryList as $category)
                                                 echo '<option value="' . $category['id'] . '">' . $category['name'] . '</option>
                        ' ?>
@@ -146,8 +143,7 @@ $authorList = $conn->query("SELECT * FROM author");
 
 
 
-                                <input id="quantity" name="quantity" class="form-control input-md" value="1" required=""
-                                    type="hidden">
+                                <input id="quantity" name="quantity" class="form-control input-md" value="1" required="" type="hidden">
 
 
 
@@ -156,8 +152,7 @@ $authorList = $conn->query("SELECT * FROM author");
                                 <div class="form-group">
                                     <label class=" control-label" for="available_quantity"> Giá tiền</label>
                                     <div class="">
-                                        <input id="price" name="price" class="form-control input-md" required=""
-                                            type="text">
+                                        <input id="price" name="price" class="form-control input-md" required="" type="text">
 
                                     </div>
                                 </div>
@@ -178,15 +173,13 @@ $authorList = $conn->query("SELECT * FROM author");
 
                                 <div class="form-group">
                                     <label class=" control-label" for="filebutton">Hình Ảnh</label>
-                                    <input type="file" id="image" name="image" required=""
-                                        class="form-control input-md">
+                                    <input type="file" id="image" name="image" required="" class="form-control input-md">
                                 </div>
 
                                 <!-- Button -->
 
                                 <div class="form-group">
-                                    <input type="submit" id="btnSubmit" name="btnSubmit" class="btn btn-primary"
-                                        value="Thêm">
+                                    <input type="submit" id="btnSubmit" name="btnSubmit" class="btn btn-primary" value="Thêm">
                                 </div>
 
 

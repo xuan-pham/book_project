@@ -10,7 +10,7 @@ class AdminController
         $numberOfProduct = $productModel->countProduct();
         $numberOfOrder = $productModel->countOrder();
         $numberOfPost = $productModel->countPost();
-        
+
         require_once('views/admin/AdminView.php');
         $loginView =  new AdminView();
         $loginView->index($numberOfProduct, $numberOfOrder, $numberOfPost);
@@ -219,7 +219,8 @@ class AdminController
         $loginView = new AdminView();
         $loginView->editPostCategory();
     }
-    public function order(){
+    public function order()
+    {
         require_once('models/admin/OrderModel.php');
         $orderModel = new OrderModel();
         $orderItem = $orderModel->getAllOrder();
@@ -228,12 +229,14 @@ class AdminController
         $loginView = new AdminView();
         $loginView->order($orderItem);
     }
-    public function editOrder(){
+    public function editOrder()
+    {
         require_once('views/admin/AdminView.php');
         $loginView = new AdminView();
         $loginView->editOrder();
     }
-    public function orderDetail(){
+    public function orderDetail()
+    {
         require_once('models/admin/OrderModel.php');
         $id = $_GET['odid'];
         $orderModel = new OrderModel();
@@ -244,4 +247,10 @@ class AdminController
         $loginView->orderDetail($orderItem);
     }
 
+    public function sendMail()
+    {
+        require_once('views/admin/AdminView.php');
+        $loginView = new AdminView();
+        $loginView->sendMail();
+    }
 }

@@ -27,7 +27,7 @@ if ($action == 'home') {
 } else if (strstr($action, 'productCategoryId')) {
     $id = explode('-', strstr($action, 'productCategoryId'));
     $homeController->productByCategoryId($id[1]);
-}else if ($action == 'products') {
+} else if ($action == 'products') {
     $homeController->products();
 } else if ($action == 'contact') {
     $homeController->contact();
@@ -124,6 +124,8 @@ else if ($action == 'login') {
     $adminController->orderDetail();
 } else if ($action == 'admin-edit-postCategory') {
     $adminController->editPostCategory();
+} else if ($action == 'send-mail') {
+    $adminController->sendMail();
 } else {
     echo "404 ERROR";
 }
