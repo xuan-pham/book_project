@@ -12,7 +12,7 @@ class OrderDetailModel
         }
 
         $result = $conn->query("
-        SELECT `order`.`id`, `order`.`lastname`, `product`.`name`, `order_detail`.`quantity`, `order_detail`.`price` 
+        SELECT `order`.`id`, `order`.`firstname`, `product`.`name`, `order_detail`.`quantity`, `order_detail`.`price` 
         FROM ((`order_detail` 
         INNER JOIN `product` ON `product`.`id` = `order_detail`.`product_id`) 
         INNER JOIN `order` ON `order`.`id` = `order_detail`.`order_id`) 

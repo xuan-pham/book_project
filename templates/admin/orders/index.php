@@ -32,7 +32,7 @@
                                     <tr>
                                         <th scope="row" class="text-center"><?= $num++ ?></th>
                                         <td class="text-center"><?= $item['id'] ?></td>
-                                        <td class="text-center"><?= $item['firstname'] ?> <?= $item['lastname'] ?></td>
+                                        <td class="text-center"><?= $item['lastname'] ?> <?= $item['firstname'] ?></td>
                                         <td class="text-center"><?= $item['address'] ?></td>
                                         <td class="text-center"><?= $item['phone'] ?></td>
                                         <td class="text-center"><?= $item['email'] ?></td>

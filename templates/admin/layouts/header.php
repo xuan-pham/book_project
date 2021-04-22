@@ -141,6 +141,7 @@
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-speedometer"></i>
                                     <span> Sản Phẩm</span>
+                                    <span class="menu-arrow"></span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -156,6 +157,7 @@
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-mail"></i>
                                     <span>Tác Giả</span>
+                                    <span class="menu-arrow"></span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -185,6 +187,7 @@
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-mail"></i>
                                     <span>Nhà Xuất Bản</span>
+                                    <span class="menu-arrow"></span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -198,10 +201,11 @@
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-mail"></i>
                                     <span> Hệ Thống</span>
+                                    <span class="menu-arrow"></span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="?action=admin-add-setting">Thêm Cài đặt</a></li>
+                                    <!-- <li><a href="?action=admin-add-setting">Thêm Cài đặt</a></li> -->
                                     <li><a href="?action=admin-setting">Cài đặt Website</a></li>
 
                                 </ul>
@@ -211,6 +215,7 @@
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-mail"></i>
                                     <span>Quản Lý Thành Viên</span>
+                                    <span class="menu-arrow"></span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -231,6 +236,7 @@
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-speedometer"></i>
                                     <span> Sản Phẩm</span>
+                                    <span class="menu-arrow"></span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -251,6 +257,7 @@
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-mail"></i>
                                     <span>Tác Giả</span>
+                                    <span class="menu-arrow"></span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -267,6 +274,7 @@
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="ion-md-mail"></i>
                                     <span>Nhà Xuất Bản</span>
+                                    <span class="menu-arrow"></span>
 
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
