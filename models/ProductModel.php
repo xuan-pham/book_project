@@ -64,7 +64,7 @@ class ProductModel
         return $product;
     }
 
-     public function orderProductByid($firstname,$lastname,$address,$phone,$email,$note)
+    public function orderProductByid($firstname, $lastname, $address, $phone, $email, $note)
     {
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         mysqli_set_charset($conn, "utf8");
@@ -73,20 +73,20 @@ class ProductModel
         }
 
         $sql = "INSERT INTO `order` (firstname,lastname,address,phone,email,note,created_at,updated_at)  VALUES('$firstname','$lastname','$address','$phone','$email','$note',now(),now())";
-  
-      
-        if(mysqli_query($conn, $sql)){
+
+
+        if (mysqli_query($conn, $sql)) {
             $last_id = mysqli_insert_id($conn);
-            
+
             foreach ($_SESSION['cart'] as $item) {
                 $productId = $item['id'];
                 $quantity = $item['quantity'];
                 $price = $item['price'];
                 $query = "INSERT INTO `order_detail` (order_id,product_id,quantity,price,created_at,updated_at) VALUES('$last_id','$productId','$quantity','$price',now(),now())";
-                
-                if(mysqli_query($conn, $query)){
+
+                if (mysqli_query($conn, $query)) {
                     echo "ok";
-                } else{
+                } else {
                     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
                 }
             }
@@ -94,24 +94,24 @@ class ProductModel
             $_SESSION['success'] = "Thêm thành công";
             unset($_SESSION['cart']);
             header("Location: ?action=success");
-        } else{
+        } else {
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
         }
- 
- 
     }
 
-    public function search($key){
+    public function search($key)
+    {
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         mysqli_set_charset($conn, "utf8");
         if (mysqli_connect_errno()) {
             echo "Connect error" . mysqli_connect_error();
         }
-         $result = $conn->query(
+        $result = $conn->query(
             "SELECT * 
             FROM product
             WHERE name LIKE '%$key%'
-            ");
+            "
+        );
         $products = array();
         if ($result->num_rows > 0) {
             while ($product = mysqli_fetch_assoc($result)) {

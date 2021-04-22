@@ -3,10 +3,11 @@
 <?php
 include 'models/admin/ProductModel.php';
 ?>
+
 <head>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- 
-   <script src="ckeditor/ckeditor.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script src="ckeditor/ckeditor.js"></script>
 </head>
 <div class="content-page">
     <div class="content">
@@ -47,18 +48,19 @@ include 'models/admin/ProductModel.php';
                                         <th>Ngày Xuất Bản</th>
                                         <th>Ngày Cập Nhật</th>
                                         <th>Chức Năng</th>
-                                        
+
                                     </tr>
                                 </thead>
                                 <?php
+                                $num = 1;
                                 $results = getAllProducts();
                                 ?>
                                 <?php foreach ($results as $result) : ?>
 
                                 <tbody>
                                     <tr>
-                                 
-                                        <td><?= $result['id'] ?></td>
+
+                                        <th scope="row" class="text-center"><?= $num++ ?></th>
                                         <td><img src="templates/images/products/<?= $result['image'] ?>" width="50px"
                                                 height="50px"></td>
                                         <td><?= $result['name'] ?></td>
@@ -66,7 +68,7 @@ include 'models/admin/ProductModel.php';
                                         <td><?= $result['decription'] ?></td>
                                         <td><?= $result['price'] ?></td>
                                         <th scope="row" class="text-center">
-                                        <?php
+                                            <?php
                                                 if ($result['status'] == 1) {
                                                     echo '<span class="badge badge-success badge-pill p-2"> Hiện </span>';
                                                 } else {
@@ -74,18 +76,19 @@ include 'models/admin/ProductModel.php';
                                                 }
                                                 ?>
 
-                                  
+
                                         <td><?= $result['created_at'] ?></td>
-                                        <td><?= $result['updated_at'] ?></td>                                    
-                              
-                                    <td class="text-center">
-                                        <a href="?action=admin-edit-product&editProduct=<?= $result['id'] ?>"><i
-                                                class="fa fa-edit" aria-hidden="true"></i></a>
-                                        &ensp;
-                                        <a onclick="return confirm('Bạn có muốn xóa?')"
-                                            href="templates/admin/products/delete.php?deleteId=<?= $result['id'] ?>"><i
-                                                class="fa fa-trash" aria-hidden="true"></i></a>
-                                    </td>
+                                        <td><?= $result['updated_at'] ?></td>
+
+                                        <td class="text-center">
+                                            <a href="?action=admin-edit-product&editProduct=<?= $result['id'] ?>"><i
+                                                    class="fa fa-edit" style="margin-left: 12px;"
+                                                    aria-hidden="true"></i></a>
+                                            &ensp;
+                                            <a onclick="return confirm('Bạn có muốn xóa?')"
+                                                href="templates/admin/products/delete.php?deleteId=<?= $result['id'] ?>"><i
+                                                    class="fa fa-trash" aria-hidden="true"></i></a>
+                                        </td>
                                     </tr>
                                 </tbody>
                                 <?php endforeach; ?>
