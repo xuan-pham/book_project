@@ -62,9 +62,12 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-12">
                         <!-- Logo -->
+                        <?php foreach ($settingItem as $item) : ?>
                         <div class="logo">
-                            <a href="?action=home"><img src="templates\images\logo.png" alt="logo"></a>
+                            <a href="?action=home"><img style="width:110px; height: 32px"
+                                    src="templates/admin/images/logo/<?= $item['logo'] ?>"></a>
                         </div>
+                        <?php endforeach; ?>
                         <!--/ End Logo -->
                         <!-- Search Form -->
                         <div class="search-top">

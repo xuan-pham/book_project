@@ -9,7 +9,8 @@
                     <!-- Single Widget -->
                     <div class="single-footer about">
                         <div class="logo">
-                            <a href="?action=home"><img src="templates\images\<?= $item['logo'] ?>" alt="logo"></a>
+                            <a href="?action=home"><img style="width:110px; height: 32px"
+                                    src="templates/admin/images/logo/<?= $item['logo'] ?>" alt="logo"></a>
                         </div>
                         <h3 style="color: #fff;"><?= $item['name'] ?></h3>
                         <p class="call">Hãy gọi chúng tôi<span><a
