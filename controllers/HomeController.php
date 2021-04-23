@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 class HomeController
 {
 
@@ -244,4 +246,11 @@ class HomeController
         $productView = new ProductView();
         $productView->productByCategoryId($productItem, $categoriesSidebar, $settingItem);
     }
+
+    public function test($id){
+        require_once('models/ProductModel.php');
+        $productModel = new ProductModel();
+        $productItem = $productModel->convertProductById($id);
+    }
+
 }

@@ -93,7 +93,7 @@
                                                         href="?action=productId-<?= $item['id'] ?>"><?= $item['name'] ?></a>
                                                 </h3>
                                                 <div class="product-price">
-                                                    <span><?= $item['price'] ?></span>
+                                                    <span><?= $item['price'] ?> vnđ</span>
                                                 </div>
                                             </div>
                                         </div>

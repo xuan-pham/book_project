@@ -49,6 +49,11 @@ if ($action == 'home') {
     $homeController->success();
 } else if (isset($_GET['search'])) {
     $homeController->search();
+} else if ($action == 'send-mail') {
+    $homeController->sendMail();
+} else if (strstr($action, 'testId')) {
+    $id = explode('-', strstr($action, 'testId'));
+    $homeController->test($id[1]);
 }
 
 
@@ -124,8 +129,6 @@ else if ($action == 'login') {
     $adminController->orderDetail();
 } else if ($action == 'admin-edit-postCategory') {
     $adminController->editPostCategory();
-} else if ($action == 'send-mail') {
-    $adminController->sendMail();
-} else {
+}else {
     echo "404 ERROR";
 }
