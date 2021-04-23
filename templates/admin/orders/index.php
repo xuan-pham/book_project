@@ -29,20 +29,23 @@
                                 $num = 1;
                                 foreach ($orderItem as $item) :
                                 ?>
-                                    <tr>
-                                        <th scope="row" class="text-center"><?= $num++ ?></th>
-                                        <td class="text-center"><?= $item['id'] ?></td>
-                                        <td class="text-center"><?= $item['lastname'] ?> <?= $item['firstname'] ?></td>
-                                        <td class="text-center"><?= $item['address'] ?></td>
-                                        <td class="text-center"><?= $item['phone'] ?></td>
-                                        <td class="text-center"><?= $item['email'] ?></td>
-                                        <td class="text-center"><?= $item['note'] ?></td>
-                                        <td class="text-center"><a href="?action=admin-order-detail&odid=<?= $item['id'] ?>">Xem chi tiết</a></td>
-                                        <td class="text-center">
-                                            <a href="?action=admin-edit-order&oid=<?= $item['id'] ?>"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                            <!-- <a onclick="return confirm('Bạn có muốn xóa?')" href="templates/admin/author/deleteAuthor.php?adid=<?= $item['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <th scope="row" class="text-center"><?= $num++ ?></th>
+                                    <td class="text-center"><?= $item['id'] ?></td>
+                                    <td class="text-center"><?= $item['lastname'] ?> <?= $item['firstname'] ?></td>
+                                    <td class="text-center"><?= $item['address'] ?></td>
+                                    <td class="text-center"><?= $item['phone'] ?></td>
+                                    <td class="text-center"><?= $item['email'] ?></td>
+                                    <td class="text-center"><?= $item['note'] ?></td>
+                                    <td class="text-center"><a
+                                            href="?action=admin-order-detail&odid=<?= $item['id'] ?>">Xem chi tiết</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="?action=admin-edit-order&oid=<?= $item['id'] ?>"><i class="fa fa-edit"
+                                                aria-hidden="true"></i></a>
+                                        <!-- <a onclick="return confirm('Bạn có muốn xóa?')" href="templates/admin/author/deleteAuthor.php?adid=<?= $item['id'] ?>"><i class="fa fa-trash" aria-hidden="true"></i></a> -->
+                                    </td>
+                                </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
