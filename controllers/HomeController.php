@@ -22,7 +22,6 @@ class HomeController
         require_once('models/PostModel.php');
         $blogModel = new PostModel();
         $blogItem = $blogModel->getBlogAtHomePage();
-
         // Get product featured
         require_once('models/ProductModel.php');
         $productModel = new ProductModel();
@@ -32,7 +31,7 @@ class HomeController
         require_once('models/SettingModel.php');
         $settingModel = new SettingModel();
         $settingItem = $settingModel->getAllSetting();
-
+       
         // Call view to return data 
         require_once('views/HomeView.php');
         $homeView = new HomeView();
@@ -45,7 +44,8 @@ class HomeController
         require_once('models/PostModel.php');
         $postModel = new PostModel();
         $posts = $postModel->getAllPosts();
-
+       
+        $postss = $postModel->getthreePosts();
         require_once('models/CategoryPost.php');
         $categoriesPostModel = new CategoryPostModel();
         $categoriesPosts = $categoriesPostModel->getCategoriesPosts();
@@ -53,24 +53,23 @@ class HomeController
         require_once('models/SettingModel.php');
         $settingModel = new SettingModel();
         $settingItem = $settingModel->getAllSetting();
-
         $postView = new BlogView();
-        $postView->index($posts, $categoriesPosts,$settingItem);
+        $postView->index($postss,$posts, $categoriesPosts,$settingItem);
     }
     public function blogDetail($id)
     {
         require_once('views/BlogView.php');
         require_once('models/PostModel.php');
         $postModel = new PostModel();
-        $post = $postModel->getPostByid($id);
-
+        $post = $postModel->getPostByid($id);;
+        $postItem = $postModel->getPostByCategoryId($id);
         // Get data of settings
         require_once('models/SettingModel.php');
         $settingModel = new SettingModel();
         $settingItem = $settingModel->getAllSetting();
         
         $postView = new BlogView();
-        $postView->detail($post,$settingItem);
+        $postView->detail($post,$settingItem,$postItem);
     }
     public function products()
     {
@@ -244,4 +243,24 @@ class HomeController
         $productView = new ProductView();
         $productView->productByCategoryId($productItem, $categoriesSidebar, $settingItem);
     }
+    public function postByCategoryId($id){
+        require_once('models/SettingModel.php');
+        $settingModel = new SettingModel();
+        $settingItem = $settingModel->getAllSetting();
+
+        require_once('models/PostModel.php');
+        $postModel = new PostModel();
+        $postItem = $postModel->getPostByCategoryId($id);
+        
+        $postss = $postModel->getthreePosts();
+        require_once('models/CategoryPost.php');
+        $categoriesPostModel = new CategoryPostModel();
+        $categoriesPosts = $categoriesPostModel->getCategoriesPosts();
+       
+        require_once('views/BlogView.php');
+        $postView = new BlogView();
+        $postView->postByCategoryId($postItem, $categoriesPosts, $settingItem,$postss);
+
+    }
+
 }

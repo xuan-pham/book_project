@@ -21,10 +21,15 @@ if ($action == 'home') {
     $homeController->index();
 } else if ($action == 'blogs') {
     $homeController->blogs();
-} else if (strstr($action, 'postId')) {
+}
+
+else if (strstr($action, 'postId')) {
     $id = explode('-', strstr($action, 'postId'));
     $homeController->blogDetail($id[1]);
-} else if (strstr($action, 'productCategoryId')) {
+} else if (strstr($action, 'postCategoryId')) {
+    $id = explode('-', strstr($action, 'postCategoryId'));
+    $homeController->postByCategoryId($id[1]);
+}else if (strstr($action, 'productCategoryId')) {
     $id = explode('-', strstr($action, 'productCategoryId'));
     $homeController->productByCategoryId($id[1]);
 }else if ($action == 'products') {

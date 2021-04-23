@@ -190,20 +190,22 @@
                                                     </ul>
                                                     <?php else : ?>
                                                     <?php endif; ?>
-                                                </li>
+                                                </li>                      
                                                 <li><a href="?action=blogs">Tin tức<i class="ti-angle-down"></i></a>
-
                                                     <?php
-                                                    $categoriesProduct = getAllPostCategory();
+                                                    $categoriesPosts = getAllPostCategory();
                                                     ?>
+                                                    <?php if (isset($categoriesPosts)) : ?>
                                                     <ul class="dropdown">
-                                                        <?php foreach ($categoriesProduct as $item) : ?>
+                                                        <?php foreach ($categoriesPosts as $item) : ?>
                                                         <li>
-                                                            <a href="?action=blogs"><?= $item['name'] ?></a>
+                                                        <a
+                                                                href="?action=postCategoryId-<?= $item['id'] ?>"><?= $item['name'] ?></a>
                                                         </li>
                                                         <?php endforeach; ?>
                                                     </ul>
-
+                                                    <?php else : ?>
+                                                    <?php endif; ?>
                                                 </li>
                                                 <li><a href="?action=contact">Liên hệ</a></li>
                                             </ul>
