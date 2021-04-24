@@ -67,7 +67,7 @@
                             </div>
                             <div class="form-group d-md-flex">
                                 <div class="w-100 text-md-right">
-                                    <a href="?action=user-password">Quên mật khẩu</a>
+
                                 </div>
                             </div>
                             <div class="form-group">

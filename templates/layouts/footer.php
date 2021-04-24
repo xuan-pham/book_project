@@ -5,11 +5,12 @@
         <div class="container">
             <div class="row">
                 <?php foreach ($settingItem as $item) : ?>
-                <div class="col-lg-5 col-md-6 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <!-- Single Widget -->
                     <div class="single-footer about">
                         <div class="logo">
-                            <a href="?action=home"><img src="templates\images\<?= $item['logo'] ?>" alt="logo"></a>
+                            <a href="?action=home"><img style="width:110px; height: 32px"
+                                    src="templates/admin/images/logo/<?= $item['logo'] ?>" alt="logo"></a>
                         </div>
                         <h3 style="color: #fff;"><?= $item['name'] ?></h3>
                         <p class="call">Hãy gọi chúng tôi<span><a
@@ -17,35 +18,7 @@
                     </div>
                     <!-- End Single Widget -->
                 </div>
-                <div class="col-lg-2 col-md-6 col-12">
-                    <!-- Single Widget -->
-                    <div class="single-footer links">
-                        <h4>Thông tin</h4>
-                        <ul>
-                            <li><a href="#">Về Chúng Tôi</a></li>
-                            <li><a href="#">Các câu hỏi thường gặp</a></li>
-                            <li><a href="#">Điều khoản dịch vụ</a></li>
-                            <li><a href="#">Liên hệ với chúng tôi</a></li>
-                            <li><a href="#">Hướng dẫn</a></li>
-                        </ul>
-                    </div>
-                    <!-- End Single Widget -->
-                </div>
-                <div class="col-lg-2 col-md-6 col-12">
-                    <!-- Single Widget -->
-                    <div class="single-footer links">
-                        <h4>Dịch vụ khách hàng</h4>
-                        <ul>
-                            <li><a href="#">Phương thức thanh toán</a></li>
-                            <li><a href="#">Hoàn trả</a></li>
-                            <li><a href="#">Đổi trả</a></li>
-                            <li><a href="#">Giao hàng</a></li>
-                            <li><a href="#">Chính sách quyền riêng tư</a></li>
-                        </ul>
-                    </div>
-                    <!-- End Single Widget -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <!-- Single Widget -->
                     <div class="single-footer social">
                         <h4>Liên Lạc</h4>
