@@ -84,7 +84,6 @@ class HomeController
 
         $productModel = new ProductModel();
         $products = $productModel->getAllProducts();
-        $productss = $productModel->getAllsProducts();
 
         require_once('models/SettingModel.php');
         $settingModel = new SettingModel();
