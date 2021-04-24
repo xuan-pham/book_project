@@ -11,30 +11,7 @@
 <!-- End Preloader -->
 
 <!-- Slider Area -->
-<section class="hero-slider">
-    <!-- Single Slider -->
-    <div class="single-slider">
-        <div class="container">
-            <div class="row no-gutters">
-                <div class="col-lg-9 offset-lg-3 col-12">
-                    <div class="text-inner">
-                        <div class="row">
-                            <div class="col-lg-7 col-12">
-                                <div class="hero-text">
-                                    <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
-                                    <p>Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find
-                                        it pereri <br> odiy maboriosm.</p>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/ End Single Slider -->
-</section>
 <!--/ End Slider Area -->
 
 <!-- Start Small Banner  -->
@@ -46,7 +23,7 @@
 
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="single-banner">
-                    <img src="templates/images/banners/<?= $item['image'] ?>" alt="#">
+                    <img style="width: 604px;height:403px" src="templates/images/banners/<?= $item['image'] ?>" alt="#">
                 </div>
             </div>
 
