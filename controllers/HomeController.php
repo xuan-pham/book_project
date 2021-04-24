@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 class HomeController
 {
 
@@ -259,8 +261,12 @@ class HomeController
        
         require_once('views/BlogView.php');
         $postView = new BlogView();
-        $postView->postByCategoryId($postItem, $categoriesPosts, $settingItem,$postss);
-
+        $postView->postByCategoryId($postItem, $categoriesPosts, $settingItem, $postss);
+    }
+    public function test($id){
+        require_once('models/ProductModel.php');
+        $productModel = new ProductModel();
+        $productItem = $productModel->convertProductById($id);
     }
 
 }

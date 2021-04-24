@@ -42,25 +42,25 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>Tên<span>*</span></label>
-                                    <input type="text" name="firstname" placeholder="" >
+                                    <input type="text" name="firstname" placeholder="">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>Họ<span>*</span></label>
-                                    <input type="text" name="lastname" placeholder="" >
+                                    <input type="text" name="lastname" placeholder="">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>Địa chỉ email<span>*</span></label>
-                                    <input type="email" name="email" placeholder="" >
+                                    <input type="email" name="email" placeholder="">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>Số điện thoại<span>*</span></label>
-                                    <input type="text" name="phone" placeholder="" >
+                                    <input type="text" name="phone" placeholder="">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-12">
@@ -111,7 +111,7 @@
 </section>
 <!--/ End Checkout -->
 <script>
-document.getElementById("totalCounter").innerHTML = localStorage.getItem('totalCounter');
+document.getElementById("totalCounter").innerHTML = `${localStorage.getItem('totalCounter')} vnđ`;
 </script>
 
 <?php include_once('layouts/footer.php'); ?>

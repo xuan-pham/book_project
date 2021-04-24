@@ -133,13 +133,20 @@ class AdminView
     {
         require_once("templates/admin/postCategory/editPostCategory.php");
     }
-    public function order($orderItem){
+    public function order($orderItem)
+    {
         require_once("templates/admin/orders/index.php");
     }
-    public function editOrder(){
+    public function editOrder()
+    {
         require_once("templates/admin/orders/editOrder.php");
     }
-    public function orderDetail(){
+    public function orderDetail()
+    {
         require_once("templates/admin/ordersDetail/index.php");
+    }
+    public function sendMail()
+    {
+        require_once("templates/mail.php");
     }
 }

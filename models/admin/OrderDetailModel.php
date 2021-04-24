@@ -4,6 +4,7 @@ class OrderDetailModel
 {
     public function getOrderDetailByID($id)
     {
+
         // Connect database
         $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
         mysqli_set_charset($conn, "utf8");
@@ -18,6 +19,7 @@ class OrderDetailModel
         INNER JOIN `order` ON `order`.`id` = `order_detail`.`order_id`) 
         HAVING `order`.`id` = '$id';
         ");
+
         $orders = array();
 
         if ($result->num_rows > 0) {

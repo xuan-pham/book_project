@@ -32,7 +32,7 @@ else if (strstr($action, 'postId')) {
 }else if (strstr($action, 'productCategoryId')) {
     $id = explode('-', strstr($action, 'productCategoryId'));
     $homeController->productByCategoryId($id[1]);
-}else if ($action == 'products') {
+} else if ($action == 'products') {
     $homeController->products();
 } else if ($action == 'contact') {
     $homeController->contact();
@@ -54,6 +54,11 @@ else if (strstr($action, 'postId')) {
     $homeController->success();
 } else if (isset($_GET['search'])) {
     $homeController->search();
+} else if ($action == 'send-mail') {
+    $homeController->sendMail();
+} else if (strstr($action, 'testId')) {
+    $id = explode('-', strstr($action, 'testId'));
+    $homeController->test($id[1]);
 }
 
 
@@ -129,6 +134,6 @@ else if ($action == 'login') {
     $adminController->orderDetail();
 } else if ($action == 'admin-edit-postCategory') {
     $adminController->editPostCategory();
-} else {
+}else {
     echo "404 ERROR";
 }

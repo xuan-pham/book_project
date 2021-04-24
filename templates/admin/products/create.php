@@ -69,128 +69,120 @@ $authorList = $conn->query("SELECT * FROM author");
                         <div class="col-8 mx-auto">
                             <form class="content-first" method="POST" enctype="multipart/form-data">
                                 <!-- Tên Sản Phẩm-->
-                         
-                                    <div class="form-group">
-                                        <label class=" control-label" for="product_name">Tên Sản Phẩm</label>
-                                        <div class="">
-                                            <input id="name" name="name" required="" class="form-control input-md"
-                                                type="text">
 
-                                        </div>
+                                <div class="form-group">
+                                    <label class=" control-label" for="product_name">Tên Sản Phẩm</label>
+                                    <div class="">
+                                        <input id="name" name="name" required="" class="form-control input-md" type="text">
+
                                     </div>
+                                </div>
 
-                                    <!-- Miêu tả sản phẩm-->
-                                    <div class="form-group">
-                                        <label class=" control-label" for="product_name_fr"> Miêu tả sản phẩm</label>
-                                        <div class="">
-                                            <textarea name="decription" cols="54" id="decription"
-                                                class="form-control"></textarea>
+                                <!-- Miêu tả sản phẩm-->
+                                <div class="form-group">
+                                    <label class=" control-label" for="product_name_fr"> Miêu tả sản phẩm</label>
+                                    <div class="">
+                                        <textarea name="decription" cols="54" id="decription" class="form-control"></textarea>
 
-                                        </div>
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label class=" control-label" for="detail">Chi tiết sản phẩm</label>
-                                        <div class="">
+                                <div class="form-group">
+                                    <label class=" control-label" for="detail">Chi tiết sản phẩm</label>
+                                    <div class="">
 
-                                            <textarea name="detail" id="detail"></textarea>
-                                            <script>
+                                        <textarea name="detail" id="detail"></textarea>
+                                        <script>
                                             CKEDITOR.replace('detail');
-                                            </script>
-                                        </div>
+                                        </script>
                                     </div>
-                                    <!-- Loại sản phẩm -->
-                                    <div class="form-group">
-                                        <label class=" control-label" for="product_categorie"> Loại sản phẩm</label>
-                                        <div class="">
+                                </div>
+                                <!-- Loại sản phẩm -->
+                                <div class="form-group">
+                                    <label class=" control-label" for="product_categorie"> Loại sản phẩm</label>
+                                    <div class="">
 
-                                            <select id="id_productCategory" name="id_productCategory" required=""
-                                                class="form-control">
-                                                <?php foreach ($categoryList as $category)
-                                            echo '<option value="' . $category['id'] . '">' . $category['name'] . '</option>
+                                        <select id="id_productCategory" name="id_productCategory" required="" class="form-control">
+                                            <?php foreach ($categoryList as $category)
+                                                echo '<option value="' . $category['id'] . '">' . $category['name'] . '</option>
                        ' ?>
 
-                                            </select>
-                                        </div>
+                                        </select>
                                     </div>
+                                </div>
 
 
-                                    <!-- id_author -->
-                                    <div class="form-group">
-                                        <label class=" control-label" for="product_categorie">Tác Giả</label>
-                                        <div class="">
+                                <!-- id_author -->
+                                <div class="form-group">
+                                    <label class=" control-label" for="product_categorie">Tác Giả</label>
+                                    <div class="">
 
-                                            <select id="id_Author" name="id_Author" required="" class="form-control">
-                                                <?php foreach ($authorList as $author)
-                                            echo '<option value="' . $author['id'] . '">' . $author['fullname'] . '</option>' ?>
+                                        <select id="id_Author" name="id_Author" required="" class="form-control">
+                                            <?php foreach ($authorList as $author)
+                                                echo '<option value="' . $author['id'] . '">' . $author['fullname'] . '</option>' ?>
 
-                                            </select>
-                                        </div>
+                                        </select>
                                     </div>
+                                </div>
 
-                                    <!-- publisher -->
-                                    <div class="form-group">
-                                        <label class=" control-label" for="id_Publisher">Nhà Xuất Bản</label>
-                                        <div class="">
+                                <!-- publisher -->
+                                <div class="form-group">
+                                    <label class=" control-label" for="id_Publisher">Nhà Xuất Bản</label>
+                                    <div class="">
 
-                                            <select id="id_Publisher" required="" name="id_Publisher"
-                                                class="form-control">
-                                                <?php foreach ($publisherList as $publisher)
-                                            echo '<option value="' . $publisher['id'] . '">' . $publisher['name'] . ' </option>
+                                        <select id="id_Publisher" required="" name="id_Publisher" class="form-control">
+                                            <?php foreach ($publisherList as $publisher)
+                                                echo '<option value="' . $publisher['id'] . '">' . $publisher['name'] . ' </option>
                        ' ?>
 
-                                            </select>
-                                        </div>
+                                        </select>
                                     </div>
+                                </div>
 
-                                    <!-- Số lượng-->
-
-
-
-                                    <input id="quantity" name="quantity" class="form-control input-md" value="1"
-                                        required="" type="hidden">
+                                <!-- Số lượng-->
 
 
 
+                                <input id="quantity" name="quantity" class="form-control input-md" value="1" required="" type="hidden">
 
-                                    <!-- Giá tiền -->
-                                    <div class="form-group">
-                                        <label class=" control-label" for="available_quantity"> Giá tiền</label>
-                                        <div class="">
-                                            <input id="price" name="price" class="form-control input-md" required=""
-                                                type="text">
 
-                                        </div>
+
+
+                                <!-- Giá tiền -->
+                                <div class="form-group">
+                                    <label class=" control-label" for="available_quantity"> Giá tiền</label>
+                                    <div class="">
+                                        <input id="price" name="price" class="form-control input-md" required="" type="text">
+
                                     </div>
-                                    <!-- Status -->
-                                    <div class="form-group">
-                                        <label class=" control-label" for="status">Trạng Thái</label>
-                                        <div class="">
-                                            <select id="status" name="status" class="form-control">
-                                                <option value="1">Hoạt động</option>
-                                                <option value="0">Tạm ngưng</option>
-                                            </select>
-                                        </div>
+                                </div>
+                                <!-- Status -->
+                                <div class="form-group">
+                                    <label class=" control-label" for="status">Trạng Thái</label>
+                                    <div class="">
+                                        <select id="status" name="status" class="form-control">
+                                            <option value="1">Hoạt động</option>
+                                            <option value="0">Tạm ngưng</option>
+                                        </select>
                                     </div>
+                                </div>
 
 
-                                    <!-- Hình ảnh -->
+                                <!-- Hình ảnh -->
 
 
-                                    <div class="form-group">
-                                        <label class=" control-label" for="filebutton">Hình Ảnh</label>
-                                        <input type="file" id="image" name="image" required=""
-                                            class="form-control input-md">
-                                    </div>
+                                <div class="form-group">
+                                    <label class=" control-label" for="filebutton">Hình Ảnh</label>
+                                    <input type="file" id="image" name="image" required="" class="form-control input-md">
+                                </div>
 
-                                    <!-- Button -->
+                                <!-- Button -->
 
-                                    <div class="form-group">
-                                        <input type="submit" id="btnSubmit" name="btnSubmit" class="btn btn-primary"
-                                            value="Sửa">
-                                    </div>
+                                <div class="form-group">
+                                    <input type="submit" id="btnSubmit" name="btnSubmit" class="btn btn-primary" value="Thêm">
+                                </div>
 
-                             
+
                             </form>
                         </div>
                     </div>

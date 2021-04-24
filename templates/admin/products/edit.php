@@ -1,6 +1,6 @@
 <?php include('templates/admin/layouts/header.php'); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <script src="templates/admin/products/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="templates/admin/products/ckeditor/ckeditor.js" type="text/javascript"></script>
 <?php
 session_start();
 include('models/admin/ProductModel.php'); ?>
@@ -73,153 +73,144 @@ $authorList = $conn->query("SELECT * FROM author");
     <div class="content">
         <div class="row">
             <div class="col-12 mx-auto p-5">
-            <div class="card">    
-                <div class="card-title text-center p-3">
+                <div class="card">
+                    <div class="card-title text-center p-3">
                         <h3 class="font-weight-bold"> Sửa Sản Phẩm</h3>
                     </div>
                     <div class="card-body">
-                    <div class="col-8 mx-auto">
-                    <form class="form-horizontal" method="POST"  enctype="multipart/form-data">
-                        <!-- Tên Sản Phẩm-->                  
-                            <div class="form-group">                            
-                                    <input id="product_name_fr"  name="id"
-                                        class="form-control input-md"
-                                        value="<?Php echo '' . $editProduct['id'] . ''; ?>" type="hidden">                         
-                            </div>
-                            <div class="form-group">
-                                <label class=" control-label" for="product_name">Tên Sản Phẩm</label>
-                                <div class="">
-                                    <input id="name" name="name" class="form-control input-md" 
-                                        type="text" value="<?Php echo '' . $editProduct['name'] . ''; ?>">
-
+                        <div class="col-8 mx-auto">
+                            <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+                                <!-- Tên Sản Phẩm-->
+                                <div class="form-group">
+                                    <input id="product_name_fr" name="id" class="form-control input-md" value="<?Php echo '' . $editProduct['id'] . ''; ?>" type="hidden">
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <label class=" control-label" for="product_name">Tên Sản Phẩm</label>
+                                    <div class="">
+                                        <input id="name" name="name" class="form-control input-md" type="text" value="<?Php echo '' . $editProduct['name'] . ''; ?>">
 
-                            <!-- Miêu tả sản phẩm-->
-                            <div class="form-group">
-                                <label class=" control-label" for="product_name_fr"> Miêu tả sản phẩm</label>
-                                <div class="">
-                                <textarea name="decription" class="form-control" cols="54" id="decription"><?Php echo '' . $editProduct['decription'] . ''; ?></textarea>
-
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class=" control-label" for="detail">Chi tiết sản phẩm</label>
-                                <div class="">
-                         
-                                 <textarea  name="detail" id="detail"><?Php echo '' . $editProduct['detail'] . ''; ?></textarea>
-                                 <script>CKEDITOR.replace('detail');</script>
-                                </div>
-                            </div>
-                            <!-- Loại sản phẩm -->
-                            <div class="form-group">
-                                <label class=" control-label" for="product_categorie"> Loại sản phẩm</label>
-                                <div class="">
 
-                                    <select id="id_productCategory" name="id_productCategory" 
-                                        class="form-control">
-                                        <?php foreach ($categoryList as $category)
-                                            echo '<option value="' . $category['id'] . '">' . $category['name'] . '</option>
+                                <!-- Miêu tả sản phẩm-->
+                                <div class="form-group">
+                                    <label class=" control-label" for="product_name_fr"> Miêu tả sản phẩm</label>
+                                    <div class="">
+                                        <textarea name="decription" class="form-control" cols="54" id="decription"><?Php echo '' . $editProduct['decription'] . ''; ?></textarea>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class=" control-label" for="detail">Chi tiết sản phẩm</label>
+                                    <div class="">
+
+                                        <textarea name="detail" id="detail"><?Php echo '' . $editProduct['detail'] . ''; ?></textarea>
+                                        <script>
+                                            CKEDITOR.replace('detail');
+                                        </script>
+                                    </div>
+                                </div>
+                                <!-- Loại sản phẩm -->
+                                <div class="form-group">
+                                    <label class=" control-label" for="product_categorie"> Loại sản phẩm</label>
+                                    <div class="">
+
+                                        <select id="id_productCategory" name="id_productCategory" class="form-control">
+                                            <?php foreach ($categoryList as $category)
+                                                echo '<option value="' . $category['id'] . '">' . $category['name'] . '</option>
                        ' ?>
 
-                                    </select>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
 
-                            <!-- id_author -->
-                            <div class="form-group">
-                                <label class=" control-label" for="product_categorie">Tác Giả</label>
-                                <div class="">
+                                <!-- id_author -->
+                                <div class="form-group">
+                                    <label class=" control-label" for="product_categorie">Tác Giả</label>
+                                    <div class="">
 
-                                    <select id="id_Author" name="id_Author" class="form-control">
-                                        <?php foreach ($authorList as $author)
-                                            echo '<option value="' . $author['id'] . '">' . $author['fullname'] . ' </option>
+                                        <select id="id_Author" name="id_Author" class="form-control">
+                                            <?php foreach ($authorList as $author)
+                                                echo '<option value="' . $author['id'] . '">' . $author['fullname'] . ' </option>
                        ' ?>
 
-                                    </select>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- publisher -->
-                            <div class="form-group">
-                                <label class=" control-label" for="id_Publisher">Nhà Xuất Bản</label>
-                                <div class="">
+                                <!-- publisher -->
+                                <div class="form-group">
+                                    <label class=" control-label" for="id_Publisher">Nhà Xuất Bản</label>
+                                    <div class="">
 
-                                    <select id="id_Publisher" name="id_Publisher" 
-                                        class="form-control">
-                                        <?php foreach ($publisherList as $publisher)
-                                            echo '<option value="' . $publisher['id'] . '">' . $publisher['name'] . ' </option>
+                                        <select id="id_Publisher" name="id_Publisher" class="form-control">
+                                            <?php foreach ($publisherList as $publisher)
+                                                echo '<option value="' . $publisher['id'] . '">' . $publisher['name'] . ' </option>
                        ' ?>
 
-                                    </select>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- Số lượng-->
-                            <div class="form-group">
-                                <label class=" control-label" for="quantity"> Số lượng</label>
-                                <div class="">
-                                    <input id="quantity" name="quantity"
-                                        value="<?Php echo '' . $editProduct['quantity'] . ''; ?>"
-                                        class="form-control input-md"  required="" type="number">
+                                <!-- Số lượng-->
+                                <div class="form-group">
+                                    <label class=" control-label" for="quantity"> Số lượng</label>
+                                    <div class="">
+                                        <input id="quantity" name="quantity" type="hidden" value="<?Php echo '' . $editProduct['quantity'] . ''; ?>" class="form-control input-md" required="" type="number">
 
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- Giá tiền -->
-                            <div class="form-group">
-                                <label class=" control-label" for="available_quantity"> Giá tiền</label>
-                                <div class="">
-                                    <input id="price" name="price"
-                                        value="<?Php echo '' . $editProduct['price'] . ''; ?>"
-                                        class="form-control input-md"  required="" type="number">
+                                <!-- Giá tiền -->
+                                <div class="form-group">
+                                    <label class=" control-label" for="available_quantity"> Giá tiền</label>
+                                    <div class="">
+                                        <input id="price" name="price" value="<?Php echo '' . $editProduct['price'] . ''; ?>" class="form-control input-md" required="" type="text">
 
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Status -->
-                            <div class="form-group">
-                                <label class=" control-label" for="status">Trạng Thái</label>
-                                <div class="">
-                                    <select id="status" name="status"  class="form-control">
-                                        <?php
-                                        if ($editProduct['status'] == 1) {
-                                            echo '<option value="1" selected>Hoạt động</option>';
-                                            echo '<option value="0">Tạm ngưng</option>';
-                                        } else {
-                                            echo '<option value="1">Hoạt động</option>';
-                                            echo '<option value="0"selected>Tạm ngưng</option>';
-                                        }
-                                        ?>
-                                    </select>
+                                <!-- Status -->
+                                <div class="form-group">
+                                    <label class=" control-label" for="status">Trạng Thái</label>
+                                    <div class="">
+                                        <select id="status" name="status" class="form-control">
+                                            <?php
+                                            if ($editProduct['status'] == 1) {
+                                                echo '<option value="1" selected>Hoạt động</option>';
+                                                echo '<option value="0">Tạm ngưng</option>';
+                                            } else {
+                                                echo '<option value="1">Hoạt động</option>';
+                                                echo '<option value="0"selected>Tạm ngưng</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
 
 
-                            <!-- Hình ảnh -->
+                                <!-- Hình ảnh -->
 
 
-                            <div class="form-group">
-                                <label class=" control-label" for="filebutton">Hình Ảnh</label>
-                                <input type="file" id="image" name="image" style="width: 40%; margin-left: 13px;"
-                                    required="" class="form-control input-md">
-                            </div>
+                                <div class="form-group">
+                                    <label class=" control-label" for="filebutton">Hình Ảnh</label>
+                                    <input type="file" id="image" name="image" value="<?= $editProduct['image'] ?>" style="width: 40%;" class="form-control input-md">
+                                </div>
 
-                            <!-- Button -->
+                                <!-- Button -->
 
-                            <div class="form-group">
-                                <input type="submit" id="btnSub" name="btnSub" style="margin-left: 14px;"
-                                    class="btn btn-primary" value="Sửa">
-                            </div>
+                                <div class="form-group">
+                                    <input type="submit" id="btnSub" name="btnSub" class="btn btn-primary" value="Sửa">
+                                </div>
 
                         </div>
-                          </form>
-                       </div>                 
-                   </div>
+                        </form>
+                    </div>
                 </div>
-             </div>
-         </div>
+            </div>
+        </div>
     </div>
+</div>
 </div>
 <?php include('templates/admin/layouts/footer.php'); ?>
