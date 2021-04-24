@@ -2,7 +2,7 @@
 
 class ProductView
 {
-    public function index($products, $categoriesSidebar, $settingItem)
+    public function index($products, $categoriesSidebar, $settingItem, $productss)
     {
         require_once("templates/product.php");
     }

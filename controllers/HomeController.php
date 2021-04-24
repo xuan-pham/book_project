@@ -23,7 +23,7 @@ class HomeController
         // Get data of blogs
         require_once('models/PostModel.php');
         $blogModel = new PostModel();
-        $blogItem = $blogModel->getBlogAtHomePage();
+        $blogItem = $blogModel->getthreesPosts();
         // Get product featured
         require_once('models/ProductModel.php');
         $productModel = new ProductModel();
@@ -84,13 +84,14 @@ class HomeController
 
         $productModel = new ProductModel();
         $products = $productModel->getAllProducts();
+        $productss = $productModel->getAllsProducts();
 
         require_once('models/SettingModel.php');
         $settingModel = new SettingModel();
         $settingItem = $settingModel->getAllSetting();
 
         $productView = new ProductView();
-        $productView->index($products, $categoriesSidebar,$settingItem);
+        $productView->index($products, $categoriesSidebar,$settingItem, $productss);
     }
 
     public function productId($id)

@@ -29,27 +29,7 @@
 <section class="blog-single section">
     <div class="container">
         <div class="row">     
-             <div class="col-2 col-lg-2 mx-5"> 
-                
-             <h3 class="blog-title">Tin Tức Khác</h3>
-        
-                      <?php foreach ($postss as $item) : ?>
-                            <a href="?action=postId-<?= $item['id'] ?>">
-                                         <div class="image">
-                                         
-                                       <img src="templates\images\blogs\<?= $item['image'] ?>" alt="#">
-                                         </div>        
-                                         <div style="font-size: 12px"><?= $item['title'] ?></div>                 
-                                              </a>               
-                              <div class="blog-meta">
-                              
-                                </a>
-                                
-                                    <span class="author"><a href="#"><i class="fa fa-user"></i>By Admin</a><a
-                                            href="#"><i class="fa fa-calendar"></i>Dec 24, 2018</a>
-                                </div>                                               
-                            <?php endforeach; ?>
-               </div>            
+                    
             
              <div  class="col-8 col-lg-8 mx-5">
                       <?php foreach ($postItem as $item) : ?>
@@ -69,7 +49,28 @@
                             <?php endforeach; ?>
                             <?php
 ?>
-                    </div>            
+                    </div>      
+                    <div class="col-2 col-lg-2 mx-5"> 
+                
+                <h3 class="blog-title">Tin Tức Khác</h3>
+           
+                         <?php foreach ($postss as $item) : ?>
+                               <a href="?action=postId-<?= $item['id'] ?>">
+                                            <div class="image">
+                                            
+                                          <img src="templates\images\blogs\<?= $item['image'] ?>" alt="#">
+                                            </div>        
+                                            <div style="font-size: 12px"><?= $item['title'] ?></div>                 
+                                                 </a>               
+                                 <div class="blog-meta">
+                                 
+                                   </a>
+                                   
+                                       <span class="author"><a href="#"><i class="fa fa-user"></i>By Admin</a><a
+                                               href="#"><i class="fa fa-calendar"></i>Dec 24, 2018</a>
+                                   </div>                                               
+                               <?php endforeach; ?>
+                  </div>         
              </div>  
                                
         </div>

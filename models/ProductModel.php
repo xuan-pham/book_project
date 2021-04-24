@@ -77,6 +77,28 @@ class ProductModel
         }
         return $products;
     }
+    // public function getAllsProducts()
+    // {
+    //     $conn = mysqli_connect('localhost', 'root', '', 'qlbansach');
+    //     mysqli_set_charset($conn, "utf8");
+    //     if (mysqli_connect_errno()) {
+    //         echo "Connect error" . mysqli_connect_error();
+    //     }
+    //     $result = $conn->query(
+    //         "SELECT * 
+    //         FROM product
+    //         LIMIT 4
+    //         "
+    //     );
+    //     $products = array();
+
+    //     if ($result->num_rows > 0) {
+    //         while ($product = mysqli_fetch_assoc($result)) {
+    //             $products[] = $product;
+    //         };
+    //     }
+    //     return $products;
+    // }
 
     public function getProductByid($id)
     {
