@@ -90,7 +90,7 @@ class HomeController
         $settingItem = $settingModel->getAllSetting();
 
         $productView = new ProductView();
-        $productView->index($products, $categoriesSidebar,$settingItem, $productss);
+        $productView->index($products, $categoriesSidebar,$settingItem);
     }
 
     public function productId($id)

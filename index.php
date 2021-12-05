@@ -5,8 +5,8 @@ $action = isset($_GET['action']) ? $_GET['action'] : "";
 $search = isset($_GET['search']) ? $_GET['search'] : "";
 
 
-if ($url == "/book_project/") {
-    header('Location: /book_project/?action=home');
+if ($url == "/bansach/") {
+    header('Location: /bansach/?action=home');
 }
 
 require_once 'controllers/HomeController.php';
